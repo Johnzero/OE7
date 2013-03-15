@@ -1,0 +1,12 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"group_fg_scrapy_user_scrapy","group_fg_scrapy_user scrapy","model_scrapy","group_fg_scrapy_user",1,0,0,0
+"group_fg_scrapy_manager_scrapy","group_fg_scrapy_manager scrapy","model_scrapy","group_fg_scrapy_manager",1,1,1,1
+
+"group_fg_scrapy_user_scrapy_item","group_fg_scrapy_user scrapy_item","model_scrapy_item","group_fg_scrapy_user",1,0,0,0
+"group_fg_scrapy_manager_scrapy_item","group_fg_scrapy_manager scrapy_item","model_scrapy_item","group_fg_scrapy_manager",1,1,1,1
+
+"group_fg_scrapy_user_scrapy_stores","group_fg_scrapy_user scrapy_stores","model_scrapy_stores","group_fg_scrapy_user",1,0,0,0
+"group_fg_scrapy_manager_scrapy_stores","group_fg_scrapy_manager scrapy_stores","model_scrapy_stores","group_fg_scrapy_manager",1,1,1,1
+
+"group_fg_scrapy_user_scrapy_store_item","group_fg_scrapy_user scrapy_store_item","model_scrapy_store_item","group_fg_scrapy_user",1,0,0,0
+"group_fg_scrapy_manager_scrapy_store_item","group_fg_scrapy_manager scrapy_store_item","model_scrapy_store_item","group_fg_scrapy_manager",1,1,1,1

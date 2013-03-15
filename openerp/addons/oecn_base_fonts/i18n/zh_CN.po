@@ -1,0 +1,112 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* oecn_base_fonts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-18 08:53+0000\n"
+"PO-Revision-Date: 2012-08-18 08:53+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,name:0
+msgid "Font Alias"
+msgstr "字体别名"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.config,map_ids:0
+msgid "Replace Fonts"
+msgstr "替换字体"
+
+#. module: oecn_base_fonts
+#: model:ir.model,name:oecn_base_fonts.model_oecn_base_fonts_map
+msgid "oecn_base_fonts.map"
+msgstr "oecn_base_fonts.map"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,pdf_font:0
+msgid "Original Fonts"
+msgstr "原字体"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "Font replace"
+msgstr "替换为"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.config,config_logo:0
+msgid "Image"
+msgstr "Image"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,new_font:0
+msgid "Replaced With"
+msgstr "替换为"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "Fonts Mapping Configuration"
+msgstr "配置字体替换规则"
+
+#. module: oecn_base_fonts
+#: model:ir.model,name:oecn_base_fonts.model_oecn_base_fonts
+msgid "Register system fonts to replace pdf fonts"
+msgstr "用系统字体来替换pdf文件自带字体"
+
+#. module: oecn_base_fonts
+#: help:oecn_base_fonts.map,name:0
+msgid "use this font alias                 in custom rml report template"
+msgstr "在报表rml模板使用的字体别名"
+
+#. module: oecn_base_fonts
+#: model:ir.actions.act_window,name:oecn_base_fonts.action_config_fonts_map
+msgid "Configure Fonts Mapping for pdf reports"
+msgstr "配置pdf字体替换规则"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "res_config_contents"
+msgstr "res_config_contents"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,map_id:0
+msgid "Font Map"
+msgstr "字体替换规则"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "pdf font support for your language"
+msgstr "选择支持本地语言的pdf字体"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "title"
+msgstr "标题"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.config,wrap:0
+msgid "CJK wrap"
+msgstr "CJK 换行"
+
+#. module: oecn_base_fonts
+#: help:oecn_base_fonts.config,wrap:0
+msgid "If you are using CJK fonts, check this option will wrap your             words properly at the edge of the  pdf report"
+msgstr "如果你使用了中/日/韩字体，勾选这里将用双字符方式换行"
+
+#. module: oecn_base_fonts
+#: model:ir.model,name:oecn_base_fonts.model_oecn_base_fonts_config
+msgid "oecn_base_fonts.config"
+msgstr "oecn_base_fonts.config"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "Fonts used in the default report may not support the characters in your lanuage. Use the setting here to replace the Original font with the font you choose"
+msgstr "系统内置的报表所使用的字体可能不支持您的语言。你可以在服务器系统里选择支持你语言的字体替换原来的字体。"
+

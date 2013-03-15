@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<openerp>
+    <data>
+	<record id="product_attr_form_view" model="ir.ui.view">
+	      <field name="name">product.attr.form.inherit</field>
+              <field name="model">product.product</field>
+              <field name="type">form</field>
+              <field name="inherit_id" ref="product.product_normal_form_view"/>
+              <field name="arch" type="xml">
+                  <field name="product_manager" position="after">
+                      <field name="source"/>
+                  </field>
+              </field>
+          </record>
+         <record id="view_partner_client_form" model="ir.ui.view">
+            <field name="name">res.partner.client.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="负责业务员">
+                        <field name="sales_ids" colspan="4" mode="tree" nolabel="1" widget="many2many_list"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        <record id="view_user_client_form" model="ir.ui.view">
+            <field name="name">res.user.client.form</field>
+            <field name="model">res.users</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                    <notebook position="inside">
+                        <page string="负责客户">
+                            <field name="partner_ids" nolabel="1"/>
+                        </page>
+                    </notebook>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_data_report_horizontal_tree">
+            <field name="name">fg_data.report.horizontal.tree</field>
+            <field name="model">fg_data.report.horizontal</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="统计结果">
+                    <field name="name"/>
+                    <field name="value" sum="共计"/>
+                    <field name="desc"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="action_fg_data_report_horizontal" model="ir.actions.act_window">
+            <field name="name">统计结果</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_data.report.horizontal</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+        </record>
+        
+        
+	</data>
+</openerp>

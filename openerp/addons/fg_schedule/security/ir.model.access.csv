@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fg_project_task_user,fg_project.task.user,model_fg_project_task,group_project_schedule_user,1,1,1,0
+access_fg_project_task_manager,fg_project.task.manager,model_fg_project_task,group_project_schedule_manager,1,1,1,1
+
+access_fg_schedule_project_user,fg_schedule.project.user,model_fg_schedule_project,group_project_schedule_user,1,1,1,0
+access_fg_schedule_project_manager,fg_schedule.project.manager,model_fg_schedule_project,group_project_schedule_manager,1,1,1,1
+
+access_conf_task_user,conf_task.user,model_conf_task,group_project_schedule_user,1,1,1,0
+access_conf_task_manager,conf_task.manager,model_conf_task,group_project_schedule_manager,1,1,1,1

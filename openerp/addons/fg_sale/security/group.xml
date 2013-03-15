@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="0">
+        <record id="group_fg_sale_user" model="res.groups">
+            <field name="name">业务开单系统 / 业务部业务员</field>
+        </record>
+        <record id="group_fg_sale_manager" model="res.groups">
+            <field name="name">业务开单系统 / 业务部经理</field>
+        </record>
+        <record id="group_fg_sale_chart" model="res.groups">
+            <field name="name">业务开单系统 / 报表组</field>
+        </record>
+        <record id="group_fg_sale_fga" model="res.groups">
+            <field name="name">业务开单系统 / FGA组</field>
+        </record>
+        <record id="group_fg_sale_sale_user" model="res.groups">
+            <field name="name">业务开单系统 / 销售部业务员组</field>
+        </record>
+         <record id="group_fg_sale_sale_manager" model="res.groups">
+            <field name="name">业务开单系统 / 销售部经理组</field>
+        </record>
+         <record id="group_fg_sale_delivery_addresse" model="res.groups">
+            <field name="name">Addressess in Sales Orders</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+    </data>
+</openerp>

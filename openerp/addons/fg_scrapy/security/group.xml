@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <record id="group_fg_scrapy_user" model="res.groups">
+	        <field name="name">违规记录查询 / 用户</field>
+	    </record>
+	    <record id="group_fg_scrapy_manager" model="res.groups">
+	        <field name="name">违规记录查询 / 经理</field>
+	    </record>
+	</data>
+</openerp>

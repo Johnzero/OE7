@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Top menu item -->
+        <menuitem name="业务系统" id="fg_sale_top_menu" sequence="11"/>
+
+        <record id="seq_type_fg_sale_order" model="ir.sequence.type">
+            <field name="name">Fuguang Sale Order</field>
+            <field name="code">fg_sale.order</field>
+        </record>
+        <record id="seq_fg_sale_order" model="ir.sequence">
+            <field name="name">Fu Guang Order</field>
+            <field name="code">fg_sale.order</field>
+            <field name="prefix">FGSO-%(year)s%(month)s%(day)s</field>
+            <field name="padding">4</field>
+            <field name="implementation">no_gap</field>
+        </record>
+
+        <record model="ir.ui.view" id="fg_sale_order_tree_view">
+            <field name="name">fg_sale.order.tree</field>
+            <field name="model">fg_sale.order</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="销售订单" colors="red:minus == True;blue:state == 'draft';gray:state=='cancel'">
+                    <field name="name"/>
+                    <field name="sub_name"/>
+                    <field name="date_order"/>
+                    <field name="user_id"/>
+                    <field name="partner_id"/>
+                    <field name="amount_total" sum="共计"/>
+                    <field name="minus"/>
+                    <field name="promotion"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_fg_sales_order_filter" model="ir.ui.view">
+            <field name="name">fg_sale.order.list.select</field>
+            <field name="model">fg_sale.order</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="搜索订单">
+                    <filter string="未审核" domain="[('state','=','draft')]"/>
+                    <filter string="已审核" domain="[('state','=','done')]"/>
+                    <filter string="已取消" domain="[('state','=','cancel')]"/>
+                    <filter string="红单" domain="[('minus','=',True)]"/>
+                    <filter string="促销单" domain="[('promotion','=',True)]"/>
+                    <filter domain="[('user_id','=',uid)]" string="我创建的订单"/>
+                    <group expand="0" string="分组为..." groups="base.group_extended">
+                        <filter string="状态" domain="[]" context="{'group_by':'state'}"/>
+                        <filter string="订单日期" domain="[]" context="{'group_by':'date_order'}"/>
+                    </group>
+                    <field name="name"/>
+                    <field name="sub_name"/>
+                    <field name="user_id"/>
+                    <field name="partner_id" />
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_sale_order_form_view">
+            <field name="name">fg_sale.order.form</field>
+            <field name="model">fg_sale.order</field>
+            <field name="arch" type="xml">
+                <form string="销售订单" version="7.0">
+                    <header>
+                            <button name="button_review" type="object" confirm="一旦审核以后,将不能被修改, 确认审核?" string="审核单据" states="draft"/>
+                            <button name="button_cancel" type="object" confirm="确认取消?" string="取消单据" states="draft" />
+                            <field name="state" widget="statusbar" statusbar_visible="cancel,draft,done"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <h1>
+                                <label string="业务单"/>
+                                <field name="name" class="oe_inline" readonly="1"/>
+                            </h1>
+                            <group>
+                                <field name="sub_name"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="partner_id" on_change="onchange_partner_id(partner_id, context)" domain="[('customer','=',True)]" context="{'search_default_customer':1, 'show_address': 1}" options='{"always_reload": True}'/>
+                                <field name="partner_shipping_id" groups="fg_sale.group_fg_sale_delivery_address"  context="{'default_type':'default'}"/>
+                            </group>
+                            <group>
+                                <field name="date_order"/>
+                                <field name="date_confirm"/>
+                                <field name="note"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="confirmer_id"/>
+                            </group>
+                            <group>
+                                <field name="minus"/>
+                                <field name="promotion"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="订单明细">
+                                <field name="order_line">
+                                    <form string="订单明细" version="7.0">
+                                        <header groups="base.group_user">
+                                        </header>
+                                        <group>
+                                            <field name="product_id"/>
+                                            <field name="product_uom"/>
+                                            <field name="product_uom_qty"/>
+                                            <field name="aux_qty" invisible="1"/>
+                                            <field name="unit_price"/>
+                                            <field name="subtotal_amount"/>
+                                            <field name="note"/>
+                                        </group>
+                                    </form>
+                                    <tree string="销售明细" editable="bottom">
+                                        <field name="product_id" on_change="product_id_change(product_id)"/>
+                                        <field name="product_uom" on_change="product_uom_id_change(product_id, product_uom)"/>
+                                        <field name="product_uom_qty" on_change="product_uom_qty_change(product_id, product_uom, product_uom_qty, unit_price)"/>
+                                        <field name="aux_qty" invisible="1"/>
+                                        <field name="unit_price" on_change="product_uom_qty_change(product_id, product_uom, product_uom_qty, unit_price)"/>
+                                        <field name="subtotal_amount" sum="共计"/>
+                                        <field name="note"/>
+                                    </tree>
+                                </field>
+                                    <group class="oe_subtotal_footer oe_right" colspan="2" name="sale_total">
+                                        <field name="amount_discount"/>
+                                        <div class="oe_subtotal_footer_separator oe_inline">
+                                            <label for="amount_total" />
+                                            <button name="button_dummy" states="draft" string="更新" type="object" class="oe_edit_only oe_link"/>
+                                        </div>
+                                        <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                                    </group>
+                                    <div class="oe_clear"/>
+                            </page>
+                            <page string="其他">
+                                
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_fg_sale_order_all" model="ir.actions.act_window">
+            <field name="name">所有销售单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_fg_sales_order_filter"/>
+        </record>
+        
+        <menuitem id="menu_fg_sale_order" name="订单" parent="fg_sale_top_menu" sequence="0"/>
+        <menuitem id="menu_fg_sale_order_all" parent="menu_fg_sale_order" action="action_fg_sale_order_all" sequence="2"/>
+        
+        <menuitem id="menu_fg_sale_config" name="配置" parent="fg_sale_top_menu" sequence="1"/>
+        
+        <menuitem id="menu_fg_sale_partner" parent="menu_fg_sale_config" name="客户" action="base.action_partner_form" sequence="11"/>
+        <menuitem id="menu_fg_sale_product" name="产品" parent="menu_fg_sale_config" action="product.product_normal_action_sell" sequence="12"/>
+    </data>
+</openerp>

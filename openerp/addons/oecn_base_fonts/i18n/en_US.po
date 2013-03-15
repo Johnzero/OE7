@@ -1,0 +1,112 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+#	* oecn_base_fonts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-18 08:44+0000\n"
+"PO-Revision-Date: 2012-08-18 08:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,name:0
+msgid "Font Alias"
+msgstr "Font Alias"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.config,map_ids:0
+msgid "Replace Fonts"
+msgstr "Replace Fonts"
+
+#. module: oecn_base_fonts
+#: model:ir.model,name:oecn_base_fonts.model_oecn_base_fonts_map
+msgid "oecn_base_fonts.map"
+msgstr "oecn_base_fonts.map"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,pdf_font:0
+msgid "Original Fonts"
+msgstr "Original Fonts"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "Font replace"
+msgstr "Font replace"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.config,config_logo:0
+msgid "Image"
+msgstr "Image"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,new_font:0
+msgid "Replaced With"
+msgstr "Replaced With"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "Fonts Mapping Configuration"
+msgstr "Fonts Mapping Configuration"
+
+#. module: oecn_base_fonts
+#: model:ir.model,name:oecn_base_fonts.model_oecn_base_fonts
+msgid "Register system fonts to replace pdf fonts"
+msgstr "Register system fonts to replace pdf fonts"
+
+#. module: oecn_base_fonts
+#: help:oecn_base_fonts.map,name:0
+msgid "use this font alias                 in custom rml report template"
+msgstr "use this font alias                 in custom rml report template"
+
+#. module: oecn_base_fonts
+#: model:ir.actions.act_window,name:oecn_base_fonts.action_config_fonts_map
+msgid "Configure Fonts Mapping for pdf reports"
+msgstr "Configure Fonts Mapping for pdf reports"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "res_config_contents"
+msgstr "res_config_contents"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.map,map_id:0
+msgid "Font Map"
+msgstr "Font Map"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "pdf font support for your language"
+msgstr "pdf font support for your language"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "title"
+msgstr "title"
+
+#. module: oecn_base_fonts
+#: field:oecn_base_fonts.config,wrap:0
+msgid "CJK wrap"
+msgstr "CJK wrap"
+
+#. module: oecn_base_fonts
+#: help:oecn_base_fonts.config,wrap:0
+msgid "If you are using CJK fonts, check this option will wrap your             words properly at the edge of the  pdf report"
+msgstr "If you are using CJK fonts, check this option will wrap your             words properly at the edge of the  pdf report"
+
+#. module: oecn_base_fonts
+#: model:ir.model,name:oecn_base_fonts.model_oecn_base_fonts_config
+msgid "oecn_base_fonts.config"
+msgstr "oecn_base_fonts.config"
+
+#. module: oecn_base_fonts
+#: view:oecn_base_fonts.config:0
+msgid "Fonts used in the default report may not support the characters in your lanuage. Use the setting here to replace the Original font with the font you choose"
+msgstr "Fonts used in the default report may not support the characters in your lanuage. Use the setting here to replace the Original font with the font you choose"
+

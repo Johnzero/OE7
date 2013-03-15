@@ -1,0 +1,11 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"fg_sale_order_user","group_fg_sale_user fg_sale_order","model_fg_sale_order","fg_sale.group_fg_sale_user",1,1,1,0
+"fg_sale_order_manager","group_fg_sale_manager fg_sale_order","model_fg_sale_order","fg_sale.group_fg_sale_manager",1,1,1,0
+"fg_sale_order_chart","group_fg_sale_chart fg_sale_order","model_fg_sale_order","fg_sale.group_fg_sale_chart",1,0,0,0
+"fg_sale_order_fga","group_fg_sale_fga fg_sale_order","model_fg_sale_order","fg_sale.group_fg_sale_fga",1,0,0,0
+
+"fg_sale_order_line_user","group_fg_sale_user fg_sale_order_line","model_fg_sale_order_line","fg_sale.group_fg_sale_user",1,1,1,1
+"fg_sale_order_line_manager","group_fg_sale_manager fg_sale_order_line","model_fg_sale_order_line","fg_sale.group_fg_sale_manager",1,1,1,1
+"fg_sale_order_line_chart","group_fg_sale_chart fg_sale_order_line","model_fg_sale_order_line","fg_sale.group_fg_sale_chart",1,0,0,0
+"fg_sale_order_line_fga","group_fg_sale_fga fg_sale_order_line","model_fg_sale_order_line","fg_sale.group_fg_sale_fga",1,0,0,0
+

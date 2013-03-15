@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <record id="group_project_schedule_user" model="res.groups">
+	        <field name="name">产品物料推进 / 用户</field>
+	    </record>
+	    <record id="group_project_schedule_manager" model="res.groups">
+	        <field name="name">产品物料推进 / 经理</field>
+	    </record>
+	</data>
+</openerp>
