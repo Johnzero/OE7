@@ -16031,3 +16031,8 @@ msgstr "开始日期"
 #: model:ir.ui.menu,name:project.menu_project_category_act
 msgid "Tags"
 msgstr "标签"
+
+#. module: mail
+#: view:mail.message:0
+msgid "To Read"
+msgstr "未读"
