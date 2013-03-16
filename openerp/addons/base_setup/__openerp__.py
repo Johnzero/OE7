@@ -31,7 +31,7 @@ This module helps to configure the system at the installation of a new database.
 Shows you a list of applications features to install from.
 
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['base', 'web_kanban'],
     'data': [

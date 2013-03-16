@@ -21,7 +21,7 @@
 {
     'name' : 'eInvoicing',
     'version' : '1.1',
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'category' : 'Accounting & Finance',
     'description' : """
 Accounting and Financial Management.

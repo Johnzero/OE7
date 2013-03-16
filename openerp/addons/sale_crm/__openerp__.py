@@ -34,7 +34,7 @@ The case is then closed and linked to the generated sales order.
 We suggest you to install this module, if you installed both the sale and the crm
 modules.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/crm_statistics_dashboard.jpeg', 'images/opportunity_to_quote.jpeg'],
     'depends': ['sale', 'crm'],

@@ -31,7 +31,7 @@ This module provides facility to the user to install mrp and sales modulesat a t
 It is basically used when we want to keep track of production orders generated
 from sales order. It adds sales name and sales Reference on production order.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/SO_to_MO.jpeg'],
     'depends': ['mrp', 'sale_stock'],

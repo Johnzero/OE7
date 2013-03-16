@@ -29,7 +29,7 @@ Google Analytics.
 
 Collects web application usage with Google Analytics.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://openerp.com',
     'depends': ['web'],
     'data': [],

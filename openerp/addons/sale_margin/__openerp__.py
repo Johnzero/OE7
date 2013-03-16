@@ -29,7 +29,7 @@ This module adds the 'Margin' on sales order.
 This gives the profitability by calculating the difference between the Unit
 Price and Cost Price.
     """,
-    'author':'Xero',
+    'author':'OpenERP SA',
     'images':['images/sale_margin.jpeg'],
     'depends':['sale'],
     'demo':['sale_margin_demo.xml'],

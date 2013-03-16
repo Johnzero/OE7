@@ -56,7 +56,7 @@ The Dashboard for the Sales Manager will include
 * My Quotations
 * Monthly Turnover (Graph)
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/sale_dashboard.jpeg','images/Sale_order_line_to_invoice.jpeg','images/sale_order.jpeg','images/sales_analysis.jpeg'],
     'depends': ['account_voucher'],

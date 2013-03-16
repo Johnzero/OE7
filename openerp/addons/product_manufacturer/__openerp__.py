@@ -20,7 +20,7 @@
 {
     'name': 'Products Manufacturers',
     'version': '1.0',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Purchase Management',
     'depends': ['stock'],
     'demo': [],

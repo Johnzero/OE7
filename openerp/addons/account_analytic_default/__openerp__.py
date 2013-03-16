@@ -35,7 +35,7 @@ Allows to automatically select analytic accounts based on criterions:
     * Company
     * Date
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/analytic_defaults.jpeg'],
     'depends': ['sale_stock'],

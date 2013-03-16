@@ -22,7 +22,7 @@
 {
     'name': 'Cancel Journal Entries',
     'version': '1.1',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Accounting & Finance',
     'description': """
 Allows canceling accounting entries.

@@ -42,7 +42,7 @@ You can choose flexible invoicing methods:
 * *On Delivery Order*: Invoices are generated from picking (delivery)
 * *Before Delivery*: A Draft invoice is created and must be paid before delivery
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/deliveries_to_invoice.jpeg'],
     'depends': ['sale', 'stock', 'procurement'],

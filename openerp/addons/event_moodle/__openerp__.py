@@ -61,7 +61,7 @@ confirmation email to communicate the login/password of moodle to your subscribe
 
 **PASSWORD:** ${object.moodle_user_password}
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['event'],
     'data': [
         'wizard_moodle.xml',

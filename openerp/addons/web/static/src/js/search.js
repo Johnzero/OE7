@@ -324,7 +324,10 @@ instance.web.SearchView = instance.web.Widget.extend(/** @lends instance.web.Sea
                 e.preventDefault();
                 break;
             }
-        }
+        },
+        'autocompleteopen': function () {
+            this.$el.autocomplete('widget').css('z-index', 3);
+        },
     },
     /**
      * @constructs instance.web.SearchView
@@ -457,7 +460,7 @@ instance.web.SearchView = instance.web.Widget.extend(/** @lends instance.web.Sea
             autoFocus: true,
             minLength: 1,
             delay: 0
-        }).css('z-index', 3).data('autocomplete');
+        }).data('autocomplete');
 
         // MonkeyPatch autocomplete instance
         _.extend(autocomplete, {
@@ -1017,7 +1020,9 @@ instance.web.search.FilterGroup = instance.web.search.Input.extend(/** @lends in
         // create a GroupbyGroup instead of the current FilterGroup
         if (!(this instanceof instance.web.search.GroupbyGroup) &&
               _(filters).all(function (f) {
-                  return f.attrs.context && f.attrs.context.group_by; })) {
+                  if (!f.attrs.context) { return false; }
+                  var c = instance.web.pyeval.eval('context', f.attrs.context);
+                  return !_.isEmpty(c.group_by);})) {
             return new instance.web.search.GroupbyGroup(filters, parent);
         }
         this._super(parent);
@@ -1192,7 +1197,7 @@ instance.web.search.GroupbyGroup = instance.web.search.FilterGroup.extend({
             category: _t("GroupBy"),
             icon: this.icon,
             values: values,
-            field: this.getParent()._s_groupby
+            field: this.view._s_groupby
         };
     }
 });

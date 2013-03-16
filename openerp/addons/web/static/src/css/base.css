@@ -2309,12 +2309,45 @@
 .openerp .oe_form .oe_form_field_text {
   width: 100%;
 }
+.openerp .oe_form .oe_form_field_text .oe_form_text_content {
+  text-overflow: ellipsis;
+  display: inline-block;
+  white-space: pre-wrap;
+  overflow-x: hidden;
+  width: 100%;
+}
 .openerp .oe_form .oe_form_field_char input,
 .openerp .oe_form .oe_form_field_url input,
 .openerp .oe_form .oe_form_field_email input,
 .openerp .oe_form .oe_form_field_text textarea,
 .openerp .oe_form .oe_form_field_selection select {
   width: 100%;
+}
+.openerp .oe_text_center {
+   text-align: center;
+}
+.openerp .oe_form .oe_form_box_info {
+   background: #ffee99;
+   border-bottom: 1px solid #ccbb66;
+   padding: 4px;
+}
+.openerp .oe_form .oe_form_box_info > p {
+   margin: auto;
+}
+.openerp .oe_form .oe_form_box_warning {
+   background: #bd362f;
+   border-bottom: 1px solid #990000;
+   padding: 4px;
+}
+.openerp .oe_form .oe_form_box_warning * {
+   color: white;
+   text-shadow: none;
+}
+.openerp .oe_form .oe_form_box_warning > p {
+   margin: auto;
+}
+.openerp .oe_text_left {
+   text-align: left;
 }
 .openerp .oe_form .oe_form_field_text.oe_inline, .openerp .oe_form .oe_form_field_text.oe_inline > textarea {
   width: 500px;

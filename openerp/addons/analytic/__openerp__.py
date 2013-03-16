@@ -22,7 +22,7 @@
 {
     'name' : 'Analytic Accounting',
     'version': '1.1',
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'website' : 'http://www.openerp.com',
     'category': 'Hidden/Dependency',
     'depends' : ['base', 'decimal_precision', 'mail'],

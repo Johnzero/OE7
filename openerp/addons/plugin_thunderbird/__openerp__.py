@@ -22,7 +22,7 @@
 {
     'name' : 'Thunderbird Plug-In',
     'version' : '1.0',
-    'author' : ['Xero', 'Axelor'],
+    'author' : ['OpenERP SA', 'Axelor'],
     'website' : 'http://www.openerp.com/',
     'depends' : ['base','mail', 'plugin'],
     'category' : 'Customer Relationship Management',

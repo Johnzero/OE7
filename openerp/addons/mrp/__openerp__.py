@@ -23,7 +23,7 @@
 {
     'name': 'MRP',
     'version': '1.1',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'category': 'Manufacturing',
     'sequence': 18,

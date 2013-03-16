@@ -236,7 +236,6 @@
     width: 100%;
     padding: 2px 4px;
     color: #AAA;
-    word-spacing: 3px;
     cursor: text;
 }
 .openerp .oe_mail .oe_msg.oe_msg_composer_compact .oe_compact_record {

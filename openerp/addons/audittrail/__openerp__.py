@@ -31,7 +31,7 @@ This module lets administrator track every user operation on all the objects of 
 The administrator can subscribe to rules for read, write and delete on objects 
 and can check logs.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['base'],
     'data': [

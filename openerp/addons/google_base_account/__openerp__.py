@@ -28,7 +28,7 @@
 The module adds google user in res user.
 ========================================
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['base'],
     'data': [

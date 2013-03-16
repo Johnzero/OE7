@@ -20,7 +20,7 @@
 {
     'name': 'Purchase Requisitions',
     'version': '0.1',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Purchase Management',
     'images': ['images/purchase_requisitions.jpeg'],
     'website': 'http://www.openerp.com',

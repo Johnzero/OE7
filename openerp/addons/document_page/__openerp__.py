@@ -28,7 +28,7 @@ Pages
 =====
 Web pages
     """,
-    'author': ['Xero'],
+    'author': ['OpenERP SA'],
     'website': 'http://www.openerp.com/',
     'depends': ['knowledge'],
     'data': [

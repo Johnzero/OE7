@@ -35,7 +35,7 @@ It supports:
 
 If you need to manage your meetings, you should install the CRM module.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Hidden/Dependency',
     'website': 'http://www.openerp.com',
     'demo': ['crm_meeting_demo.xml'],

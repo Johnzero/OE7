@@ -29,7 +29,7 @@
 This module adds issue menu and features to your portal if project_issue and portal are installed.
 ==================================================================================================
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['project_issue','portal'],
     'data': [
         'security/portal_security.xml',

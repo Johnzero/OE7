@@ -27,7 +27,7 @@
         'share',
         'auth_signup',
     ],
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Portal',
     'description': """
 Customize access to your OpenERP database to external users by creating portals.

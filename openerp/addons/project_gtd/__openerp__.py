@@ -38,7 +38,7 @@ Getting Things Done (commonly abbreviated as GTD) is an action management method
 
 GTD rests on the principle that a person needs to move tasks out of the mind by recording them externally. That way, the mind is freed from the job of remembering everything that needs to be done, and can concentrate on actually performing those tasks.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'images': ['images/project_gtd.jpeg'],
     'depends': ['project'],
     'data': [

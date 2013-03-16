@@ -31,7 +31,7 @@ Generic Payroll system Integrated with Accounting.
     * Payment Encoding
     * Company Contribution Management
     """,
-    'author':'Xero',
+    'author':'OpenERP SA',
     'website':'http://www.openerp.com',
     'images': ['images/hr_employee_payslip.jpeg'],
     'depends': [

@@ -33,7 +33,7 @@ This application allows you to track your customers/suppliers claims and grievan
 It is fully integrated with the email gateway so that you can create
 automatically new claims based on incoming emails.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['crm'],
     'data': [

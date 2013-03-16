@@ -28,7 +28,7 @@
 Todo list for CRM leads and opportunities.
 ==========================================
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['crm','project_gtd'],
     'data': ['crm_todo_view.xml'],
     'demo': ['crm_todo_demo.xml'],

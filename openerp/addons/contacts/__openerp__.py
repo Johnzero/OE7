@@ -27,7 +27,7 @@
 This module gives you a quick view of your address book, accessible from your home page.
 You can track your suppliers, customers and other contacts.
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://openerp.com',
     'summary': 'Contacts, People and Companies',
     'depends': [

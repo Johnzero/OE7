@@ -23,7 +23,7 @@ Re-implement openerp's file import system:
 """,
     'category': 'Uncategorized',
     'website': 'http://www.openerp.com',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['web'],
     'installable': True,
     'auto_install': False,

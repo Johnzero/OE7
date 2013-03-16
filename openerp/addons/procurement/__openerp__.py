@@ -23,7 +23,7 @@
 {
     'name' : 'Procurements',
     'version' : '1.0',
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'website' : 'http://www.openerp.com',
     'category' : 'Hidden/Dependency',
     'depends' : ['base','process', 'product', 'stock'],

@@ -38,7 +38,7 @@ It may also increase your stock size because products are reserved as soon
 as possible and the scheduler time range is not taken into account anymore.
 In that case, you can not use priorities any more on the different picking.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['procurement'],
     'data': ['mrp_jit.xml'],
     'demo': [],

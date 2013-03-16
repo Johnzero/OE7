@@ -23,7 +23,7 @@
 {
     'name' : 'Outlook Plug-In',
     'version' : '1.0',
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'website' : 'http://www.openerp.com/',
     'depends' : ['base', 'mail','plugin'],
     'category' : 'Customer Relationship Management',

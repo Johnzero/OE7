@@ -22,7 +22,7 @@
 {
     'name' : 'Employee Appraisals',
     'version': '0.1',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Human Resources',
     'sequence': 31,
     'website': 'http://www.openerp.com',

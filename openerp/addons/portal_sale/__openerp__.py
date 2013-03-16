@@ -43,7 +43,7 @@ If online payment acquirers are configured, portal users will also be given the 
 pay online on their Sale Orders and Invoices that are not paid yet. Paypal is included
 by default, you simply need to configure a Paypal account in the Accounting/Invoicing settings.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['sale','portal'],
     'data': [
         'security/portal_security.xml',

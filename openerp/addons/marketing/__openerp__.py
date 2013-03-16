@@ -24,7 +24,7 @@
     'name': 'Marketing',
     'version': '1.1',
     'depends': ['base', 'base_setup', 'crm'],
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Hidden/Dependency',
     'description': """
 Menu for Marketing.

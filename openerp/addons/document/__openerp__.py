@@ -35,7 +35,7 @@ This is a complete document management system.
         * Files by Partner (graph)
         * Files Size by Month (graph)
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['knowledge'],
     'data': [

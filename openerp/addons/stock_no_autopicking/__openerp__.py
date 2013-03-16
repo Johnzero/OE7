@@ -33,7 +33,7 @@ suppliers (sub-contracting). To achieve this, set the assembled product which is
 sub-contracted to 'No Auto-Picking' and put the location of the supplier in the
 routing of the assembly operation.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['mrp'],
     'images': ['images/auto_picking.jpeg'],
     'data': ['stock_no_autopicking_view.xml'],

@@ -38,7 +38,7 @@ Key Features
 * Manage your Events and Registrations
 * Use emails to automatically confirm and send acknowledgements for any event registration
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['base_setup', 'board', 'email_template'],
     'data': [
         'security/event_security.xml',

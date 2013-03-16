@@ -37,7 +37,7 @@ The following topics should be covered by this module:
     * Repair quotation report
     * Notes for the technician and for the final customer
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'images': ['images/repair_order.jpeg'],
     'depends': ['mrp', 'sale', 'account'],
     'data': [

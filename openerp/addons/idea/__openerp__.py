@@ -33,7 +33,7 @@ Then, other users can comment on these ideas and vote for particular ideas.
 Each idea has a score based on the different votes.
 The managers can obtain an easy view of best ideas from all the users.
 Once installed, check the menu 'Ideas' in the 'Tools' main menu.""",
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://openerp.com',
     'depends': ['mail'],
     'data': [

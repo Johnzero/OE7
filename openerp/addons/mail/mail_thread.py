@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2009-today Xero (<http://www.openerp.com>)
+#    Copyright (C) 2009-today OpenERP SA (<http://www.openerp.com>)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -248,7 +248,7 @@ class mail_thread(osv.AbstractModel):
 
         # automatic logging unless asked not to (mainly for various testing purpose)
         if not context.get('mail_create_nolog'):
-            self.message_post(cr, uid, thread_id, body=_('Document created'), context=context)
+            self.message_post(cr, uid, thread_id, body='Document created', context=context)
         return thread_id
 
     def write(self, cr, uid, ids, values, context=None):
@@ -307,7 +307,6 @@ class mail_thread(osv.AbstractModel):
                 lst.append(name)
         if not lst:
             return lst
-
         return self.fields_get(cr, uid, lst, context=context)
 
     def message_track(self, cr, uid, ids, tracked_fields, initial_values, context=None):
@@ -345,17 +344,18 @@ class mail_thread(osv.AbstractModel):
             # generate tracked_values data structure: {'col_name': {col_info, new_value, old_value}}
             for col_name, col_info in tracked_fields.items():
                 if record[col_name] == initial[col_name] and getattr(self._all_columns[col_name].column, 'track_visibility', None) == 'always':
-                    tracked_values[col_name] = dict(col_info=_(col_info['string']),
+                    tracked_values[col_name] = dict(col_info=col_info['string'],
                                                         new_value=convert_for_display(record[col_name], col_info))
                 elif record[col_name] != initial[col_name]:
                     if getattr(self._all_columns[col_name].column, 'track_visibility', None) in ['always', 'onchange']:
-                        tracked_values[col_name] = dict(col_info=_(col_info['string']),
+                        tracked_values[col_name] = dict(col_info=col_info['string'],
                                                             old_value=convert_for_display(initial[col_name], col_info),
                                                             new_value=convert_for_display(record[col_name], col_info))
                     if col_name in tracked_fields:
                         changes.append(col_name)
             if not changes:
                 continue
+
             # find subtypes and post messages or log if no subtype found
             subtypes = []
             for field, track_info in self._track.items():
@@ -883,9 +883,9 @@ class mail_thread(osv.AbstractModel):
                     mail_message_obj.write(cr, SUPERUSER_ID, message_ids, {'author_id': ids[0]}, context=context)
         return result
 
-    def message_post(self, cr, uid, thread_id, body='', subject=None,
-                        content_subtype='html', type='notification', subtype=None,
-                        parent_id=False, attachments=None, context=None, **kwargs):
+    def message_post(self, cr, uid, thread_id, body='', subject=None, type='notification',
+                        subtype=None, parent_id=False, attachments=None, context=None,
+                        content_subtype='html', **kwargs):
         """ Post a new message in an existing thread, returning the new
             mail.message ID.
 
@@ -931,7 +931,18 @@ class mail_thread(osv.AbstractModel):
             body = tools.plaintext2html(body)
 
         # 2: Private message: add recipients (recipients and author of parent message)
-        partner_ids = set(kwargs.pop('partner_ids', []))
+        #   + legacy-code management (! we manage only 4 and 6 commands)
+        partner_ids = set()
+        kwargs_partner_ids = kwargs.pop('partner_ids', [])
+        for partner_id in kwargs_partner_ids:
+            if isinstance(partner_id, (list, tuple)) and partner_id[0] == 4 and len(partner_id) == 2:
+                partner_ids.add(partner_id[1])
+            if isinstance(partner_id, (list, tuple)) and partner_id[0] == 6 and len(partner_id) == 3:
+                partner_ids |= set(partner_id[2])
+            elif isinstance(partner_id, (int, long)):
+                partner_ids.add(partner_id)
+            else:
+                pass  # we do not manage anything else
         if parent_id and model == 'mail.thread':
             parent_message = mail_message.browse(cr, uid, parent_id, context=context)
             partner_ids |= set([partner.id for partner in parent_message.partner_ids])
@@ -1018,6 +1029,21 @@ class mail_thread(osv.AbstractModel):
         if message.author_id and thread_id and type != 'notification':
             self.message_subscribe(cr, uid, [thread_id], [message.author_id.id], context=context)
         return msg_id
+
+    #------------------------------------------------------
+    # Compatibility methods: do not use
+    # TDE TODO: remove me in 8.0
+    #------------------------------------------------------
+
+    def message_create_partners_from_emails(self, cr, uid, emails, context=None):
+        return {'partner_ids': [], 'new_partner_ids': []}
+
+    def message_post_user_api(self, cr, uid, thread_id, body='', parent_id=False,
+                                attachment_ids=None, content_subtype='plaintext',
+                                context=None, **kwargs):
+        return self.message_post(cr, uid, thread_id, body=body, parent_id=parent_id,
+                                    attachment_ids=attachment_ids, content_subtype=content_subtype,
+                                    context=context, **kwargs)
 
     #------------------------------------------------------
     # Followers API

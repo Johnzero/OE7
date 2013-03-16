@@ -38,7 +38,7 @@ Lots of reporting on time and employee tracking are provided.
 It is completely integrated with the cost accounting module. It allows you to set
 up a management by affair.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/hr_timesheet_lines.jpeg'],
     'depends': ['account', 'hr', 'base', 'hr_attendance', 'process'],

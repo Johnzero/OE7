@@ -47,7 +47,7 @@ Main Features
 * Allows the user to create an invoice automatically
 * Refund previous sales
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'images': ['images/pos_touch_screen.jpeg', 'images/pos_session.jpeg', 'images/pos_analysis.jpeg','images/sale_order_pos.jpeg','images/product_pos.jpeg'],
     'depends': ['sale_stock'],
     'data': [

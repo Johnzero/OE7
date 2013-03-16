@@ -23,7 +23,7 @@
     'version' : '1.0',
     'depends' : ['base'],
     'images' : ['images/ldap_configuration.jpeg'],
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'description': """
 Adds support for authentication by LDAP server.
 ===============================================

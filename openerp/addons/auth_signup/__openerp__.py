@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2009-today Xero (<http://www.openerp.com>)
+#    Copyright (C) 2009-today OpenERP SA (<http://www.openerp.com>)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -25,7 +25,7 @@
 Allow users to sign up and reset their password
 ===============================================
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'version': '1.0',
     'category': 'Authentication',
     'website': 'http://www.openerp.com',

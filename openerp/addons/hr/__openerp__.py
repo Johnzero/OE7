@@ -22,7 +22,7 @@
 {
     'name': 'Employee Directory',
     'version': '1.1',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Human Resources',
     'sequence': 21,
     'website': 'http://www.openerp.com',
@@ -40,7 +40,7 @@ You can manage:
 * HR Departments
 * HR Jobs
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': [
         'images/hr_department.jpeg',

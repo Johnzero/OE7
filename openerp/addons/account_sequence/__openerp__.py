@@ -37,7 +37,7 @@ You can customize the following attributes of the sequence:
     * Increment Number
     * Number Padding
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/internal_sequence_number.jpeg'],
     'depends': ['account'],

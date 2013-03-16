@@ -33,7 +33,7 @@ to trace your interventions. This menu is more adapted to oral communication,
 which is not necessarily related to a claim. Select a customer, add notes
 and categorize your interventions with a channel and a priority level.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['crm'],
     'data': [

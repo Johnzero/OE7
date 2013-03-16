@@ -33,7 +33,7 @@ This application allows you to manage the issues you might face in a project lik
 
 It allows the manager to quickly check the issues, assign them and decide on their status quickly as they evolve.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/issue_analysis.jpeg','images/project_issue.jpeg'],
     'depends': [

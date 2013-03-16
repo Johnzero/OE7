@@ -21,7 +21,7 @@
 
 {
     'name': 'Lunch Orders',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'version': '0.2',
     'depends': ['base'],
     'category' : 'Tools',

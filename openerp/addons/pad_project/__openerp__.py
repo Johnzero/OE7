@@ -27,7 +27,7 @@
 This module adds a PAD in all project kanban views.
 ===================================================
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['project', 'pad'],
     'data': ['project_task.xml'],

@@ -33,7 +33,7 @@ question may have multiple answers. Different users may give different answers o
 question and according to that survey is done. Partners are also sent mails with
 user name and password for the invitation of the survey.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['mail'],
     'data': [
         'survey_report.xml',

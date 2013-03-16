@@ -25,7 +25,7 @@
     'category': 'Purchase Management',
     'images' : ['images/purchase_validation.jpeg'],
     'depends' : ['base','purchase'],
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'description': """
 Double-validation for purchases exceeding minimum amount.
 =========================================================

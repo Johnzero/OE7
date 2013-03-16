@@ -30,7 +30,7 @@ Remove minimal account chart.
 
 Deactivates minimal chart of accounts.
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['account'],
     'data': [],

@@ -93,7 +93,7 @@ You can use the demo data as follow:
        stored to shelf 2.
      - When delivering the customer: Pick List -> Packing -> Delivery Order from Gate A
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'images': ['images/pulled_flow.jpeg','images/pushed_flow.jpeg'],
     'depends': ['procurement','stock','sale'],
     'data': ['stock_location_view.xml', 'security/stock_location_security.xml', 'security/ir.model.access.csv', 'procurement_pull_workflow.xml'],

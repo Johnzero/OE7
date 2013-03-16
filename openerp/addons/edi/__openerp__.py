@@ -32,7 +32,7 @@ different systems, and provides generic mechanisms to import and export them.
 More details about OpenERP's EDI format may be found in the technical OpenERP 
 documentation at http://doc.openerp.com.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['base', 'email_template'],
     'icon': '/edi/static/src/img/knowledge.png',

@@ -21,8 +21,8 @@
 {
     'name': 'Password Encryption',
     'version': '1.1',
-    'author': ['Xero', 'FS3'],
-    'maintainer': 'Xero',
+    'author': ['OpenERP SA', 'FS3'],
+    'maintainer': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'category': 'Tools',
     'description': """

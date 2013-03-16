@@ -37,7 +37,7 @@ value is given as usual by the employee data so that this module is perfectly
 compatible with older configurations.
 
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/analytic_user_function.jpeg'],
     'depends': ['hr_timesheet_sheet'],

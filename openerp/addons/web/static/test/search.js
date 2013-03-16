@@ -855,11 +855,11 @@ openerp.testing.section('search.serialization', {
     test('FilterGroup', {asserts: 6}, function (instance) {
         var view = {inputs: [], query: {on: function () {}}};
         var filter_a = new instance.web.search.Filter(
-            {attrs: {name: 'a', context: 'c1', domain: 'd1'}}, view);
+            {attrs: {name: 'a', context: '{"c1": True}', domain: 'd1'}}, view);
         var filter_b = new instance.web.search.Filter(
-            {attrs: {name: 'b', context: 'c2', domain: 'd2'}}, view);
+            {attrs: {name: 'b', context: '{"c2": True}', domain: 'd2'}}, view);
         var filter_c = new instance.web.search.Filter(
-            {attrs: {name: 'c', context: 'c3', domain: 'd3'}}, view);
+            {attrs: {name: 'c', context: '{"c3": True}', domain: 'd3'}}, view);
         var group = new instance.web.search.FilterGroup(
             [filter_a, filter_b, filter_c], view);
         return group.facet_for_defaults({a: true, c: true})
@@ -880,7 +880,7 @@ openerp.testing.section('search.serialization', {
                 equal(context.__ref, 'compound_context',
                     "context should be compound");
                 deepEqual(context.__contexts, [
-                    'c1', 'c3'
+                    '{"c1": True}', '{"c3": True}'
                 ], "context should merge all filter contexts");
                 ok(!context.get_eval_context(), "context should have no evaluation context");
             });
@@ -1044,6 +1044,103 @@ openerp.testing.section('search.filters', {
                 equal(view.query.length, 0, "click should have removed facet");
                 strictEqual(calls, 1, "one search should have been triggered");
             });
+    });
+});
+openerp.testing.section('search.groupby', {
+    dependencies: ['web.search'],
+    rpc: 'mock',
+    templates: true,
+}, function (test) {
+    test('basic', {
+        asserts: 7,
+        setup: function (instance, $s, mock) {
+            mock('dummy.model:fields_view_get', function () {
+                return {
+                    type: 'search',
+                    fields: {},
+                    arch: [
+                        '<search>',
+                            '<filter string="Foo" context="{\'group_by\': \'foo\'}"/>',
+                            '<filter string="Bar" context="{\'group_by\': \'bar\'}"/>',
+                            '<filter string="Baz" context="{\'group_by\': \'baz\'}"/>',
+                        '</search>'
+                    ].join(''),
+                }
+            });
+        }
+    }, function (instance, $fix) {
+        var view = makeSearchView(instance);
+        return view.appendTo($fix)
+        .done(function () {
+            // 3 filters, 1 filtergroup group, 1 custom filter, 1 advanced, 1 Filters
+            equal(view.inputs.length, 7,
+                  'should have 7 inputs total');
+            var group = _.find(view.inputs, function (f) {
+                return f instanceof instance.web.search.GroupbyGroup
+            });
+            ok(group, "should have a GroupbyGroup input");
+            strictEqual(group.getParent(), view,
+                        "group's parent should be view");
+
+            group.toggle(group.filters[0]);
+            group.toggle(group.filters[2]);
+
+            var results = view.build_search_data();
+            deepEqual(results.errors, [], "should have no errors");
+            deepEqual(results.domains, [], "should have no domain");
+            deepEqual(results.contexts, [
+                new instance.web.CompoundContext(
+                    "{'group_by': 'foo'}", "{'group_by': 'baz'}")
+            ], "should have compound contexts");
+            deepEqual(results.groupbys, [
+                "{'group_by': 'foo'}",
+                "{'group_by': 'baz'}"
+            ], "should have sequence of contexts")
+        });
+    });
+    test('unified multiple groupby groups', {
+        asserts: 4,
+        setup: function (instance, $s, mock) {
+            mock('dummy.model:fields_view_get', function () {
+                return {
+                    type: 'search',
+                    fields: {},
+                    arch: [
+                        '<search>',
+                            '<filter string="Foo" context="{\'group_by\': \'foo\'}"/>',
+                            '<separator/>',
+                            '<filter string="Bar" context="{\'group_by\': \'bar\'}"/>',
+                            '<separator/>',
+                            '<filter string="Baz" context="{\'group_by\': \'baz\'}"/>',
+                        '</search>'
+                    ].join(''),
+                }
+            });
+        }
+    }, function (instance, $fix) {
+        var view = makeSearchView(instance);
+        return view.appendTo($fix)
+        .done(function () {
+            // 3 filters, 3 filtergroups, 1 custom filter, 1 advanced, 1 Filters
+            equal(view.inputs.length, 9, "should have 9 inputs total");
+
+            var groups = _.filter(view.inputs, function (f) {
+                return f instanceof instance.web.search.GroupbyGroup
+            });
+            equal(groups.length, 3, "should have 3 GroupbyGroups");
+
+            groups[0].toggle(groups[0].filters[0]);
+            groups[2].toggle(groups[2].filters[0]);
+            equal(view.query.length, 1,
+                  "should have unified groupby groups in single facet");
+            deepEqual(view.build_search_data(), {
+                errors: [],
+                domains: [],
+                contexts: [new instance.web.CompoundContext(
+                    "{'group_by': 'foo'}", "{'group_by': 'baz'}")],
+                groupbys: [ "{'group_by': 'foo'}", "{'group_by': 'baz'}" ],
+            }, "should only have contexts & groupbys in search data");
+        });
     });
 });
 openerp.testing.section('search.filters.saved', {

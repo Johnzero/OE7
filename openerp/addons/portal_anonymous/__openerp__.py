@@ -4,7 +4,7 @@
 Allow anonymous to Access Portal.
 =================================
  """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'version': '1.0',
     'category': 'Hidden',
     'website': 'http://www.openerp.com',

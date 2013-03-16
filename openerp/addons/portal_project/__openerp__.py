@@ -29,7 +29,7 @@
 This module adds project menu and features (tasks) to your portal if project and portal are installed.
 ======================================================================================================
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['project','portal'],
     'data': [
         'security/portal_security.xml',

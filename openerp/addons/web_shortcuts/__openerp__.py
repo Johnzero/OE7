@@ -30,7 +30,7 @@ Add a Shortcut icon in the systray in order to access the user's shortcuts (if a
 
 Add a Shortcut icon besides the views title in order to add/remove a shortcut.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://openerp.com',
     'depends': ['base'],
     'data': [],

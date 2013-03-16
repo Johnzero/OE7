@@ -28,7 +28,7 @@
 The common interface for plug-in.
 =================================
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['base'],
     'data': [],

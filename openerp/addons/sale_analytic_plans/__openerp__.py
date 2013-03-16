@@ -29,7 +29,7 @@ The base module to manage analytic distribution and sales orders.
 
 Using this module you will be able to link analytic accounts to sales orders.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/sale_order_analytic_account.jpeg', 'images/sales_order_line.jpeg'],
     'depends': ['sale', 'account_analytic_plans'],

@@ -21,7 +21,7 @@
 {
     'name' : 'Accounting and Finance',
     'version' : '1.1',
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'category': 'Accounting & Finance',
     'sequence': 10,
     'summary': 'Financial and Analytic Accounting',

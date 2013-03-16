@@ -38,7 +38,7 @@ With this module:
 -----------------
     A + B + C -> D + E
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/bom_byproduct.jpeg'],
     'depends': ['base', 'mrp'],

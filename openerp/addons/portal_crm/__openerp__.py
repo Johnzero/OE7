@@ -29,7 +29,7 @@
 This module adds a contact page (with a contact form creating a lead when submitted) to your portal if crm and portal are installed.
 ====================================================================================================================================
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['crm','portal'],
     'data': [
         'contact_view.xml',

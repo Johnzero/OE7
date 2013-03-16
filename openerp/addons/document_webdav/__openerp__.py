@@ -31,7 +31,7 @@
 {
     'name': 'Shared Repositories (WebDAV)',
     'version': '2.3',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Knowledge Management',
     'website': 'http://www.openerp.com',
     'description': """

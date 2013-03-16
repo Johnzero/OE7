@@ -2,7 +2,7 @@
 # -*- encoding: utf-8 -*-
 #
 # Copyright P. Christeas <p_christ@hol.gr> 2008,2009
-# Copyright Xero. (http://www.openerp.com) 2010
+# Copyright OpenERP SA. (http://www.openerp.com) 2010
 #
 #
 # WARNING: This program as such is intended to be used by professional

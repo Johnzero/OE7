@@ -46,7 +46,7 @@ procurement line is updated accordingly. For example, if this procurement corres
 to a sale order line, the sale order line will be considered delivered when the
 task is completed.
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/product.jpeg', 'images/task_from_SO.jpeg'],
     'depends': ['project', 'procurement', 'sale', 'mrp_jit'],

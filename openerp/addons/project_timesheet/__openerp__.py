@@ -31,7 +31,7 @@ This module lets you transfer the entries under tasks defined for Project
 Management to the Timesheet line entries for particular date and particular user
 with the effect of creating, editing and deleting either ways.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/invoice_task_work.jpeg', 'images/my_timesheet.jpeg', 'images/working_hour.jpeg'],
     'depends': ['project', 'hr_timesheet_sheet', 'hr_timesheet_invoice', 'account_analytic_analysis'],

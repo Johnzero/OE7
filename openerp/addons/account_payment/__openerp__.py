@@ -22,7 +22,7 @@
 {
     'name': 'Suppliers Payment Management',
     'version': '1.1',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'category': 'Accounting & Finance',
     'description': """
 Module to manage the payment of your supplier invoices.

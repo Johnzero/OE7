@@ -2,7 +2,7 @@
 ##############################################################################
 #
 #    OpenERP, Open Source Management Solution
-#    Copyright (C) 2010-today Xero (<http://www.openerp.com>)
+#    Copyright (C) 2010-today OpenERP SA (<http://www.openerp.com>)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -191,20 +191,31 @@ class mail_mail(osv.Model):
         return body
 
     def send_get_mail_reply_to(self, cr, uid, mail, partner=None, context=None):
-        """ Return a specific ir_email body. The main purpose of this method
-            is to be inherited by Portal, to add a link for signing in, in
-            each notification email a partner receives.
+        """ Return a specific ir_email reply_to.
 
             :param browse_record mail: mail.mail browse_record
             :param browse_record partner: specific recipient partner
         """
         if mail.reply_to:
             return mail.reply_to
-        if not mail.model or not mail.res_id:
-            return False
-        if not hasattr(self.pool.get(mail.model), 'message_get_reply_to'):
-            return False
-        return self.pool.get(mail.model).message_get_reply_to(cr, uid, [mail.res_id], context=context)[0]
+        email_reply_to = False
+
+        # if model and res_id: try to use ``message_get_reply_to`` that returns the document alias
+        if mail.model and mail.res_id and hasattr(self.pool.get(mail.model), 'message_get_reply_to'):
+            email_reply_to = self.pool.get(mail.model).message_get_reply_to(cr, uid, [mail.res_id], context=context)[0]
+        # no alias reply_to -> reply_to will be the email_from, only the email part
+        if not email_reply_to and mail.email_from:
+            emails = tools.email_split(mail.email_from)
+            if emails:
+                email_reply_to = emails[0]
+
+        # format 'Document name <email_address>'
+        if email_reply_to and mail.model and mail.res_id:
+            document_name = self.pool.get(mail.model).name_get(cr, SUPERUSER_ID, [mail.res_id], context=context)[0]
+            if document_name:
+                email_reply_to = _('Followers of %s <%s>') % (document_name[1], email_reply_to)
+
+        return email_reply_to
 
     def send_get_email_dict(self, cr, uid, mail, partner=None, context=None):
         """ Return a dictionary for specific email values, depending on a
@@ -259,11 +270,6 @@ class mail_mail(osv.Model):
                     email_list.append(self.send_get_email_dict(cr, uid, mail, context=context))
 
                 # build an RFC2822 email.message.Message object and send it without queuing
-                userobj = self.pool.get('res.users').browse(cr, uid, uid, context=context)
-                if userobj.email:
-                    mail.email_from = userobj.email
-                else:
-                    raise osv.except_osv(_('Invalid Action!'), _("Unable to send email, please configure the sender's email address or alias."))
                 for email in email_list:
                     msg = ir_mail_server.build_email(
                         email_from = mail.email_from,
@@ -279,7 +285,6 @@ class mail_mail(osv.Model):
                         object_id = mail.res_id and ('%s-%s' % (mail.res_id, mail.model)),
                         subtype = 'html',
                         subtype_alternative = 'plain')
-                    print "Mail Send To :",email.get('email_to')
                     res = ir_mail_server.send_email(cr, uid, msg,
                         mail_server_id=mail.mail_server_id.id, context=context)
                 if res:

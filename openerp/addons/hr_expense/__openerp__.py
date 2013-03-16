@@ -43,10 +43,10 @@ The whole flow is implemented as:
 
 This module also uses analytic accounting and is compatible with the invoice on timesheet module so that you are able to automatically re-invoice your customers' expenses if your work by project.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'images': ['images/hr_expenses_analysis.jpeg', 'images/hr_expenses.jpeg'],
-    'depends': ['hr', 'account_voucher'],
+    'depends': ['hr', 'account_voucher', 'account_accountant'],
     'data': [
         'security/ir.model.access.csv',
         'hr_expense_data.xml',

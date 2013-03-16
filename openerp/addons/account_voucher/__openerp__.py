@@ -22,7 +22,7 @@
 {
     'name' : 'eInvoicing & Payments',
     'version' : '1.0',
-    'author' : 'Xero',
+    'author' : 'OpenERP SA',
     'summary': 'Send Invoices and Track Payments',
     'description': """
 Invoicing & Payments by Accounting Voucher & Receipts

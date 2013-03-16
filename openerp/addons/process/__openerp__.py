@@ -33,7 +33,7 @@ This module shows the basic processes involved in the selected modules and in th
 **e.g.** product/process/product_process.xml.
 
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['web'],
     'data': [

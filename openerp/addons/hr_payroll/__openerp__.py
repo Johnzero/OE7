@@ -37,7 +37,7 @@ Generic Payroll system.
     * Monthly Payroll Register
     * Integrated with Holiday Management
     """,
-    'author':'Xero',
+    'author':'OpenERP SA',
     'website':'http://www.openerp.com',
     'images': ['images/hr_company_contributions.jpeg','images/hr_salary_heads.jpeg','images/hr_salary_structure.jpeg','images/hr_employee_payslip.jpeg'],
     'depends': [

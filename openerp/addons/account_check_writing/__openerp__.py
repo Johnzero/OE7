@@ -21,7 +21,7 @@
 {
     'name': 'Check Writing',
     'version': '1.1',
-    'author': 'Xero, NovaPoint Group',
+    'author': 'OpenERP SA, NovaPoint Group',
     'category': 'Generic Modules/Accounting',
     'description': """
 Module for the Check Writing and Check Printing.

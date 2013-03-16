@@ -30,7 +30,7 @@ This module is for managing a multicompany environment.
 
 This module is the base module for other multi-company modules.
     """,
-    'author': 'Xero,SYLEAM',
+    'author': 'OpenERP SA,SYLEAM',
     'website': 'http://www.openerp.com/',
     'depends': [
         'base',

@@ -22,7 +22,7 @@
 {
     'name': 'Google Docs integration',
     'version': '0.2',
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://openerp.com',
     'category': 'Tools',
     'installable': True,

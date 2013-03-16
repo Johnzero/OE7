@@ -37,7 +37,7 @@ were overlapping.
 
     **Note:** this module is not compatible with the module segmentation, since it's the same which has been renamed.
     """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': ['base', 'crm'],
     'data': ['security/ir.model.access.csv', 'wizard/open_questionnaire_view.xml', 'crm_profiling_view.xml'],

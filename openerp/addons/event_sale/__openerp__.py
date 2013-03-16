@@ -37,7 +37,7 @@ that product, you will be able to choose an existing event of that category and
 when you confirm your sale order it will automatically create a registration for
 this event.
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'depends': ['event', 'sale_crm'],
     'data': ['event_sale_view.xml'],
     'demo': ['event_demo.xml'],

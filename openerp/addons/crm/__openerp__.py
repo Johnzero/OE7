@@ -46,7 +46,7 @@ Dashboard for CRM will include:
 * Planned Revenue by Stage and User (graph)
 * Opportunities by Stage (graph)
 """,
-    'author': 'Xero',
+    'author': 'OpenERP SA',
     'website': 'http://www.openerp.com',
     'depends': [
         'base_action_rule',
