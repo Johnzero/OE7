@@ -2647,7 +2647,7 @@
 .openerp ul.oe_form_status li .label, .openerp ul.oe_form_status_clickable li .label {
   color: #4c4c4c;
   text-shadow: 0 1px 1px #fcfcfc, 0 -1px 1px #dedede;
-  padding: 7px;
+  padding: 6px;
   display: inline-block;
   padding-left: 24px;
   margin: 0;
@@ -3393,11 +3393,11 @@ div.ui-widget-overlay {
   background: rgb(205, 223, 255);
 }
 .openerp ul.oe_form_status li .arrow {
-  height: 30px;
+  height: 31px;
   padding-right: 2px;
 }
 .openerp ul.oe_form_status_clickable li .arrow {
-  height: 30px;
+  height: 31px;
   width: 20px;
 }
 .openerp ul.oe_form_status li {
@@ -3405,4 +3405,7 @@ div.ui-widget-overlay {
 }
 .openerp .oe_form header {
   text-align: center
+}
+.openerp ul.oe_form_status li .label {
+  /*padding: 6px !important;*/
 }

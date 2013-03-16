@@ -3496,7 +3496,10 @@ class BaseModel(object):
         """
         if context is None:
             context = {}
-
+            context['lang'] = 'zh_CN'
+        elif 'lang' in context.keys() : context['lang'] = 'zh_CN'  
+        else:context['lang'] = 'zh_CN'
+        
         write_access = self.check_access_rights(cr, user, 'write', raise_exception=False) \
             or self.check_access_rights(cr, user, 'create', raise_exception=False)
 
