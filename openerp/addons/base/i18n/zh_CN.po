@@ -16038,11 +16038,21 @@ msgid "To Read"
 msgstr "未读"
 
 #. module: sale
-#: model:mail.message.subtype,description:sale.mt_order_confirmed
+#: code:mail.message.subtype,description:sale.mt_order_confirmed
 msgid "Quotation confirmed"
 msgstr "报价已经确认"
 
 #. module: sale
-#: model:mail.message.subtype,description:sale.mt_order_sent
+#: code:mail.message.subtype,description:sale.mt_order_sent
 msgid "Quotation sent"
 msgstr "报价已发送"
+
+#. module: purchase
+#: code:mail.message.subtype,name:purchase.mt_rfq_approved
+msgid "RFQ Approved"
+msgstr "询价单批准"
+
+#. module: purchase
+#: code:mail.message.subtype,name:purchase.mt_rfq_confirmed
+msgid "RFQ Confirmed"
+msgstr "询价单确认"

@@ -372,7 +372,7 @@ class mail_thread(osv.AbstractModel):
                 except ValueError, e:
                     _logger.debug('subtype %s not found, giving error "%s"' % (subtype, e))
                     continue
-                message = format_message(subtype_rec.description if subtype_rec.description else subtype_rec.name, tracked_values)
+                message = format_message(_(subtype_rec.description if subtype_rec.description else subtype_rec.name), tracked_values)
                 self.message_post(cr, uid, record['id'], body=message, subtype=subtype, context=context)
                 posted = True
             if not posted:
