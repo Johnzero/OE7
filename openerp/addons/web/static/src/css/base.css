@@ -3393,11 +3393,11 @@ div.ui-widget-overlay {
   background: rgb(205, 223, 255);
 }
 .openerp ul.oe_form_status li .arrow {
-  height: 31px;
+  height: 28px;
   padding-right: 2px;
 }
 .openerp ul.oe_form_status_clickable li .arrow {
-  height: 31px;
+  height: 28px;
   width: 20px;
 }
 .openerp ul.oe_form_status li {

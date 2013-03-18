@@ -248,7 +248,7 @@ class mail_thread(osv.AbstractModel):
 
         # automatic logging unless asked not to (mainly for various testing purpose)
         if not context.get('mail_create_nolog'):
-            self.message_post(cr, uid, thread_id, body='Document created', context=context)
+            self.message_post(cr, uid, thread_id, body=_('Document created'), context=context)
         return thread_id
 
     def write(self, cr, uid, ids, values, context=None):
