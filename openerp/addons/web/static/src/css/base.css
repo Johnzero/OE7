@@ -3422,3 +3422,7 @@ div.ui-widget-overlay {
 .openerp .oe_login button {
   float: right;
 }
+.openerp ul.oe_form_status_clickable li .arrow span {
+  margin-top: 5px;
+  margin-left: -14px;
+}
