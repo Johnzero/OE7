@@ -66,20 +66,20 @@
             <div class="oe_login_logo"><img src='/web/static/src/img/logo2.png'/></div>
             <form action="" method="post">
                 <div class="oe_login_dbpane" >
-                    Database:
+                    数据库:
                     <input name="db" t-att-value="widget.selected_db || ''"/>
                 </div>
                 <ul>
-                    <li>Username</li>
+                    <li><b>用户</b></li>
                     <li><input name="login" type="text" value="" autofocus="autofocus"/></li>
-                    <li>Password</li>
+                    <li><b>密码</b></li>
                     <li><input name="password" type="password" value=""/></li>
-                    <li><button name="submit">Log in</button></li>
+                    <li><button name="submit">登陆</button></li>
                 </ul>
             </form>
             <div class="oe_login_footer">
-                <a href="#" class="oe_login_manage_db">Manage Databases</a> |
-                <a href="http://www.openerp.com" target="_blank">Powered by <span>OpenERP</span></a>
+                <a href="#" class="oe_login_manage_db">管理数据库</a> |
+                <a href="http://shine-it.net/index.php#c1" target="_blank">Powered by <span>Xero</span></a>
             </div>
         </div>
     </div>
@@ -208,7 +208,7 @@
                 </div>
                 <table align="center" class="db_option_table">
                     <tr>
-                        <td><label for="drop_db">Database:</label></td>
+                        <td><label for="drop_db">数据库:</label></td>
                         <td class="oe_form_field oe_form_field_selection">
                             <select t-if="widget.db_list" name="drop_db" autofocus="autofocus">
                                 <t t-foreach="widget.db_list" t-as="db">
@@ -240,7 +240,7 @@
                 <input type="hidden" name="token" />
                 <table align="center" class="db_option_table">
                     <tr>
-                        <td><label for="backup_db">Database:</label></td>
+                        <td><label for="backup_db">数据库:</label></td>
                         <td class="oe_form_field oe_form_field_selection ">
                             <select t-if="widget.db_list" name="backup_db" autofocus="autofocus">
                                 <t t-foreach="widget.db_list" t-as="db">

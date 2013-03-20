@@ -3415,3 +3415,10 @@ div.ui-widget-overlay {
   margin-top: 1px;
   margin-bottom: -4px;
 }
+.openerp .oe_login .oe_login_pane {
+  padding: 25px 33px;
+}
+
+.openerp .oe_login button {
+  float: right;
+}
