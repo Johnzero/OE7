@@ -16056,3 +16056,8 @@ msgstr "询价单批准"
 #: code:mail.message.subtype,name:purchase.mt_rfq_confirmed
 msgid "RFQ Confirmed"
 msgstr "询价单确认"
+
+#. module: mail
+#: model:ir.ui.menu,name:mail.wizard_update_translations
+msgid "HR Policies"
+msgstr "人力资源政策"
