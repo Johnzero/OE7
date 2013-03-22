@@ -16070,3 +16070,7 @@ msgstr ""
 "                </p>\n"
 "            "
 
+#. module: mrp
+#: selection:mrp.production,state:0
+msgid "Awaiting Raw Materials"
+msgstr "等待原材料"
