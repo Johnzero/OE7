@@ -249,7 +249,7 @@ class db(netsvc.ExportService):
              SaaS (giving SaaS users the super-admin password is not a good idea
              anyway)
         """
-        if os.environ.get('PGPASSWORD'):
+        if os.environ.get('PGPASSWORD') or not tools.config['db_password']:
             yield
         else:
             os.environ['PGPASSWORD'] = tools.config['db_password']
@@ -279,7 +279,7 @@ class db(netsvc.ExportService):
             if not data or res:
                 logger.error(
                         'DUMP DB: %s failed! Please verify the configuration of the database password on the server. '
-                        'It should be provided as a -w <PASSWD> command-line option, or as `db_password` in the '
+                        'You may need to create a .pgpass file for authentication, or specify `db_password` in the '
                         'server configuration file.\n %s', db_name, data)
                 raise Exception, "Couldn't dump database"
             logger.info('DUMP DB successful: %s', db_name)

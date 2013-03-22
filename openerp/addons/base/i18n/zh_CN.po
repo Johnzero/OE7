@@ -16058,6 +16058,19 @@ msgid "RFQ Confirmed"
 msgstr "询价单确认"
 
 #. module: mail
-#: model:ir.ui.menu,name:mail.wizard_update_translations
-msgid "HR Policies"
-msgstr "人力资源政策"
+#: model:ir.actions.client
+msgid ""
+"<p>\n"
+"                    No message in this group.\n"
+"                </p>\n"
+"            "
+msgstr ""
+"<p>\n"
+"                    这个群组没有未读消息.\n"
+"                </p>\n"
+"            "
+
+#. module: mrp
+#: selection:mrp.production,state:0
+msgid "Awaiting Raw Materials"
+msgstr "等待原材料"
