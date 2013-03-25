@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <record id="group_fg_competitor_user" model="res.groups">
+	        <field name="name">竞争对手分析子系统 / 用户</field>
+	    </record>
+	    <record id="group_fg_competitor_manager" model="res.groups">
+	        <field name="name">竞争对手分析子系统 / 管理员</field>
+	    </record>
+	</data>
+</openerp>

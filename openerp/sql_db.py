@@ -213,7 +213,7 @@ class Cursor(object):
         if '%d' in query or '%f' in query:
             _logger.warning(query)
             _logger.warning("SQL queries cannot contain %d or %f anymore. "
-                         "Use only %s")
+                        "Use only %s")
         if params and not isinstance(params, (tuple, list, dict)):
             _logger.error("SQL query parameters should be a tuple, list or dict; got %r", params)
             raise ValueError("SQL query parameters should be a tuple, list or dict; got %r" % (params,))

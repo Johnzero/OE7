@@ -47,8 +47,8 @@ application = openerp.service.wsgi_server.application
 # Standard OpenERP XML-RPC port is 8069
 bind = '127.0.0.1:8069'
 pidfile = '.gunicorn.pid'
-workers = 4
+workers = 8
 timeout = 240
-max_requests = 2000
+max_requests = 10000
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <record id="group_fg_online_shop_user" model="res.groups">
+	        <field name="name">网络渠道管理 / 用户</field>
+	    </record>
+	    <record id="group_fg_online_shop_manager" model="res.groups">
+	        <field name="name">网络渠道管理 / 经理</field>
+	    </record>
+	</data>
+</openerp>

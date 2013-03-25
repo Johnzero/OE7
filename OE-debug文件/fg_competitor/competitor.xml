@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+<!--竞争对手-->
+        <record model="ir.ui.view" id="fg_competitor_competitor_tree">
+            <field name="name">fg_competitor.competitor.tree</field>
+            <field name="model">fg_competitor.competitor</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="竞争对手">
+                    <field name="name" select="1"/>
+                    <field name="address" select="1"/>
+                    <field name="website" />
+                    <field name="brandname"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="fg_competitor_competitor_form">
+            <field name="name">fg_competitor.competitor.form</field>
+            <field name="model">fg_competitor.competitor</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="竞争对手">
+                    <group col="6" colspan="4">
+                        <field name="name" select="1"/>
+                        <field name="website" select="1"/>
+                        <field name="address" select="1"/>
+                    </group>
+                    <newline/>
+                    <notebook colspan="4">
+                        <page string ="旗下品牌">
+                            <field colspan="4" mode="tree" name="brands" nolabel="1" widget="one2many_list" />
+                        </page>
+                        <page string="公司介绍">
+                            <field name="detail" nolabel='1' colspan="4"/>
+                        </page>
+                        <page string ="说明">
+                            <field name="note" nolabel="1" colspan="4"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_fg_competitor" model="ir.actions.act_window">
+            <field name="name">竞争对手</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_competitor.competitor</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="limit">500</field>
+        </record>
+        
+<!--竞争对手品牌-->
+        <record model="ir.ui.view" id="fg_competitor_brand_tree">
+            <field name="name">fg_competitor.brand.tree</field>
+            <field name="model">fg_competitor.brand</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="" editable="bottom">
+                    <field name="name"/>
+                    <field name="note"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_competitor_brand_form">
+            <field name="name">fg_competitor.competitor.form</field>
+            <field name="model">fg_competitor.brand</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="竞争对手品牌">
+                    <field name="competitor_id"/>
+                    <field name="name"/>
+                    <newline/>
+                    <notebook colspan="4">
+                        <page string ="旗下产品">
+                            <field colspan="4" mode="tree" name="products" nolabel="1" widget="one2many_list"/>
+                        </page>
+                        <page string ="说明">
+                            <field name="note" nolabel="1" colspan="4"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        
+        <record id="action_fg_competitor_brand" model="ir.actions.act_window">
+            <field name="name">竞争对手品牌</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_competitor.brand</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="limit">200</field>
+        </record>
+
+<!--竞争对手产品-->
+        <record model="ir.ui.view" id="fg_competitor_product_tree">
+            <field name="name">fg_competitor.product.tree</field>
+            <field name="model">fg_competitor.product</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="产品明细">
+                    <field name="brand_id"/>
+                    <field name="name"/>
+                    <field name="meterial"/>
+                    <field name="color"/>
+                    <field name="capacity"/>
+                    <field name="price"/>
+                    <field name="year"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_competitor_product_form">
+            <field name="name">fg_competitor.product.form</field>
+            <field name="model">fg_competitor.product</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="产品明细">
+                    <group col="4" colspan="4">
+                        <field name="brand_id"/>
+                        <field name="name"/>
+                        <field name="category"/>
+                        <field name="model"/>
+                    </group>
+                    <notebook colspan="6">
+                        <page string="常规">
+                            <field name="year"/>
+                            <field name="meterial"/>
+                            <field name="style"/>
+                            <field name="color"/>
+                            <field name="price"/>
+                            <field name="capacity"/>
+                        </page>
+                        <page string="链接">
+                            <field name="url" string="产品链接" colspan='4' widget="url"/>
+                            <newline/>
+                            <field name="photo" widget="image" colspan='4'/>
+                        </page>
+                        <page string="标签">
+                            <field name="tags" widget="many2many_list" colspan="4" nolabel='1'/>
+                        </page>
+                        <page string='说明'>
+                            <field name='note' nolabel="1"/>
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_competitor_product_kanban">
+            <field name="name">fg_competitor.product.kanban</field>
+            <field name="model">fg_competitor.product</field>
+            <field name="type">kanban</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_competitor_vignette">
+                                <div class="oe_competitor_image">
+                                    <a type="edit"><img t-att-src="kanban_image('fg_competitor.product', 'photo',record.id.value)" class="oe_competitor_picture"/></a>
+                                </div>
+                                <div class="oe_competitor_details">
+                                    <h4><a type="edit" style='font-size:17px'><field name="name"/> (<field name="brand_id"/>)</a></h4>
+                                    <ul>
+                                        <li t-if="record.model.raw_value"><field name="model"/></li>
+                                        <li t-if="record.color.raw_value">颜色:<field name="color"/></li>
+                                        <li t-if="record.meterial.raw_value">材质:<field name="meterial"/></li>
+                                        <li t-if="record.capacity.raw_value">容量:<field name="capacity"/></li>
+                                        <li t-if="record.price.raw_value">价格:<field name="price"/></li>
+                                        <li t-if="record.year.raw_value">发布年份:<field name="year"/></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                $('.oe_competitor_picture').load(function() { if($(this).width() > $(this).height()) { $(this).addClass('oe_competitor_picture_wide') } });
+                            </script>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+        
+        <record id="action_fg_competitor_product" model="ir.actions.act_window">
+            <field name="name">竞争对手产品</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_competitor.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="limit">300</field>
+            <field name="domain">[('category','=','competitor')]</field>
+        </record>
+        
+        <record id="action_fg_competitpr_other_product" model="ir.actions.act_window">
+            <field name="name">其他产品</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_competitor.product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="limit">300</field>
+            <field name="domain">[('category','=','no-competitor')]</field>
+        </record>
+        
+        <menuitem id='fg_competitor' name='竞争对手分析' groups="fg_competitor.group_fg_competitor_user,fg_competitor.group_fg_competitor_manager" web_icon="icon/project.png" web_icon_hover="icon/project-hover.png"/>
+        <menuitem id="fg_competitor_menu" name="竞争对手" parent="fg_competitor" />
+        <menuitem id="fg_competitor_menu2" name="公司信息" parent="fg_competitor_menu" action="action_fg_competitor" sequence="1"/>
+        <menuitem id="fg_competitor_product" name="对手产品" parent="fg_competitor_menu" action="action_fg_competitor_product"/>
+        <menuitem id="fg_competitor_analysis" name="其他产品展示" parent="fg_competitor" action="action_fg_competitpr_other_product"/>
+        
+    </data>
+</openerp>
