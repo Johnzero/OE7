@@ -21,7 +21,7 @@ instance.web.str_to_datetime = function(str) {
     if ( !res ) {
         throw new Error(_.str.sprintf(_t("'%s' is not a valid datetime"), str));
     }
-    var obj = Date.parseExact(res[1]+' UTC', 'yyyy-MM-dd HH:mm:ss zzz');
+    var obj = Date.parseExact(res[1], 'yyyy-MM-dd HH:mm:ss');
     if (! obj) {
         throw new Error(_.str.sprintf(_t("'%s' is not a valid datetime"), str));
     }

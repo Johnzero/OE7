@@ -28,7 +28,7 @@
 # sufficiently deferred so that setting the TZ environment variable
 # in openerp.cli.server was working.
 import os
-os.environ['TZ'] = 'UTC-8' # Set the timezone...
+#os.environ['TZ'] = 'UTC' # Set the timezone...
 import time              # ... *then* import time.
 del os
 del time
