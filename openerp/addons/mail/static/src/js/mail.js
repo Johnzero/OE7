@@ -257,6 +257,7 @@ openerp.mail = function (session) {
         format_data: function () {
             //formating and add some fields for render
             this.date = this.date ? session.web.str_to_datetime(this.date) : false;
+            this.datestring = this.date.toLocaleString();
             if (this.date && new Date().getTime()-this.date.getTime() < 7*24*60*60*1000) {
                 this.timerelative = $.timeago(this.date);
             } 
