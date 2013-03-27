@@ -25,7 +25,7 @@
     'depends': [
         'base',
         'share',
-        'auth_signup',
+        #'auth_signup',
     ],
     'author': 'OpenERP SA',
     'category': 'Portal',

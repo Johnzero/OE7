@@ -1,0 +1,88 @@
+<div class="oe_login_footer oe_inline">
+                <a href="#" class="oe_login_manage_db">管理数据库</a> |
+                <a href="http://shine-it.net/index.php#c1" target="_blank">Powered by <span>Openerp</span></a> |
+                <a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html" target="_blank">安装浏览器</a>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*chagne*/
+
+
+/*Microsoft YaHei*/
+.openerp .oe_secondary_submenu .oe_menu_counter:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+.oe_msg_vote {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+  margin: 1px;
+  padding: 1px 4px;
+  border: none;
+  background: #7c7bad;
+  color: #eeeeee !important;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+}
+.oe_msg_center .oe_msg_content .oe_msg_body {
+  padding-left: 10px;
+}
+.openerp .oe_mail .oe_attachment {
+  min-height: 0px !important;
+}
+.openerp.ui-dialog .ui-widget-header {
+  /*border: none;*/
+}
+.openerp .oe_mail .oe_msg.oe_msg_nobody {
+  background: rgb(205, 223, 255);
+}
+.openerp .oe_form header {
+  text-align: center
+}
+
+.openerp .oe_login .oe_login_pane {
+  padding: 25px 33px;
+}
+
+.openerp .oe_login button {
+  float: right;
+}
+
+.openerp .oe_tags .text-wrap {
+  text-align: left;
+}
+
+.openerp .oe_form header {
+font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
+}
+
+.openerp ul.oe_form_status li .arrow span, .openerp ul.oe_form_status_clickable li .arrow span {
+  margin-left: -15px;
+  margin-top: 3px;
+}
+
+.openerp ul.oe_form_status li, .openerp ul.oe_form_status_clickable li {
+
+  margin: 0px -18px 0 0;
+}
+
+.openerp .oe_login .oe_login_footer a {
+  margin: 2px -1px;
+}

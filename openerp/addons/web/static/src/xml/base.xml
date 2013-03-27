@@ -77,9 +77,10 @@
                     <li><button name="submit">登陆</button></li>
                 </ul>
             </form>
-            <div class="oe_login_footer">
+            <div class="oe_login_footer oe_inline">
                 <a href="#" class="oe_login_manage_db">管理数据库</a> |
-                <a href="http://shine-it.net/index.php#c1" target="_blank">Powered by <span>Xero</span></a>
+                <a href="http://shine-it.net/index.php#c1" target="_blank">Powered by <span>Openerp</span></a> |
+                <a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html" target="_blank">安装浏览器</a>
             </div>
         </div>
     </div>

@@ -3452,3 +3452,7 @@ font-family: "Lucida Grande", Helvetica, Verdana, Arial, sans-serif;
 
   margin: 0px -18px 0 0;
 }
+
+.openerp .oe_login .oe_login_footer a {
+  margin: 2px -1px;
+}
