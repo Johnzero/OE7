@@ -1,0 +1,1491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--
+        Resource: res.partner
+        -->
+		
+<record id="fg_picking_user_1" model="res.users">
+    <field name="login">郑奎军</field>
+    <field name="password">05518751888</field>
+    <field name="name">郑奎军</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_1" model="res.partner">
+    <field name="name">郑奎军</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_1"/>
+</record>
+<record id="res_partner_address_1" model="res.partner.address">
+    <field name="city">临沂市</field>
+    <field name="name">郑奎军</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','山东省')]"/>
+    <field name="mobile">13405398734</field>
+    <field name="phone">0539-8022108</field>
+    <field name="street">临沂市兰山区临西六路与聚才路交汇小商品二期一号楼1007号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_1"/>
+</record>
+
+<record id="fg_picking_user_2" model="res.users">
+    <field name="login">周伯利</field>
+    <field name="password">05518751888</field>
+    <field name="name">周伯利</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_2" model="res.partner">
+    <field name="name">周伯利</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_2"/>
+</record>
+<record id="res_partner_address_2" model="res.partner.address">
+    <field name="city">临沂市</field>
+    <field name="name">周伯利</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','山东省')]"/>
+    <field name="mobile">13905498215</field>
+    <field name="phone">0539-8297288</field>
+    <field name="street">临沂市新塑料市场展厅20号临西十路与聚才路交会处</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_2"/>
+</record>
+
+<record id="fg_picking_user_3" model="res.users">
+    <field name="login">杨辉</field>
+    <field name="password">05518751888</field>
+    <field name="name">杨辉</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_3" model="res.partner">
+    <field name="name">杨辉</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_3"/>
+</record>
+<record id="res_partner_address_3" model="res.partner.address">
+    <field name="city">郑州市</field>
+    <field name="name">杨辉</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">15039097123</field>
+    <field name="phone">0371-86032566</field>
+    <field name="street">郑州市二七区华中路.合盛商贸城D区102号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_3"/>
+</record>
+
+<record id="fg_picking_user_4" model="res.users">
+    <field name="login">茹志斌</field>
+    <field name="password">05518751888</field>
+    <field name="name">茹志斌</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_4" model="res.partner">
+    <field name="name">茹志斌</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_4"/>
+</record>
+<record id="res_partner_address_4" model="res.partner.address">
+    <field name="city">郑州市</field>
+    <field name="name">茹志斌</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">13393700004</field>
+    <field name="phone">0371-60227088</field>
+    <field name="street">郑州市南三环万客来盈合百货城2排10-12号.佳城百货商贸</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_4"/>
+</record>
+
+<record id="fg_picking_user_5" model="res.users">
+    <field name="login">郭治峰</field>
+    <field name="password">05518751888</field>
+    <field name="name">郭治峰</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_5" model="res.partner">
+    <field name="name">郭治峰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_5"/>
+</record>
+<record id="res_partner_address_5" model="res.partner.address">
+    <field name="city">洛阳市</field>
+    <field name="name">郭治峰</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">13703795570</field>
+    <field name="phone">0379-65983636</field>
+    <field name="street">洛阳市关林镇钱江广场根深数码城门面房北1号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_5"/>
+</record>
+
+<record id="fg_picking_user_6" model="res.users">
+    <field name="login">王云朋</field>
+    <field name="password">05518751888</field>
+    <field name="name">王云朋</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_6" model="res.partner">
+    <field name="name">王云朋</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_6"/>
+</record>
+<record id="res_partner_address_6" model="res.partner.address">
+    <field name="city">郑州市</field>
+    <field name="name">王云朋</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">18937136004</field>
+    <field name="phone">0371-60811780</field>
+    <field name="street">河南省郑州市华中路合盛商贸城E-1119号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_6"/>
+</record>
+
+<record id="fg_picking_user_7" model="res.users">
+    <field name="login">朱荣富</field>
+    <field name="password">05518751888</field>
+    <field name="name">朱荣富</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_7" model="res.partner">
+    <field name="name">朱荣富</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_7"/>
+</record>
+<record id="res_partner_address_7" model="res.partner.address">
+    <field name="city">郑州市</field>
+    <field name="name">朱荣富</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">18003713797</field>
+    <field name="phone">0371-66974865</field>
+    <field name="street">河南省郑州市南下街南彩小区9号楼四单元5号2楼</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_7"/>
+</record>
+
+<record id="fg_picking_user_8" model="res.users">
+    <field name="login">徐明</field>
+    <field name="password">05518751888</field>
+    <field name="name">徐明</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_8" model="res.partner">
+    <field name="name">徐明</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_8"/>
+</record>
+<record id="res_partner_address_8" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">徐明</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13905514837</field>
+    <field name="phone">0551-5200632</field>
+    <field name="street">合肥市安徽大市场4区1111号明霞杯业</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_8"/>
+</record>
+
+<record id="fg_picking_user_9" model="res.users">
+    <field name="login">钱铭</field>
+    <field name="password">05518751888</field>
+    <field name="name">钱铭</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_9" model="res.partner">
+    <field name="name">钱铭</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_9"/>
+</record>
+<record id="res_partner_address_9" model="res.partner.address">
+    <field name="city">芜湖市</field>
+    <field name="name">钱铭</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">15855983933</field>
+    <field name="phone">0553-3840542</field>
+    <field name="street">芜湖市沿河路274号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_9"/>
+</record>
+
+<record id="fg_picking_user_10" model="res.users">
+    <field name="login">杨志</field>
+    <field name="password">05518751888</field>
+    <field name="name">杨志</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_10" model="res.partner">
+    <field name="name">杨志</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_10"/>
+</record>
+<record id="res_partner_address_10" model="res.partner.address">
+    <field name="city">重庆市</field>
+    <field name="name">杨志</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','重庆市')]"/>
+    <field name="mobile">13389666260</field>
+    <field name="phone">023-68816686</field>
+    <field name="street">重庆市渝中区大坪彭家花园12号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_10"/>
+</record>
+
+<record id="fg_picking_user_11" model="res.users">
+    <field name="login">吕祥华</field>
+    <field name="password">05518751888</field>
+    <field name="name">吕祥华</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_11" model="res.partner">
+    <field name="name">吕祥华</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_11"/>
+</record>
+<record id="res_partner_address_11" model="res.partner.address">
+    <field name="city">石家庄市</field>
+    <field name="name">吕祥华</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河北省')]"/>
+    <field name="mobile">13731158888</field>
+    <field name="phone">0311-86985107</field>
+    <field name="street">石家庄市南三条现代小商品城C区2号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_11"/>
+</record>
+
+<record id="fg_picking_user_12" model="res.users">
+    <field name="login">刘春桥</field>
+    <field name="password">05518751888</field>
+    <field name="name">刘春桥</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_12" model="res.partner">
+    <field name="name">刘春桥</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_12"/>
+</record>
+<record id="res_partner_address_12" model="res.partner.address">
+    <field name="city">太原市</field>
+    <field name="name">刘春桥</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','山西省')]"/>
+    <field name="mobile">13803411432</field>
+    <field name="phone">0351-2817056</field>
+    <field name="street">太原市小商品批发市场3用房17号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_12"/>
+</record>
+
+<record id="fg_picking_user_13" model="res.users">
+    <field name="login">颜晓杰</field>
+    <field name="password">05518751888</field>
+    <field name="name">颜晓杰</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_13" model="res.partner">
+    <field name="name">颜晓杰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_13"/>
+</record>
+<record id="res_partner_address_13" model="res.partner.address">
+    <field name="city">太原市</field>
+    <field name="name">颜晓杰</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','山西省')]"/>
+    <field name="mobile">15333011888</field>
+    <field name="phone">0351-2816388</field>
+    <field name="street">太原市小商品批发市场大型停车场6号楼51号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_13"/>
+</record>
+
+<record id="fg_picking_user_14" model="res.users">
+    <field name="login">杨德顺</field>
+    <field name="password">05518751888</field>
+    <field name="name">杨德顺</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_14" model="res.partner">
+    <field name="name">杨德顺</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_14"/>
+</record>
+<record id="res_partner_address_14" model="res.partner.address">
+    <field name="city">保定市</field>
+    <field name="name">杨德顺</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河北省')]"/>
+    <field name="mobile">13803123655</field>
+    <field name="phone">0312-6402031</field>
+    <field name="street">保定市白沟国际商贸城四楼4053号，德顺水杯</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_14"/>
+</record>
+
+<record id="fg_picking_user_15" model="res.users">
+    <field name="login">葛伦明</field>
+    <field name="password">05518751888</field>
+    <field name="name">葛伦明</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_15" model="res.partner">
+    <field name="name">葛伦明</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_15"/>
+</record>
+<record id="res_partner_address_15" model="res.partner.address">
+    <field name="city">石家庄市</field>
+    <field name="name">葛伦明</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河北省')]"/>
+    <field name="mobile">13803396088</field>
+    <field name="phone">0311-85277889</field>
+    <field name="street">石家庄市桥西区工农路113号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_15"/>
+</record>
+
+<record id="fg_picking_user_16" model="res.users">
+    <field name="login">郭景文</field>
+    <field name="password">05518751888</field>
+    <field name="name">郭景文</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_16" model="res.partner">
+    <field name="name">郭景文</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_16"/>
+</record>
+<record id="res_partner_address_16" model="res.partner.address">
+    <field name="city">天津市</field>
+    <field name="name">郭景文</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','天津市')]"/>
+    <field name="mobile">13920250408</field>
+    <field name="phone">022-87732055</field>
+    <field name="street">天津市红桥区大胡同万隆一区二楼31号 </field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_16"/>
+</record>
+
+<record id="fg_picking_user_17" model="res.users">
+    <field name="login">张灵川</field>
+    <field name="password">05518751888</field>
+    <field name="name">张灵川</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_17" model="res.partner">
+    <field name="name">张灵川</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_17"/>
+</record>
+<record id="res_partner_address_17" model="res.partner.address">
+    <field name="city">北京市</field>
+    <field name="name">张灵川</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','北京市')]"/>
+    <field name="mobile">13910111442</field>
+    <field name="phone">010-61287719</field>
+    <field name="street">北京市大兴区西红门镇小白楼村28号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_17"/>
+</record>
+
+<record id="fg_picking_user_18" model="res.users">
+    <field name="login">徐达报</field>
+    <field name="password">05518751888</field>
+    <field name="name">徐达报</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_18" model="res.partner">
+    <field name="name">徐达报</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_18"/>
+</record>
+<record id="res_partner_address_18" model="res.partner.address">
+    <field name="city">西安市</field>
+    <field name="name">徐达报</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','陕西省')]"/>
+    <field name="mobile">13991983118</field>
+    <field name="phone">029-82559919</field>
+    <field name="street">西安市长缨西路明大公司日用杂货市场北排170171号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_18"/>
+</record>
+
+<record id="fg_picking_user_19" model="res.users">
+    <field name="login">郭毅</field>
+    <field name="password">05518751888</field>
+    <field name="name">郭毅</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_19" model="res.partner">
+    <field name="name">郭毅</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_19"/>
+</record>
+<record id="res_partner_address_19" model="res.partner.address">
+    <field name="city">西安市</field>
+    <field name="name">郭毅</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','陕西省')]"/>
+    <field name="mobile">13659286676</field>
+    <field name="phone">029—82687865</field>
+    <field name="street">西安市长乐中路188号义乌商城A区1065号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_19"/>
+</record>
+
+<record id="fg_picking_user_20" model="res.users">
+    <field name="login">万会平</field>
+    <field name="password">05518751888</field>
+    <field name="name">万会平</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_20" model="res.partner">
+    <field name="name">万会平</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_20"/>
+</record>
+<record id="res_partner_address_20" model="res.partner.address">
+    <field name="city">成都市</field>
+    <field name="name">万会平</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','四川省')]"/>
+    <field name="mobile">18980632262</field>
+    <field name="phone">028—83356870</field>
+    <field name="street">成都市荷花金池负一楼北一街B-2A</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_20"/>
+</record>
+
+<record id="fg_picking_user_21" model="res.users">
+    <field name="login">应永泉</field>
+    <field name="password">05518751888</field>
+    <field name="name">应永泉</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_21" model="res.partner">
+    <field name="name">应永泉</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_21"/>
+</record>
+<record id="res_partner_address_21" model="res.partner.address">
+    <field name="city">成都市</field>
+    <field name="name">应永泉</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','四川省')]"/>
+    <field name="mobile">13982255968</field>
+    <field name="phone">028-83362449</field>
+    <field name="street">成都市荷花金池一楼西二街1-19号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_21"/>
+</record>
+
+<record id="fg_picking_user_22" model="res.users">
+    <field name="login">潘志发</field>
+    <field name="password">05518751888</field>
+    <field name="name">潘志发</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_22" model="res.partner">
+    <field name="name">潘志发</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_22"/>
+</record>
+<record id="res_partner_address_22" model="res.partner.address">
+    <field name="city">南京市</field>
+    <field name="name">潘志发</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江苏省')]"/>
+    <field name="mobile">13813909048</field>
+    <field name="phone">025-58837772</field>
+    <field name="street">南京市下关区热河南路61号茶叶城内92号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_22"/>
+</record>
+
+<record id="fg_picking_user_23" model="res.users">
+    <field name="login">启润</field>
+    <field name="password">05518751888</field>
+    <field name="name">启润</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_23" model="res.partner">
+    <field name="name">启润</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_23"/>
+</record>
+<record id="res_partner_address_23" model="res.partner.address">
+    <field name="city">南京市</field>
+    <field name="name">启润</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江苏省')]"/>
+    <field name="mobile">13813858438</field>
+    <field name="phone">025-85631634</field>
+    <field name="street">南京市下关区建宁路12号金桥市场西一楼239号柜台</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_23"/>
+</record>
+
+<record id="fg_picking_user_24" model="res.users">
+    <field name="login">朱庆丰</field>
+    <field name="password">05518751888</field>
+    <field name="name">朱庆丰</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_24" model="res.partner">
+    <field name="name">朱庆丰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_24"/>
+</record>
+<record id="res_partner_address_24" model="res.partner.address">
+    <field name="city">徐州市</field>
+    <field name="name">朱庆丰</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江苏省')]"/>
+    <field name="mobile">15949041356</field>
+    <field name="phone">0516-83735037</field>
+    <field name="street">徐州市宣城电子市场18号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_24"/>
+</record>
+
+<record id="fg_picking_user_25" model="res.users">
+    <field name="login">白玉亭</field>
+    <field name="password">05518751888</field>
+    <field name="name">白玉亭</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_25" model="res.partner">
+    <field name="name">白玉亭</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_25"/>
+</record>
+<record id="res_partner_address_25" model="res.partner.address">
+    <field name="city">哈尔滨市</field>
+    <field name="name">白玉亭</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','黑龙江省')]"/>
+    <field name="mobile">15004605709</field>
+    <field name="phone">0451-55580602</field>
+    <field name="street">哈尔滨市道里区一面街36号3单元202室</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_25"/>
+</record>
+
+<record id="fg_picking_user_26" model="res.users">
+    <field name="login">杨小红</field>
+    <field name="password">05518751888</field>
+    <field name="name">杨小红</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_26" model="res.partner">
+    <field name="name">杨小红</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_26"/>
+</record>
+<record id="res_partner_address_26" model="res.partner.address">
+    <field name="city">大连市</field>
+    <field name="name">杨小红</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','辽宁省')]"/>
+    <field name="mobile">13841121148</field>
+    <field name="phone">0411-82549944</field>
+    <field name="street">大连市西岗区双兴街8号土杂外头房49号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_26"/>
+</record>
+
+<record id="fg_picking_user_27" model="res.users">
+    <field name="login">庞金山</field>
+    <field name="password">05518751888</field>
+    <field name="name">庞金山</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_27" model="res.partner">
+    <field name="name">庞金山</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_27"/>
+</record>
+<record id="res_partner_address_27" model="res.partner.address">
+    <field name="city">沈阳市</field>
+    <field name="name">庞金山</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','辽宁省')]"/>
+    <field name="mobile">18809828899</field>
+    <field name="phone">024-24503369</field>
+    <field name="street">沈阳市东陵区东北日杂市场五区18号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_27"/>
+</record>
+
+<record id="fg_picking_user_28" model="res.users">
+    <field name="login">史亚凤</field>
+    <field name="password">05518751888</field>
+    <field name="name">史亚凤</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_28" model="res.partner">
+    <field name="name">史亚凤</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_28"/>
+</record>
+<record id="res_partner_address_28" model="res.partner.address">
+    <field name="city">沈阳市</field>
+    <field name="name">史亚凤</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','辽宁省')]"/>
+    <field name="mobile">13998308422</field>
+    <field name="phone">024-24509218</field>
+    <field name="street">沈阳市东北日杂市场一区20号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_28"/>
+</record>
+
+<record id="fg_picking_user_29" model="res.users">
+    <field name="login">田明</field>
+    <field name="password">05518751888</field>
+    <field name="name">田明</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_29" model="res.partner">
+    <field name="name">田明</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_29"/>
+</record>
+<record id="res_partner_address_29" model="res.partner.address">
+    <field name="city">长春市</field>
+    <field name="name">田明</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','吉林省')]"/>
+    <field name="mobile">13804352428</field>
+    <field name="phone">0431-82874860</field>
+    <field name="street">长春市光复路天源商厦106号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_29"/>
+</record>
+
+<record id="fg_picking_user_30" model="res.users">
+    <field name="login">吴和志</field>
+    <field name="password">05518751888</field>
+    <field name="name">吴和志</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_30" model="res.partner">
+    <field name="name">吴和志</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_30"/>
+</record>
+<record id="res_partner_address_30" model="res.partner.address">
+    <field name="city">昆明市</field>
+    <field name="name">吴和志</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','云南省')]"/>
+    <field name="mobile">13987102742</field>
+    <field name="phone">0871-6219086</field>
+    <field name="street">昆明市官渡区中豪螺狮湾国际商贸城2期10区3楼1街3003号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_30"/>
+</record>
+
+<record id="fg_picking_user_31" model="res.users">
+    <field name="login">林棋森</field>
+    <field name="password">05518751888</field>
+    <field name="name">林棋森</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_31" model="res.partner">
+    <field name="name">林棋森</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_31"/>
+</record>
+<record id="res_partner_address_31" model="res.partner.address">
+    <field name="city">兰州市</field>
+    <field name="name">林棋森</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','甘肃省')]"/>
+    <field name="mobile">13909317678</field>
+    <field name="phone">0931-4977798</field>
+    <field name="street">兰州市兰新市场爱琴海2楼2475号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_31"/>
+</record>
+
+<record id="fg_picking_user_32" model="res.users">
+    <field name="login">陈扬超</field>
+    <field name="password">05518751888</field>
+    <field name="name">陈扬超</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_32" model="res.partner">
+    <field name="name">陈扬超</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_32"/>
+</record>
+<record id="res_partner_address_32" model="res.partner.address">
+    <field name="city">乌鲁木齐市</field>
+    <field name="name">陈扬超</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','新疆维吾尔自治区')]"/>
+    <field name="mobile">18999821846</field>
+    <field name="phone">0991-7777739</field>
+    <field name="street">乌鲁木齐市金源贸易城B区004号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_32"/>
+</record>
+
+<record id="fg_picking_user_33" model="res.users">
+    <field name="login">华新荣</field>
+    <field name="password">05518751888</field>
+    <field name="name">华新荣</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_33" model="res.partner">
+    <field name="name">华新荣</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_33"/>
+</record>
+<record id="res_partner_address_33" model="res.partner.address">
+    <field name="city">义乌市</field>
+    <field name="name">华新荣</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','浙江省')]"/>
+    <field name="mobile">13957909165</field>
+    <field name="phone">0579-85186708</field>
+    <field name="street">义乌市国际商贸城2期F区3楼16708-16709</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_33"/>
+</record>
+
+<record id="fg_picking_user_34" model="res.users">
+    <field name="login">新富光</field>
+    <field name="password">05518751888</field>
+    <field name="name">新富光</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_34" model="res.partner">
+    <field name="name">新富光</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_34"/>
+</record>
+<record id="res_partner_address_34" model="res.partner.address">
+    <field name="city">杭州市</field>
+    <field name="name">新富光</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','浙江省')]"/>
+    <field name="mobile">13757126520</field>
+    <field name="phone">0571-28977897</field>
+    <field name="street">杭州市下城区东新路900号2号楼2楼</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_34"/>
+</record>
+
+<record id="fg_picking_user_35" model="res.users">
+    <field name="login">喻平花</field>
+    <field name="password">05518751888</field>
+    <field name="name">喻平花</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_35" model="res.partner">
+    <field name="name">喻平花</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_35"/>
+</record>
+<record id="res_partner_address_35" model="res.partner.address">
+    <field name="city">广州市</field>
+    <field name="name">喻平花</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','广东省')]"/>
+    <field name="mobile">13928893737</field>
+    <field name="phone">020-22621042</field>
+    <field name="street">广州市番禹区沙溪塑料五金市场883档</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_35"/>
+</record>
+
+<record id="fg_picking_user_36" model="res.users">
+    <field name="login">陈一欢</field>
+    <field name="password">05518751888</field>
+    <field name="name">陈一欢</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_36" model="res.partner">
+    <field name="name">陈一欢</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_36"/>
+</record>
+<record id="res_partner_address_36" model="res.partner.address">
+    <field name="city">广州市</field>
+    <field name="name">陈一欢</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','广东省')]"/>
+    <field name="mobile">15118866728</field>
+    <field name="phone">020-39928078</field>
+    <field name="street">广州市番禹沙溪国际酒店用品城</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_36"/>
+</record>
+
+<record id="fg_picking_user_37" model="res.users">
+    <field name="login">万红平</field>
+    <field name="password">05518751888</field>
+    <field name="name">万红平</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_37" model="res.partner">
+    <field name="name">万红平</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_37"/>
+</record>
+<record id="res_partner_address_37" model="res.partner.address">
+    <field name="city">昆明市</field>
+    <field name="name">万红平</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','云南省')]"/>
+    <field name="mobile">13888591608</field>
+    <field name="phone">0871-3557374</field>
+    <field name="street">昆明市新螺蛳湾国际商贸城二期十区3楼3082号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_37"/>
+</record>
+
+<record id="fg_picking_user_38" model="res.users">
+    <field name="login">杨文英</field>
+    <field name="password">05518751888</field>
+    <field name="name">杨文英</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_38" model="res.partner">
+    <field name="name">杨文英</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_38"/>
+</record>
+<record id="res_partner_address_38" model="res.partner.address">
+    <field name="city">南宁市</field>
+    <field name="name">杨文英</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','贵州省')]"/>
+    <field name="mobile">15975402632</field>
+    <field name="phone">0771-4915013</field>
+    <field name="street">南宁市星光大道223号荣宝华商城A9栋-111</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_38"/>
+</record>
+
+<record id="fg_picking_user_39" model="res.users">
+    <field name="login">南宁秋实</field>
+    <field name="password">05518751888</field>
+    <field name="name">南宁秋实</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_39" model="res.partner">
+    <field name="name">南宁秋实</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_39"/>
+</record>
+<record id="res_partner_address_39" model="res.partner.address">
+    <field name="city">南宁市</field>
+    <field name="name">南宁秋实</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','贵州省')]"/>
+    <field name="mobile"></field>
+    <field name="phone">0771-2179525</field>
+    <field name="street">南宁市白沙大道136号高棠粮油库4栋16号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_39"/>
+</record>
+
+<record id="fg_picking_user_40" model="res.users">
+    <field name="login">海南恒丰</field>
+    <field name="password">05518751888</field>
+    <field name="name">海南恒丰</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_40" model="res.partner">
+    <field name="name">海南恒丰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_40"/>
+</record>
+<record id="res_partner_address_40" model="res.partner.address">
+    <field name="city">海口市</field>
+    <field name="name">海南恒丰</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','海南省')]"/>
+    <field name="mobile"></field>
+    <field name="phone">0898-66160033</field>
+    <field name="street">海口市凤翔西路裕通花园1411号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_40"/>
+</record>
+
+<record id="fg_picking_user_41" model="res.users">
+    <field name="login">上海办事处</field>
+    <field name="password">05518751888</field>
+    <field name="name">上海办事处</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_41" model="res.partner">
+    <field name="name">上海办事处</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_41"/>
+</record>
+<record id="res_partner_address_41" model="res.partner.address">
+    <field name="city">上海市</field>
+    <field name="name">上海办事处</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','上海市')]"/>
+    <field name="mobile">13816580999</field>
+    <field name="phone">021-63287950</field>
+    <field name="street">上海市黄浦区福佑路427号南1号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_41"/>
+</record>
+
+<record id="fg_picking_user_42" model="res.users">
+    <field name="login">卢进军 </field>
+    <field name="password">05518751888</field>
+    <field name="name">卢进军 </field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_42" model="res.partner">
+    <field name="name">卢进军 </field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_42"/>
+</record>
+<record id="res_partner_address_42" model="res.partner.address">
+    <field name="city">武汉市</field>
+    <field name="name">卢进军 </field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖北省')]"/>
+    <field name="mobile">13886003488</field>
+    <field name="phone">027-81888918</field>
+    <field name="street">武汉市硚口区利济南路电力商城A区1053号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_42"/>
+</record>
+
+<record id="fg_picking_user_43" model="res.users">
+    <field name="login">杨行超</field>
+    <field name="password">05518751888</field>
+    <field name="name">杨行超</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_43" model="res.partner">
+    <field name="name">杨行超</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_43"/>
+</record>
+<record id="res_partner_address_43" model="res.partner.address">
+    <field name="city">武汉市</field>
+    <field name="name">杨行超</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖北省')]"/>
+    <field name="mobile">13886085404</field>
+    <field name="phone">027-85640039</field>
+    <field name="street">武汉市硚口区利济南路济即电力商城2楼B-2048</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_43"/>
+</record>
+
+<record id="fg_picking_user_44" model="res.users">
+    <field name="login">上官斌</field>
+    <field name="password">05518751888</field>
+    <field name="name">上官斌</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_44" model="res.partner">
+    <field name="name">上官斌</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_44"/>
+</record>
+<record id="res_partner_address_44" model="res.partner.address">
+    <field name="city">武汉市</field>
+    <field name="name">上官斌</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖北省')]"/>
+    <field name="mobile">13871381888</field>
+    <field name="phone">027-85648798</field>
+    <field name="street">武汉市硚口区利济南路电力商城2楼A区202室</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_44"/>
+</record>
+
+<record id="fg_picking_user_45" model="res.users">
+    <field name="login">梁健康</field>
+    <field name="password">05518751888</field>
+    <field name="name">梁健康</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_45" model="res.partner">
+    <field name="name">梁健康</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_45"/>
+</record>
+<record id="res_partner_address_45" model="res.partner.address">
+    <field name="city">长沙市</field>
+    <field name="name">梁健康</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖南省')]"/>
+    <field name="mobile">13507469888</field>
+    <field name="phone">0731-85717688</field>
+    <field name="street">长沙市高桥市场家电城3栋123号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_45"/>
+</record>
+
+<record id="fg_picking_user_46" model="res.users">
+    <field name="login">殷新文</field>
+    <field name="password">05518751888</field>
+    <field name="name">殷新文</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_46" model="res.partner">
+    <field name="name">殷新文</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_46"/>
+</record>
+<record id="res_partner_address_46" model="res.partner.address">
+    <field name="city">南昌市</field>
+    <field name="name">殷新文</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江西省')]"/>
+    <field name="mobile">13907095192</field>
+    <field name="phone">0791-86510057</field>
+    <field name="street">南昌市五华大市场5区149号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_46"/>
+</record>
+
+<record id="fg_picking_user_47" model="res.users">
+    <field name="login">王小华</field>
+    <field name="password">05518751888</field>
+    <field name="name">王小华</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_47" model="res.partner">
+    <field name="name">王小华</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_47"/>
+</record>
+<record id="res_partner_address_47" model="res.partner.address">
+    <field name="city">南昌市</field>
+    <field name="name">王小华</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江西省')]"/>
+    <field name="mobile">13879167799</field>
+    <field name="phone">0791-88201297</field>
+    <field name="street">南昌市青山胡区顺外路湖坊危村农民公寓6栋1单元102室</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_47"/>
+</record>
+
+<record id="fg_picking_user_48" model="res.users">
+    <field name="login">吴秀屏</field>
+    <field name="password">05518751888</field>
+    <field name="name">吴秀屏</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_48" model="res.partner">
+    <field name="name">吴秀屏</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_48"/>
+</record>
+<record id="res_partner_address_48" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">吴秀屏</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13395602668</field>
+    <field name="phone">0551-4221532</field>
+    <field name="street">合肥市安徽大市场4区1154号富光百货</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_48"/>
+</record>
+
+<record id="fg_picking_user_49" model="res.users">
+    <field name="login">李世桂</field>
+    <field name="password">05518751888</field>
+    <field name="name">李世桂</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_49" model="res.partner">
+    <field name="name">李世桂</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_49"/>
+</record>
+<record id="res_partner_address_49" model="res.partner.address">
+    <field name="city">阜阳市</field>
+    <field name="name">李世桂</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13035416598</field>
+    <field name="phone">0558-2280989</field>
+    <field name="street">阜阳市青年路80号(大戏院东100米路南)</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_49"/>
+</record>
+
+<record id="fg_picking_user_50" model="res.users">
+    <field name="login">孔德彬</field>
+    <field name="password">05518751888</field>
+    <field name="name">孔德彬</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_50" model="res.partner">
+    <field name="name">孔德彬</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_50"/>
+</record>
+<record id="res_partner_address_50" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">孔德彬</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13515513888</field>
+    <field name="phone">0551-4223388</field>
+    <field name="street">合肥市安徽大市场4区1165号联合百货</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_50"/>
+</record>
+
+<record id="fg_picking_user_51" model="res.users">
+    <field name="login">焦庆霞</field>
+    <field name="password">05518751888</field>
+    <field name="name">焦庆霞</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_51" model="res.partner">
+    <field name="name">焦庆霞</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_51"/>
+</record>
+<record id="res_partner_address_51" model="res.partner.address">
+    <field name="city">蚌埠市</field>
+    <field name="name">焦庆霞</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile"></field>
+    <field name="phone">0552-2050340</field>
+    <field name="street">蚌埠市南山路吉安星8号楼4号门面</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_51"/>
+</record>
+
+<record id="fg_picking_user_52" model="res.users">
+    <field name="login">陈宏祥</field>
+    <field name="password">05518751888</field>
+    <field name="name">陈宏祥</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_52" model="res.partner">
+    <field name="name">陈宏祥</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_52"/>
+</record>
+<record id="res_partner_address_52" model="res.partner.address">
+    <field name="city">宿州市</field>
+    <field name="name">陈宏祥</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile"></field>
+    <field name="phone">0557-3030575</field>
+    <field name="street">宿州市环城南路105号名杯总汇</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_52"/>
+</record>
+
+<record id="fg_picking_user_53" model="res.users">
+    <field name="login">李凯亮</field>
+    <field name="password">05518751888</field>
+    <field name="name">李凯亮</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_53" model="res.partner">
+    <field name="name">李凯亮</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_53"/>
+</record>
+<record id="res_partner_address_53" model="res.partner.address">
+    <field name="city">贵阳市</field>
+    <field name="name">李凯亮</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','贵州省')]"/>
+    <field name="mobile">13985595555</field>
+    <field name="phone">0851-5650316</field>
+    <field name="street">贵阳市浣沙路3号立云大酒店旁</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_53"/>
+</record>
+
+<record id="fg_picking_user_54" model="res.users">
+    <field name="login">姚金添</field>
+    <field name="password">05518751888</field>
+    <field name="name">姚金添</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_54" model="res.partner">
+    <field name="name">姚金添</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_54"/>
+</record>
+<record id="res_partner_address_54" model="res.partner.address">
+    <field name="city">莆田市</field>
+    <field name="name">姚金添</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','福建省')]"/>
+    <field name="mobile">13255012988</field>
+    <field name="phone">0594-6267888</field>
+    <field name="street">莆田市涵江区商城街295栋20-22号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_54"/>
+</record>
+
+<record id="fg_picking_user_55" model="res.users">
+    <field name="login">郑庆兰</field>
+    <field name="password">05518751888</field>
+    <field name="name">郑庆兰</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_55" model="res.partner">
+    <field name="name">郑庆兰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_55"/>
+</record>
+<record id="res_partner_address_55" model="res.partner.address">
+    <field name="city">莆田市</field>
+    <field name="name">郑庆兰</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','福建省')]"/>
+    <field name="mobile"></field>
+    <field name="phone">0594-3895828</field>
+    <field name="street">莆田市涵江区商城街</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_55"/>
+</record>
+
+<record id="fg_picking_user_56" model="res.users">
+    <field name="login">黄卫华</field>
+    <field name="password">05518751888</field>
+    <field name="name">黄卫华</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_56" model="res.partner">
+    <field name="name">黄卫华</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_56"/>
+</record>
+<record id="res_partner_address_56" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">黄卫华</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile"></field>
+    <field name="phone">0551-8825596</field>
+    <field name="street">合肥市上派镇金铭街</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_56"/>
+</record>
+
+<record id="fg_picking_user_57" model="res.users">
+    <field name="login">杜红艳</field>
+    <field name="password">05518751888</field>
+    <field name="name">杜红艳</field>
+    <field name="signature"></field>
+    <field name="company_id" ref="base.main_company"/>
+    <field name="groups_id" eval="[(6,0,[ref('fg_picking.group_fgp_client')])]"/>
+</record>
+<record id="res_partner_57" model="res.partner">
+    <field name="name">杜红艳</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+    <field name="client_id" ref="fg_picking_user_57"/>
+</record>
+<record id="res_partner_address_57" model="res.partner.address">
+    <field name="city">上海市</field>
+    <field name="name">杜红艳</field>
+    <field name="country_id" ref="base.cn"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','上海市')]"/>
+    <field name="mobile">13671841086</field>
+    <field name="phone"></field>
+    <field name="street">上海市浦东新区惠南镇城南路330号沪浦市场020号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_57"/>
+</record>
+
+		</data>
+	</openerp>

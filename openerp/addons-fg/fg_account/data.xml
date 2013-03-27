@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="bill_cate_1" model="fg_account.bill.category">
+            <field name="code">BC-1</field>
+            <field name="name">现金</field>
+        </record>
+        <record id="bill_cate_2" model="fg_account.bill.category">
+            <field name="code">BC-2</field>
+            <field name="name">转账</field>
+        </record>
+    </data>
+</openerp>

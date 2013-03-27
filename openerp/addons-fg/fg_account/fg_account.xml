@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_fg_account" name="财务" sequence="2" web_icon="icon/account.png" web_icon_hover="icon/account_hover.png"
+            groups="fg_account.group_fg_account_manager,fg_account.group_fg_account_user,fg_account.group_fg_account_checker,fg_account.group_fg_account_chart"/>
+        <menuitem id="menu_fg_account_bill" parent="menu_fg_account" name="收款单" sequence="1"/>
+        <menuitem id="menu_fg_account_check" parent="menu_fg_account" groups="fg_account.group_fg_account_manager" name="审核" sequence="2"/>
+        <menuitem id="menu_fg_account_manage" parent="menu_fg_account" name="管理" sequence="10"/>
+        
+        <record id="seq_type_fg_account_bill" model="ir.sequence.type">
+            <field name="name">Fuguang Account Bill</field>
+            <field name="code">fg_account.bill</field>
+        </record>
+        <record id="seq_fg_account_bill" model="ir.sequence">
+            <field name="name">Fuguang Account Bill</field>
+            <field name="code">fg_account.bill</field>
+            <field name="prefix">FGAB-%(year)s%(month)s%(day)s</field>
+            <field name="padding">0</field>
+            <field name="implementation">no_gap</field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_account_bill_cate_tree_view">
+            <field name="name">fg_account.bill.category.tree</field>
+            <field name="model">fg_account.bill.category</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="收款单分类">
+                    <field name="code"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_account_bill_cate_form_view">
+            <field name="name">fg_account.bill.category.form</field>
+            <field name="model">fg_account.bill.category</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="form_string">
+                    <field name="code" select="1"/>
+                    <field name="name" select="1"/>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_account_bill_cate_tree_view">
+            <field name="name">收款单分类管理</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.bill.category</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="menu_fg_account_bill_cate_menu" name="收款单分类管理" parent="menu_fg_account_manage" action="action_fg_account_bill_cate_tree_view"/>
+        
+        <record model="ir.ui.view" id="fg_account_bill_form_view">
+            <field name="name">fg_account.bill.form</field>
+            <field name="model">fg_account.bill</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="收款单">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="partner_id"/>
+                    <field name="date_paying"/>
+                    <notebook colspan="4">
+                        <page string="常规">
+                            <field name="category_id"/>
+                            <field name="amount"/>
+                            <field name="checker_id"/>
+                            <field name="date_check"/>
+                        </page>
+                        <page string="附注">
+                            <field name="note" colspan="6" nolabel="1"/>
+                        </page>
+                    </notebook>
+                    <newline/>
+                    <group col="6" colspan="4" groups="fg_account.group_fg_account_checker,fg_account.group_fg_account_manager">
+                        <field name="state" widget="statusbar" statusbar_visible="draft,check,done" statusbar_colors='{"draft":"red","green":"check","done":"black","cancel":"gray"}'/>
+                        <button name="button_check" states="draft" confirm="确定已经检查完成?" string="检查" type="object" icon="gtk-go-forward" />
+                        <button name="button_cancel" states="draft,check" confirm="确认作废?" string="作废" type="object" icon="gtk-go-forward" />
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="fg_account_bill_tree_view">
+            <field name="name">fg_account.bill.tree</field>
+            <field name="model">fg_account.bill</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="收款单" colors="red:state == 'draft';gray:state=='cancel'">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="date_paying"/>
+                    <field name="partner_id"/>
+                    <field name="amount"/>
+                    <field name="category_id"/>
+                    <field name="state"/>
+                    <field name="note"/>
+                    <button name="button_done" states="check" groups="fg_account.group_fg_account_manager" confirm="确认后,将不能再次修改, 是否确认?" string="收" type="object" icon="shou"/>
+                </tree>
+            </field>
+        </record>
+        
+        
+        <record id="view_fg_account_filter" model="ir.ui.view">
+            <field name="name">fg_account.bill.list.select</field>
+            <field name="model">fg_account.bill</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="搜索收款单">
+                    <filter icon="terp-document-new" string="未审核" domain="[('state','=','draft')]"/>
+                    <filter icon="terp-check" string="已检查" domain="[('state','=','check')]"/>
+                    <filter icon="terp-check" string="已确认" domain="[('state','=','done')]"/>
+                    <filter icon="terp-dialog-close" string="已作废" domain="[('state','=','cancel')]"/>
+                    <separator orientation="vertical"/>
+                    <field name="partner_id"/>
+                    <field name="user_id">
+                        <filter domain="[('user_id','=',uid)]" help="我创建的订单" icon="terp-personal"/>
+                    </field>
+                    <field name="name"/>
+                    <newline/>
+                    <group expand="0" string="分组为..." groups="base.group_extended">
+                        <filter string="客户" icon="terp-personal" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="业务员" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="状态" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="付款日期" icon="terp-go-month" domain="[]" context="{'group_by':'date_paying'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="view_fg_account_bill_calendar" model="ir.ui.view">
+            <field name="name">sfg_account.bill.calendar</field>
+            <field name="model">fg_account.bill</field>
+            <field name="type">calendar</field>
+            <field name="arch" type="xml">
+                <calendar string="收款单" color="state" date_start="date_paying">
+                    <field name="category_id"/>
+                    <field name="amount"/>
+                </calendar>
+            </field>
+        </record>
+        
+        <record id="action_fg_account_bill_all" model="ir.actions.act_window">
+            <field name="name">所有收款单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_fg_account_filter"/>
+        </record>
+        
+        <record id="action_fg_account_bill_to_confirm" model="ir.actions.act_window">
+            <field name="name">待确认客户收款单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{}</field>
+            <field name="domain">[('partner_id','=',False)]</field>
+        </record>
+        
+        <record id="action_fg_account_bill_to_check" model="ir.actions.act_window">
+            <field name="name">待检查收款单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{}</field>
+            <field name="domain">[('state','=','draft'),('partner_id','!=',False)]</field>
+        </record>
+        
+        <record id="action_fg_account_bill_recheck" model="ir.actions.act_window">
+            <field name="name">待审核收款单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{}</field>
+            <field name="domain">[('state','=','check')]</field>
+        </record>
+        
+        <record id="action_fg_account_bill_done" model="ir.actions.act_window">
+            <field name="name">已审核收款单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.bill</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="context">{}</field>
+            <field name="domain">[('state','=','done')]</field>
+        </record>
+        
+        <menuitem id="menu_account_bill_all" parent="menu_fg_account_bill" action="action_fg_account_bill_all" sequence="0"/>
+        <menuitem id="menu_account_bill_to_confirm" parent="menu_fg_account_bill" action="action_fg_account_bill_to_confirm"  sequence="1"/>
+        <menuitem id="menu_account_bill_to_recheck" parent="menu_fg_account_bill" action="action_fg_account_bill_to_check"  sequence="2"/>
+        <menuitem id="menu_account_bill_recheck" parent="menu_fg_account_check" action="action_fg_account_bill_recheck"  sequence="0"/>
+        <menuitem id="menu_account_bill_done" parent="menu_fg_account_check" action="action_fg_account_bill_done"  sequence="1"/>
+        
+    </data>
+</openerp>

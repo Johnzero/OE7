@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="fg_picking_delivery_import_wizard_form_view">
+            <field name="name">导入仓库发货单</field>
+            <field name="model">fg_picking.delivery.import.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="说明">
+                    <field name="excel"/>
+                    <group colspan="4" col="6">
+                        <button  icon="gtk-close" special="cancel" string="关闭"/>
+                        <button icon="gtk-ok" name="import_delivery" string="确定" type="object"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_picking_delivery_import_wizard_view">
+            <field name="name">导入仓库发货单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_picking.delivery.import.wizard</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="fg_picking_delivery_import_wizard_form_view"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="menu_fg_picking_delivery_import_wizard" parent="fg_picking_delivery" action="action_fg_picking_delivery_import_wizard_view" sequence="2"/>
+        
+    </data>
+</openerp>

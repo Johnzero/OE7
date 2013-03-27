@@ -1,0 +1,2014 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="res_partner_category_0" model="res.partner.category">
+            <field name="name">一级经销商</field>
+        </record>
+<record id="res_partner_1" model="res.partner">
+    <field name="name">吴秀屏</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_1" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">吴秀屏</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13816580999</field>
+    <field name="phone">4221532</field>
+    <field name="street">安徽大市场4区1154号富光百货</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_1"/>
+</record>
+
+<record id="res_partner_2" model="res.partner">
+    <field name="name">李莹</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_2" model="res.partner.address">
+    <field name="city">郑州市</field>
+    <field name="name">李莹</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">13838158019</field>
+    <field name="phone">0371-66031585</field>
+    <field name="street">郑州市国际小商城B座二楼66号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_2"/>
+</record>
+
+<record id="res_partner_3" model="res.partner">
+    <field name="name">雷文忠</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_3" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">雷文忠</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_3"/>
+</record>
+
+<record id="res_partner_4" model="res.partner">
+    <field name="name">刘刚</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_4" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">刘刚</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_4"/>
+</record>
+
+<record id="res_partner_5" model="res.partner">
+    <field name="name">海南宏丰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_5" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">海南宏丰</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_5"/>
+</record>
+
+<record id="res_partner_6" model="res.partner">
+    <field name="name">颜晓杰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_6" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">颜晓杰</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_6"/>
+</record>
+
+<record id="res_partner_7" model="res.partner">
+    <field name="name">陈靓</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_7" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">陈靓</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_7"/>
+</record>
+
+<record id="res_partner_8" model="res.partner">
+    <field name="name">石家庄天平公司</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_8" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">石家庄天平公司</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_8"/>
+</record>
+
+<record id="res_partner_9" model="res.partner">
+    <field name="name">内蒙古施守贵</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_9" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">内蒙古施守贵</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_9"/>
+</record>
+
+<record id="res_partner_10" model="res.partner">
+    <field name="name">昆明谢安明</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_10" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">昆明谢安明</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_10"/>
+</record>
+
+<record id="res_partner_11" model="res.partner">
+    <field name="name">南京永辉超市</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_11" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">南京永辉超市</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_11"/>
+</record>
+
+<record id="res_partner_12" model="res.partner">
+    <field name="name">白山夏林</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_12" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">白山夏林</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_12"/>
+</record>
+
+<record id="res_partner_13" model="res.partner">
+    <field name="name">郭治峰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_13" model="res.partner.address">
+    <field name="city">洛阳市</field>
+    <field name="name">郭治峰</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">13703795570</field>
+    <field name="phone">0379-65983636</field>
+    <field name="street">河南省洛阳市关林商贸城塑料市场</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_13"/>
+</record>
+
+<record id="res_partner_14" model="res.partner">
+    <field name="name">上海杜红艳</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_14" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">上海杜红艳</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_14"/>
+</record>
+
+<record id="res_partner_15" model="res.partner">
+    <field name="name">浙江金瑞祥</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_15" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">浙江金瑞祥</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_15"/>
+</record>
+
+<record id="res_partner_16" model="res.partner">
+    <field name="name">王正英</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_16" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">王正英</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_16"/>
+</record>
+
+<record id="res_partner_17" model="res.partner">
+    <field name="name">台大商贸</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_17" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">台大商贸</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_17"/>
+</record>
+
+<record id="res_partner_18" model="res.partner">
+    <field name="name">任荣香</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_18" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">任荣香</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_18"/>
+</record>
+
+<record id="res_partner_19" model="res.partner">
+    <field name="name">五里庙王玲玲</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_19" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">五里庙王玲玲</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_19"/>
+</record>
+
+<record id="res_partner_20" model="res.partner">
+    <field name="name">孙茂军</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_20" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">孙茂军</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_20"/>
+</record>
+
+<record id="res_partner_21" model="res.partner">
+    <field name="name">王云朋</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_21" model="res.partner.address">
+    <field name="city">南阳市</field>
+    <field name="name">王云朋</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河南省')]"/>
+    <field name="mobile">13937706525</field>
+    <field name="phone">0377-63153190</field>
+    <field name="street">河南省南阳市工业路新华商城西外围23号富光杯店</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_21"/>
+</record>
+
+<record id="res_partner_22" model="res.partner">
+    <field name="name">吕祥华</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_22" model="res.partner.address">
+    <field name="city">石家庄市</field>
+    <field name="name">吕祥华</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河北省')]"/>
+    <field name="mobile">13731158888</field>
+    <field name="phone">0311-86985107</field>
+    <field name="street">河北省石家庄市南三条新源商贸城负一中厅</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_22"/>
+</record>
+
+<record id="res_partner_23" model="res.partner">
+    <field name="name">杨德顺</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_23" model="res.partner.address">
+    <field name="city">高碑店</field>
+    <field name="name">杨德顺</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河北省')]"/>
+    <field name="mobile">13803123655</field>
+    <field name="phone">0312-2885024</field>
+    <field name="street">河北省高碑店白沟镇德顺水杯</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_23"/>
+</record>
+
+<record id="res_partner_24" model="res.partner">
+    <field name="name">刘春桥</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_24" model="res.partner.address">
+    <field name="city">太原市</field>
+    <field name="name">刘春桥</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','河北省')]"/>
+    <field name="mobile">13803411432</field>
+    <field name="phone">0351-2761857</field>
+    <field name="street">山西省太原小商品批发市场3用房17号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_24"/>
+</record>
+
+<record id="res_partner_25" model="res.partner">
+    <field name="name">胡俊峰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_25" model="res.partner.address">
+    <field name="city">北京市</field>
+    <field name="name">胡俊峰</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','北京市')]"/>
+    <field name="mobile">13901358987</field>
+    <field name="phone">010-68517830</field>
+    <field name="street">北京市西城区阜外大街259号天意市场4楼7道23号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_25"/>
+</record>
+
+<record id="res_partner_26" model="res.partner">
+    <field name="name">周伯利</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_26" model="res.partner.address">
+    <field name="city">临沂市</field>
+    <field name="name">周伯利</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','山西省')]"/>
+    <field name="mobile">13905498215</field>
+    <field name="phone">0539-7166188</field>
+    <field name="street">山东省临沂市华东塑料批发市场54号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_26"/>
+</record>
+
+<record id="res_partner_27" model="res.partner">
+    <field name="name">郑奎军</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_27" model="res.partner.address">
+    <field name="city">临沂市</field>
+    <field name="name">郑奎军</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','山西省')]"/>
+    <field name="mobile">13905396980</field>
+    <field name="phone">0539-8017335</field>
+    <field name="street">山东省临沂市土杂市场B29号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_27"/>
+</record>
+
+<record id="res_partner_28" model="res.partner">
+    <field name="name">上官斌</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_28" model="res.partner.address">
+    <field name="city">武汉市</field>
+    <field name="name">上官斌</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖北省')]"/>
+    <field name="mobile">13886003488</field>
+    <field name="phone">027-85648798</field>
+    <field name="street">武汉市硚口区利济南路电力商城2楼A区202室</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_28"/>
+</record>
+
+<record id="res_partner_29" model="res.partner">
+    <field name="name">徐明</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_29" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">徐明</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13905514837</field>
+    <field name="phone"></field>
+    <field name="street">安徽大市场4区1111号明霞杯业</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_29"/>
+</record>
+
+<record id="res_partner_30" model="res.partner">
+    <field name="name">卢进军</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_30" model="res.partner.address">
+    <field name="city">武汉市</field>
+    <field name="name">卢进军</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖北省')]"/>
+    <field name="mobile">13871381888</field>
+    <field name="phone">027-81888918</field>
+    <field name="street">武汉市利济南路电力商城A区1053号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_30"/>
+</record>
+
+<record id="res_partner_31" model="res.partner">
+    <field name="name">杨行超</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_31" model="res.partner.address">
+    <field name="city">武汉市</field>
+    <field name="name">杨行超</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖北省')]"/>
+    <field name="mobile">13349908300</field>
+    <field name="phone">027-85252255</field>
+    <field name="street">武汉市桥口区利济南路济即电力商城2楼B-2048</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_31"/>
+</record>
+
+<record id="res_partner_32" model="res.partner">
+    <field name="name">陈一欢</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_32" model="res.partner.address">
+    <field name="city">南宁市</field>
+    <field name="name">陈一欢</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','广西')]"/>
+    <field name="mobile">13878111708</field>
+    <field name="phone">0771-4915013</field>
+    <field name="street">广西省南宁市星光大道223号荣宝华商城A9栋—111</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_32"/>
+</record>
+
+<record id="res_partner_33" model="res.partner">
+    <field name="name">李凯亮</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_33" model="res.partner.address">
+    <field name="city">贵阳市</field>
+    <field name="name">李凯亮</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','贵州省')]"/>
+    <field name="mobile">13985595555</field>
+    <field name="phone">0851-5650316</field>
+    <field name="street">贵州省贵阳市浣沙路3号立云大酒店旁</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_33"/>
+</record>
+
+<record id="res_partner_34" model="res.partner">
+    <field name="name">王小华</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_34" model="res.partner.address">
+    <field name="city">南昌市</field>
+    <field name="name">王小华</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江西省')]"/>
+    <field name="mobile">13879167799</field>
+    <field name="phone">0791-8201297</field>
+    <field name="street">江西省南昌市洛阳东路77号东方塞纳小区10栋1单元101室</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_34"/>
+</record>
+
+<record id="res_partner_35" model="res.partner">
+    <field name="name">殷新文</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_35" model="res.partner.address">
+    <field name="city">南昌市</field>
+    <field name="name">殷新文</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江西省')]"/>
+    <field name="mobile">13907095192</field>
+    <field name="phone">0791-6510057</field>
+    <field name="street">江西省南昌市五华大市场5区149号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_35"/>
+</record>
+
+<record id="res_partner_36" model="res.partner">
+    <field name="name">徐达报</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_36" model="res.partner.address">
+    <field name="city">西安市</field>
+    <field name="name">徐达报</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','陕西省')]"/>
+    <field name="mobile">13991814169</field>
+    <field name="phone">029-85753618</field>
+    <field name="street">陕西省西安市长缨西路明大公司日用杂货市场北排170171</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_36"/>
+</record>
+
+<record id="res_partner_37" model="res.partner">
+    <field name="name">郭毅</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_37" model="res.partner.address">
+    <field name="city">西安市</field>
+    <field name="name">郭毅</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','陕西省')]"/>
+    <field name="mobile">13659286676</field>
+    <field name="phone">029-82687865</field>
+    <field name="street">西安市长乐中路188号义乌商城A区1065号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_37"/>
+</record>
+
+<record id="res_partner_38" model="res.partner">
+    <field name="name">喻萍花</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_38" model="res.partner.address">
+    <field name="city">广州市</field>
+    <field name="name">喻萍花</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','广东省')]"/>
+    <field name="mobile">13928893737</field>
+    <field name="phone">020-22621042</field>
+    <field name="street">广州番禺区沙溪塑料五金市场883档</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_38"/>
+</record>
+
+<record id="res_partner_39" model="res.partner">
+    <field name="name">姚金添</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_39" model="res.partner.address">
+    <field name="city">莆田市</field>
+    <field name="name">姚金添</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','福建省')]"/>
+    <field name="mobile">13255012988</field>
+    <field name="phone">0594-6266800</field>
+    <field name="street">蒲田市涵江区商城街295栋20—22号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_39"/>
+</record>
+
+<record id="res_partner_40" model="res.partner">
+    <field name="name">孔德彬</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_40" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">孔德彬</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13003057288</field>
+    <field name="phone"></field>
+    <field name="street">安徽大市场4区1165号联合百货</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_40"/>
+</record>
+
+<record id="res_partner_41" model="res.partner">
+    <field name="name">华新荣</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_41" model="res.partner.address">
+    <field name="city">义乌市</field>
+    <field name="name">华新荣</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','浙江省')]"/>
+    <field name="mobile">13957909165</field>
+    <field name="phone">0579-85186709</field>
+    <field name="street">义乌国际商贸城2期F区3楼16708号、16709号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_41"/>
+</record>
+
+<record id="res_partner_42" model="res.partner">
+    <field name="name">梁健康</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_42" model="res.partner.address">
+    <field name="city">长沙市</field>
+    <field name="name">梁健康</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','湖南省')]"/>
+    <field name="mobile">13507469888</field>
+    <field name="phone">0731-84695688</field>
+    <field name="street">湖南省长沙市高桥市场家电城3栋123号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_42"/>
+</record>
+
+<record id="res_partner_43" model="res.partner">
+    <field name="name">万会平</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_43" model="res.partner.address">
+    <field name="city">成都市</field>
+    <field name="name">万会平</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','四川省')]"/>
+    <field name="mobile">13908029872</field>
+    <field name="phone">028-83356870</field>
+    <field name="street">四川省成都市荷花金池负一楼北一街B-2A</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_43"/>
+</record>
+
+<record id="res_partner_44" model="res.partner">
+    <field name="name">吴和志</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_44" model="res.partner.address">
+    <field name="city">昆明市</field>
+    <field name="name">吴和志</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','云南省')]"/>
+    <field name="mobile">13987102742</field>
+    <field name="phone">0871-6219086</field>
+    <field name="street">云南省昆明市螺溮湾南道1-07号富光杯总汇</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_44"/>
+</record>
+
+<record id="res_partner_45" model="res.partner">
+    <field name="name">田明</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_45" model="res.partner.address">
+    <field name="city">长春市</field>
+    <field name="name">田明</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','吉林省')]"/>
+    <field name="mobile">13804352428</field>
+    <field name="phone">0431-82874861</field>
+    <field name="street">吉林省长春市光复路天源商厦106号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_45"/>
+</record>
+
+<record id="res_partner_46" model="res.partner">
+    <field name="name">白玉亭</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_46" model="res.partner.address">
+    <field name="city">哈尔滨市</field>
+    <field name="name">白玉亭</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','黑龙江')]"/>
+    <field name="mobile">13904638097</field>
+    <field name="phone">0451-55580603</field>
+    <field name="street">黑龙江省哈尔滨市道里区一面街36号3单元202</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_46"/>
+</record>
+
+<record id="res_partner_47" model="res.partner">
+    <field name="name">史亚凤</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_47" model="res.partner.address">
+    <field name="city">沈阳市</field>
+    <field name="name">史亚凤</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','辽宁省')]"/>
+    <field name="mobile">13940418544</field>
+    <field name="phone">024-31053547</field>
+    <field name="street">辽宁省沈阳市东北日杂市场一区131号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_47"/>
+</record>
+
+<record id="res_partner_48" model="res.partner">
+    <field name="name">庞金山</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_48" model="res.partner.address">
+    <field name="city">沈阳市</field>
+    <field name="name">庞金山</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','辽宁省')]"/>
+    <field name="mobile">13332468968</field>
+    <field name="phone">024-24503369</field>
+    <field name="street">辽宁省沈阳市东陵区东北日杂五区104号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_48"/>
+</record>
+
+<record id="res_partner_49" model="res.partner">
+    <field name="name">杨小红</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_49" model="res.partner.address">
+    <field name="city">大连市</field>
+    <field name="name">杨小红</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','辽宁省')]"/>
+    <field name="mobile">13841121148</field>
+    <field name="phone">0411-82547744</field>
+    <field name="street">辽宁省大连市西岗区双兴街8号土杂外头房49号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_49"/>
+</record>
+
+<record id="res_partner_50" model="res.partner">
+    <field name="name">林棋森</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_50" model="res.partner.address">
+    <field name="city">兰州市</field>
+    <field name="name">林棋森</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','甘肃省')]"/>
+    <field name="mobile">13909317678</field>
+    <field name="phone">0931-8654178</field>
+    <field name="street">兰州市东部批发市场新世纪广场1006-1008号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_50"/>
+</record>
+
+<record id="res_partner_51" model="res.partner">
+    <field name="name">钱铭</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_51" model="res.partner.address">
+    <field name="city">芜湖市</field>
+    <field name="name">钱铭</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13905531078</field>
+    <field name="phone">0553-3829803</field>
+    <field name="street">安徽省芜湖市沿河路274号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_51"/>
+</record>
+
+<record id="res_partner_52" model="res.partner">
+    <field name="name">陈杨超</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_52" model="res.partner.address">
+    <field name="city">乌鲁木齐市</field>
+    <field name="name">陈杨超</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','新疆')]"/>
+    <field name="mobile">13579936602</field>
+    <field name="phone">0991-5505338</field>
+    <field name="street">新疆乌鲁木齐市金源贸易城B区004</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_52"/>
+</record>
+
+<record id="res_partner_53" model="res.partner">
+    <field name="name">上海办事处</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_53" model="res.partner.address">
+    <field name="city">上海</field>
+    <field name="name">上海办事处</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','上海')]"/>
+    <field name="mobile">13816580999</field>
+    <field name="phone">021-63287950</field>
+    <field name="street">上海市黄浦区福佑路427号南1号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_53"/>
+</record>
+
+<record id="res_partner_54" model="res.partner">
+    <field name="name">张灵川</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_54" model="res.partner.address">
+    <field name="city">北京</field>
+    <field name="name">张灵川</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','北京')]"/>
+    <field name="mobile">13910111442</field>
+    <field name="phone">010-62263585</field>
+    <field name="street">北京市海淀区金五星百货城3厅6道593号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_54"/>
+</record>
+
+<record id="res_partner_55" model="res.partner">
+    <field name="name">杨志</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_55" model="res.partner.address">
+    <field name="city">重庆</field>
+    <field name="name">杨志</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','重庆')]"/>
+    <field name="mobile">13908377950</field>
+    <field name="phone">023-68810657</field>
+    <field name="street">重庆市渝中区大坪彭家花园12号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_55"/>
+</record>
+
+<record id="res_partner_56" model="res.partner">
+    <field name="name">郭景文</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_56" model="res.partner.address">
+    <field name="city">天津</field>
+    <field name="name">郭景文</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','天津')]"/>
+    <field name="mobile">13920250408</field>
+    <field name="phone">022-87732055</field>
+    <field name="street">天津市红桥区大胡同天奕批发商城1楼B区94号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_56"/>
+</record>
+
+<record id="res_partner_57" model="res.partner">
+    <field name="name">邯郸王洪义（周伯利）</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_57" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">邯郸王洪义（周伯利）</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_57"/>
+</record>
+
+<record id="res_partner_58" model="res.partner">
+    <field name="name">茹志斌</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_58" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">茹志斌</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_58"/>
+</record>
+
+<record id="res_partner_59" model="res.partner">
+    <field name="name">郑庆兰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_59" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">郑庆兰</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_59"/>
+</record>
+
+<record id="res_partner_60" model="res.partner">
+    <field name="name">杨辉</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_60" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">杨辉</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_60"/>
+</record>
+
+<record id="res_partner_61" model="res.partner">
+    <field name="name">谷常喜（吕祥华）</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_61" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">谷常喜（吕祥华）</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_61"/>
+</record>
+
+<record id="res_partner_62" model="res.partner">
+    <field name="name">陈宏祥</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_62" model="res.partner.address">
+    <field name="city">宿州市</field>
+    <field name="name">陈宏祥</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13855776986</field>
+    <field name="phone">0557-3030575</field>
+    <field name="street">安徽省宿州市环城南路105号名杯总汇</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_62"/>
+</record>
+
+<record id="res_partner_63" model="res.partner">
+    <field name="name">济南王群英（周伯利）</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_63" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">济南王群英（周伯利）</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_63"/>
+</record>
+
+<record id="res_partner_64" model="res.partner">
+    <field name="name">青州王丰果（郑奎军）</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_64" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">青州王丰果（郑奎军）</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_64"/>
+</record>
+
+<record id="res_partner_65" model="res.partner">
+    <field name="name">应永泉</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_65" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">应永泉</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_65"/>
+</record>
+
+<record id="res_partner_66" model="res.partner">
+    <field name="name">万红平</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_66" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">万红平</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_66"/>
+</record>
+
+<record id="res_partner_67" model="res.partner">
+    <field name="name">杨文英</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_67" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">杨文英</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_67"/>
+</record>
+
+<record id="res_partner_68" model="res.partner">
+    <field name="name">黄卫华</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_68" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">黄卫华</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_68"/>
+</record>
+
+<record id="res_partner_69" model="res.partner">
+    <field name="name">杭州新富光</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_69" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">杭州新富光</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_69"/>
+</record>
+
+<record id="res_partner_70" model="res.partner">
+    <field name="name">刘楼英</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_70" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">刘楼英</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_70"/>
+</record>
+
+<record id="res_partner_71" model="res.partner">
+    <field name="name">张勇</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_71" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">张勇</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_71"/>
+</record>
+
+<record id="res_partner_72" model="res.partner">
+    <field name="name">销售二部</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_72" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">销售二部</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_72"/>
+</record>
+
+<record id="res_partner_73" model="res.partner">
+    <field name="name">焦庆霞</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_73" model="res.partner.address">
+    <field name="city">蚌埠市</field>
+    <field name="name">焦庆霞</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13909624122</field>
+    <field name="phone">0552-2050340</field>
+    <field name="street">安徽省蚌埠市南山路吉安星8号楼4号门面</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_73"/>
+</record>
+
+<record id="res_partner_74" model="res.partner">
+    <field name="name">魏玲</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_74" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">魏玲</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_74"/>
+</record>
+
+<record id="res_partner_75" model="res.partner">
+    <field name="name">宋巧芳</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_75" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">宋巧芳</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_75"/>
+</record>
+
+<record id="res_partner_76" model="res.partner">
+    <field name="name">君子兰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_76" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">君子兰</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_76"/>
+</record>
+
+<record id="res_partner_77" model="res.partner">
+    <field name="name">科大</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_77" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">科大</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_77"/>
+</record>
+
+<record id="res_partner_78" model="res.partner">
+    <field name="name">巢湖薛文勇</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_78" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">巢湖薛文勇</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_78"/>
+</record>
+
+<record id="res_partner_79" model="res.partner">
+    <field name="name">外贸</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_79" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">外贸</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_79"/>
+</record>
+
+<record id="res_partner_80" model="res.partner">
+    <field name="name">陈荣耀</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_80" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">陈荣耀</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_80"/>
+</record>
+
+<record id="res_partner_81" model="res.partner">
+    <field name="name">王经理</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_81" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">王经理</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_81"/>
+</record>
+
+<record id="res_partner_82" model="res.partner">
+    <field name="name">张志启</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_82" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">张志启</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_82"/>
+</record>
+
+<record id="res_partner_83" model="res.partner">
+    <field name="name">王勇</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_83" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">王勇</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_83"/>
+</record>
+
+<record id="res_partner_84" model="res.partner">
+    <field name="name">李世桂</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_84" model="res.partner.address">
+    <field name="city">阜阳市</field>
+    <field name="name">李世桂</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13035416598</field>
+    <field name="phone">0558-2280989</field>
+    <field name="street">阜阳市青年路80号（大戏院东100米路南）</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_84"/>
+</record>
+
+<record id="res_partner_85" model="res.partner">
+    <field name="name">汪东海</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_85" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">汪东海</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_85"/>
+</record>
+
+<record id="res_partner_86" model="res.partner">
+    <field name="name">梁华庭</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_86" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">梁华庭</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_86"/>
+</record>
+
+<record id="res_partner_87" model="res.partner">
+    <field name="name">高经理</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_87" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">高经理</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_87"/>
+</record>
+
+<record id="res_partner_88" model="res.partner">
+    <field name="name">韩浩</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_88" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">韩浩</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_88"/>
+</record>
+
+<record id="res_partner_89" model="res.partner">
+    <field name="name">徐永志</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_89" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">徐永志</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_89"/>
+</record>
+
+<record id="res_partner_90" model="res.partner">
+    <field name="name">徐桂珍</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_90" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">徐桂珍</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_90"/>
+</record>
+
+<record id="res_partner_91" model="res.partner">
+    <field name="name">朱振兴</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_91" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">朱振兴</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_91"/>
+</record>
+
+<record id="res_partner_92" model="res.partner">
+    <field name="name">周毅</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_92" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">周毅</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_92"/>
+</record>
+
+<record id="res_partner_93" model="res.partner">
+    <field name="name">邢秦生</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_93" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">邢秦生</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_93"/>
+</record>
+
+<record id="res_partner_94" model="res.partner">
+    <field name="name">钱亚萍</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_94" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">钱亚萍</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_94"/>
+</record>
+
+<record id="res_partner_95" model="res.partner">
+    <field name="name">潘志发</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_95" model="res.partner.address">
+    <field name="city">南京市</field>
+    <field name="name">潘志发</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江苏省')]"/>
+    <field name="mobile">13770680999</field>
+    <field name="phone">025-58757781</field>
+    <field name="street">南京市下关区热河南路61号茶叶城内92号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_95"/>
+</record>
+
+<record id="res_partner_96" model="res.partner">
+    <field name="name">田丽萍</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_96" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">田丽萍</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_96"/>
+</record>
+
+<record id="res_partner_97" model="res.partner">
+    <field name="name">销售部定制</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_97" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">销售部定制</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile">13695658308</field>
+    <field name="phone">8752853</field>
+    <field name="street">安徽省肥西县三河镇北街169号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_97"/>
+</record>
+
+<record id="res_partner_98" model="res.partner">
+    <field name="name">三河富光形象店</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_98" model="res.partner.address">
+    <field name="city">合肥市</field>
+    <field name="name">三河富光形象店</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','安徽省')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street">安徽省肥西县三河镇中街</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_98"/>
+</record>
+
+<record id="res_partner_99" model="res.partner">
+    <field name="name">销售部</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_99" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">销售部</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_99"/>
+</record>
+
+<record id="res_partner_100" model="res.partner">
+    <field name="name">合肥顶好商贸</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_100" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">合肥顶好商贸</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_100"/>
+</record>
+
+<record id="res_partner_101" model="res.partner">
+    <field name="name">山东招远</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_101" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">山东招远</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_101"/>
+</record>
+
+<record id="res_partner_102" model="res.partner">
+    <field name="name">无锡迪盟</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_102" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">无锡迪盟</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_102"/>
+</record>
+
+<record id="res_partner_103" model="res.partner">
+    <field name="name">褚少九</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_103" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">褚少九</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_103"/>
+</record>
+
+<record id="res_partner_104" model="res.partner">
+    <field name="name">周建国</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_104" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">周建国</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_104"/>
+</record>
+
+<record id="res_partner_105" model="res.partner">
+    <field name="name">朱文忠</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_105" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">朱文忠</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_105"/>
+</record>
+
+<record id="res_partner_106" model="res.partner">
+    <field name="name">易永平</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_106" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">易永平</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_106"/>
+</record>
+
+<record id="res_partner_107" model="res.partner">
+    <field name="name">刘志敏</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_107" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">刘志敏</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_107"/>
+</record>
+
+<record id="res_partner_108" model="res.partner">
+    <field name="name">广州振兴</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_108" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">广州振兴</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_108"/>
+</record>
+
+<record id="res_partner_109" model="res.partner">
+    <field name="name">朱庆丰</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_109" model="res.partner.address">
+    <field name="city">徐州市</field>
+    <field name="name">朱庆丰</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','江苏省')]"/>
+    <field name="mobile">15162259586</field>
+    <field name="phone">0516-83711797</field>
+    <field name="street">江苏省徐州市宣城电子市场18号</field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_109"/>
+</record>
+
+<record id="res_partner_110" model="res.partner">
+    <field name="name">张丙束</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_110" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">张丙束</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_110"/>
+</record>
+
+<record id="res_partner_111" model="res.partner">
+    <field name="name">富光物流</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_111" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">富光物流</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_111"/>
+</record>
+
+<record id="res_partner_112" model="res.partner">
+    <field name="name">汪宏斌</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_112" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">汪宏斌</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_112"/>
+</record>
+
+<record id="res_partner_113" model="res.partner">
+    <field name="name">天津家士利</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_113" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">天津家士利</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_113"/>
+</record>
+
+<record id="res_partner_114" model="res.partner">
+    <field name="name">芜湖华亿</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_114" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">芜湖华亿</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_114"/>
+</record>
+
+<record id="res_partner_115" model="res.partner">
+    <field name="name">杭老板</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_115" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">杭老板</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_115"/>
+</record>
+
+<record id="res_partner_116" model="res.partner">
+    <field name="name">王家珠</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_116" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">王家珠</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_116"/>
+</record>
+
+<record id="res_partner_117" model="res.partner">
+    <field name="name">葛伦明</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_117" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">葛伦明</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_117"/>
+</record>
+
+<record id="res_partner_118" model="res.partner">
+    <field name="name">宿州张爱华</field>
+    <field eval="[(6, 0, [ref('res_partner_category_0')])]" name="category_id"/>
+    <field name="customer">1</field>
+</record>
+<record id="res_partner_address_118" model="res.partner.address">
+    <field name="city"></field>
+    <field name="name">宿州张爱华</field>
+    <field name="country_id" model="res.country" search="[('name','=','China')]"/>
+    <field name="state_id" model="res.country.state" search="[('name','=','')]"/>
+    <field name="mobile"></field>
+    <field name="phone"></field>
+    <field name="street"></field>
+    <field name="type">default</field>
+    <field name="partner_id" ref="res_partner_118"/>
+</record>
+
+    </data>
+</openerp>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+<!--投诉信息-->
+    <record id="view_search" model="ir.ui.view">
+            <field name="name">Search View</field>
+            <field name="model">after.service</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="搜索">
+                    <field name='date'/>
+                    <separator orientation="vertical" />
+                    <field name='product_name'/>
+                    <separator orientation="vertical" />
+                    <field name='contact_name'/>
+                    <field name='in_charge' widget="selection"/>
+                    <field name='state'/>
+                </search>
+            </field>
+    </record>
+    
+    <record model='ir.ui.view' id='create_tree_view'>
+            <field name='name'>Create Tree View</field>
+            <field name='model'>after.service</field>
+            <field name='type'>tree</field>
+            <field name='arch' type='xml'>
+                <tree string='售后质量情况登记表' colors="red:state in ('draft','processing')">
+                    <field name='date'/>
+                    <field name='product_name'/>
+                    <field name='contact_name'/>
+                    <field name='receive_num'/>
+                    <field name='receiver'/>
+                    <field name='state'/>
+                    <field name='in_charge'/>
+                    <field name='related_department'/>
+                </tree>                    
+            </field>
+    </record>     
+    
+    <record model='ir.ui.view' id='create_form_view'>
+            <field name='name'>Create Form View</field>
+            <field name='model'>after.service</field>
+            <field name='type'>form</field>
+            <field name='arch' type='xml'>
+                <form string='售后质量情况登记表'>
+                    <group col="4" colspan="4">
+                        <field name='contact_name'/>
+                        <field name='address'/>
+                        <field name='receive_num'/>
+                        <field name='receive_product'/>
+                        <field name='tel'/>
+                        <newline/>
+                        <field name='receiver'/>
+                        <field name='date'/>
+                        <field name='returner'/>
+                        <field name='return_num'/>
+                        <field name='return_product'/>
+                        <field name='return_date'/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="问题">
+                            <field name='product_name'/>
+                            <field name='related_department'/>
+                            <label string='质量问题描述' colspan='4'/>
+                            <field name='quality_reason' colspan='4' string='质量问题描述' nolabel='1'/>
+                            <field name='pic' widget='image' colspan='4'/>
+                        </page>
+                        <page string="跟进" attrs="{'invisible':[('state','=','draft')]}">
+                            <group col='7' colspan='4'>
+                                <field name='in_charge'/>
+                                <field name='solve' attrs="{'readonly':[('in_charge','!=',uid)]}"/>
+                                <field name='commit_to' attrs="{'readonly':[('in_charge','!=',uid)]}"/>
+                                <group col='1' colspan='1'>
+                                </group>
+                            </group>
+                            <group colspan='4'>
+                                <label string='质量处鉴定结果' colspan='4'/>
+                                <field name='identify' string='质量处鉴定结果' nolabel='1'/>
+                            </group>
+                        </page>
+                        <page string='日志'>
+                            <field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
+                                    <tree string="日志">
+                                        <field name="display_text" string="History Information"/>
+                                    </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                    <group colspan="4" col="6">
+                        <field name="state" widget="statusbar" statusbar_visible="draft,processing,done" statusbar_colors='{"draft":"red","processing":"red","cancelled":"red","done":"red"}'/>
+                        <button invisible='1' name="case_draft" string="投诉" type='object' states="cancelled" icon="gtk-yes"/>
+                        <button invisible='1' name="case_cancelled" string="取消"  type='object' states='processing,draft' icon="gtk-cancel"/>
+                        <button invisible='1' name="case_processing" string="处理中"  type='object' states="draft" icon="gtk-go-forward"/>
+                        <button invisible='1' name="case_done"  string="已解决" type='object' states="processing" icon="gtk-apply"/>
+                    </group>
+                </form>
+            </field>
+    </record>    
+    
+   
+    <record model='ir.actions.act_window' id='action_create_service'>
+        <field name='name'>投诉信息登记(创建后请到第二栏进行处理)</field>
+        <field name='res_model'>after.service</field>
+        <field name='view_type'>form</field>
+        <field name='view_mode'>tree,form</field>
+        <field name='search_view_id' ref="view_search"/>
+    </record>
+    
+    <record model="ir.actions.act_window.view" id="action_create_service_tree">
+        <field name="sequence" eval="1"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="create_tree_view"/>
+        <field name="act_window_id" ref="action_create_service"/>
+    </record>
+    
+    <record model="ir.actions.act_window.view" id="action_create_service_form">
+        <field name="sequence" eval="2"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="create_form_view"/>
+        <field name="act_window_id" ref="action_create_service"/>
+    </record>
+     
+
+    
+
+          
+<!--In Process 视图-->
+    <record id="view_search_inprocess" model="ir.ui.view">
+            <field name="name">Search View</field>
+            <field name="model">after.service</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name='date'/>
+                </search>
+            </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_create_process">
+        <field name="name">需要处理的投诉(点击'处理中'进行跟进处理操作)</field>
+        <field name="res_model">after.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','in',('draft','processing')),('in_charge','=',uid)]</field>
+        <field name="view_id" eval="False"/>
+        <field name='search_view_id' ref="view_search_inprocess"/>
+        <field name="help">需要处理的投诉</field>
+    </record>
+
+    <record model="ir.ui.view" id="action_create_process_tree_view">
+        <field name="name">In Process Tree</field>
+        <field name="model">after.service</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='TreeView' colors="red:state in ('draft','processing')">
+                <field name='date'/>
+                <field name='product_name'/>
+                <field name='contact_name'/>
+                <field name='receive_num'/>
+                <field name='receiver'/>
+                <field name='in_charge'/>
+                <field name='related_department'/>
+                <field name='state'/>
+            </tree>                    
+        </field>
+    </record>
+    
+    <record model="ir.ui.view" id="action_create_process_form_view">
+        <field name="name">In Process Form</field>
+        <field name="model">after.service</field>
+        <field name="type">form</field>
+        <field name="priority">20</field>
+        <field name="arch" type="xml">
+            <form string="In Process">
+                <group col="4" colspan="4">
+                    <field name='contact_name'/>
+                    <field name='address'/>
+                    <field name='receive_num'/>
+                    <field name='receive_product'/>
+                    <field name='tel'/>
+                    <newline/>
+                    <field name='receiver'/>
+                    <field name='date'/>
+                    <field name='returner'/>
+                    <field name='return_num'/>
+                    <field name='return_product'/>
+                    <field name='return_date'/>
+                </group>
+                <notebook colspan="4">
+                    <page string="问题">
+                        <field name='product_name'/>
+                        <field name='related_department'/>
+                        <label string='质量问题描述:' colspan='4'/>
+                        <field name='quality_reason' colspan='4' string='质量问题描述' nolabel='1'/>
+                        <field name='pic' widget='image' colspan='4'/>
+                    </page>
+                    <page string="跟进" attrs="{'invisible':[('state','=','draft')]}">
+                        <group col='7' colspan='4'>
+                            <field name='in_charge'/>
+                            <field name='solve'/>
+                            <field name='commit_to' attrs="{'readonly':[('in_charge','!=',uid)],}" invisible='1'/>
+                        </group>
+                        <group colspan='4'>
+                            <label string='质量处鉴定结果:' colspan='4'/>
+                            <field name='identify' string='质量处鉴定结果' nolabel='1'/>
+                        </group>
+                        <group col='6' colspan='4'>
+                            <group col='5' colspan='3'>
+                            </group>
+                            <button name="%(action_view_creat_wizard)d" string="提交" icon="gtk-index" type="action" attrs="{'invisible':[('in_charge','!=',uid)]}" />
+                        </group>
+                    </page>
+                    <page string='日志'>
+                        <field name="message_ids" colspan="4" nolabel="1" mode="tree" readonly="1">
+                                <tree string="日志">
+                                    <field name="display_text" string="History Information"/>
+                                </tree>
+                        </field>
+                    </page>
+                </notebook>
+                <label colspan='4' string=''/>
+                <label colspan='4' string=''/>
+                <group colspan="4" col="6">
+                    <field name="state" widget="statusbar" statusbar_visible="draft,processing,done" statusbar_colors='{"draft":"red","processing":"red","cancelled":"red","done":"red"}'/>
+                    <button name="case_draft" string="投诉" type='object' states="cancelled" icon="gtk-yes"/>
+                    <button name="case_cancelled" string="取消"  type='object' states='processing,draft' icon="gtk-cancel"/>
+                    <button name="case_processing" string="处理中"  type='object' states="draft" icon="gtk-go-forward"/>
+                    <button name="case_done"  string="已解决" type='object' states="processing" icon="gtk-apply"/>
+                 </group>
+            </form>
+        </field>
+    </record>
+    
+    <record model="ir.actions.act_window.view" id="action_create_process_tree">
+        <field name="sequence" eval="10"/>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('state','in',('draft','processing')),('in_charge','=',uid)]</field>
+        <field name="view_id" ref="action_create_process_tree_view"/>
+        <field name="act_window_id" ref="action_create_process"/>
+    </record>
+
+    <record model="ir.actions.act_window.view" id="action_create_process_form">
+        <field name="sequence" eval="11"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="action_create_process_form_view"/>
+        <field name="act_window_id" ref="action_create_process"/>
+    </record>
+    
+
+    
+    <!--定义菜单-->
+    <menuitem id='after_service' name='售后服务'  web_icon="icon/security.png" web_icon_hover="icon/security1.png"/>
+    <menuitem id='after_service_menu' name='售后服务' parent='after_service'/>
+    <menuitem name='投诉信息' id='service_menu' parent='after_service_menu' action='action_create_service' sequence='1'/>
+    <menuitem id='after_service_process' name='我需要处理的投诉' parent='after_service_menu' action='action_create_process' sequence='5'/>
+    <menuitem id='done' name='已解决问题' parent='after_service_menu'/>
+    
+    </data>
+</openerp>

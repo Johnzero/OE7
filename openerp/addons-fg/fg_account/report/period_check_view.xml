@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        
+        <record model="ir.ui.view" id="fg_account_reconcile_item_tree_view">
+            <field name="name">fg_account.reconcile.item.tree</field>
+            <field name="model">fg_account.reconcile.item</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="对账单">
+                    <field name="name"/>
+                    <field name="o_date"/>
+                    <field name="o_partner"/>
+                    <field name="t"/>
+                    <field name="reconciled"/>
+                    <field name="amount"/>
+                    <field name="balance"/>
+                    <field name="note"/>
+                    <field name="cleared" invisible="1"/>
+                    <button name="button_view" string="单据" icon="STOCK_JUMP_TO" type="object"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_account_period_check_tree_view">
+            <field name="name">fg_account.period.check.tree</field>
+            <field name="model">fg_account.period.check</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="对账单" colors="red:amount &lt; 0">
+                    <field name="name"/>
+                    <field name="o_date"/>
+                    <field name="o_partner"/>
+                    <field name="t"/>
+                    <field name="reconciled"/>
+                    <field name="amount" sum="本页总额"/>
+                    <field name="note"/>
+                    <field name="cleared" groups="fg_account.group_fg_account_manager" />
+                    <button name="button_view" string="单据" icon="STOCK_JUMP_TO" type="object"/>
+                    <button name="button_clear" groups="fg_account.group_fg_account_manager" confirm="是否清账?" string="清账" type="object" icon="shou" 
+                        attrs="{'invisible':[('cleared','=',True)]}"/>
+                    <button name="button_unclear" groups="fg_account.group_fg_account_manager" confirm="是否反清账?" string="反清账" type="object" icon="STOCK_DIALOG_WARNING" 
+                        attrs="{'invisible':[('cleared','=',False)]}"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_fg_account_period_check_filter" model="ir.ui.view">
+            <field name="name">fg_account.period.check.list.select</field>
+            <field name="model">fg_account.period.check</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="过滤对账单">
+                    <filter icon="terp-document-new" string="未核对" domain="[('reconciled','=',False)]"/>
+                    <filter icon="terp-check" string="已核对" domain="[('reconciled','=',True)]"/>
+                    <separator orientation="vertical"/>
+                    <field name="o_partner"/>
+                    <field name="due_date_from" filter_domain="[('o_date','&gt;=',self)]"/>
+                    <field name="due_date_to" filter_domain="[('o_date','&lt;=',self)]"/>
+					<field name="t"/>
+                </search>
+            </field>
+        </record>
+        
+        <record id="view_fg_account_period_clear_filter" model="ir.ui.view">
+            <field name="name">fg_account.period.check.list.select</field>
+            <field name="model">fg_account.period.check</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="过滤对账单">
+                    <filter icon="terp-document-new" string="未清账" domain="[('cleared','=',False)]"/>
+                    <filter icon="terp-check" string="已清账" domain="[('cleared','=',True)]"/>
+                    <separator orientation="vertical"/>
+                    <field name="o_partner"/>
+                    <field name="due_date_from" filter_domain="[('o_date','&gt;=',self)]"/>
+                    <field name="due_date_to" filter_domain="[('o_date','&lt;=',self)]"/>
+					<field name="t"/>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_account_reconcile_item_tree_view">
+            <field name="name">对账单明细</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.reconcile.item</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="fg_account_reconcile_item_tree_view"/>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_account_period_check_reconciled_tree_view">
+            <field name="name">已对账单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.period.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('reconciled','=',True)]</field>
+            <field name="view_id" ref="fg_account_period_check_tree_view"/>
+            <field name="search_view_id" ref="view_fg_account_period_check_filter"/>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_account_period_check_unreconciled_tree_view">
+            <field name="name">未对账单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.period.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('reconciled','=',False)]</field>
+            <field name="view_id" ref="fg_account_period_check_tree_view"/>
+            <field name="search_view_id" ref="view_fg_account_period_check_filter"/>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_account_period_check_clear_tree_view">
+            <field name="name">业务单清账</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.period.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('o_date','&gt;=','2012-06-01'),('t','in',['发货额','退回'])]</field>
+            <field name="view_id" ref="fg_account_period_check_tree_view"/>
+            <field name="search_view_id" ref="view_fg_account_period_clear_filter"/>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_account_period_check_cust_clear_tree_view">
+            <field name="name">定制单清账</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_account.period.check</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree</field>
+            <field name="domain">[('o_date','&gt;=','2012-06-01'),('o_partner','=',65)]</field>
+            <field name="view_id" ref="fg_account_period_check_tree_view"/>
+            <field name="search_view_id" ref="view_fg_account_period_clear_filter"/>
+        </record>
+        
+        <menuitem id="menu_fg_account_period_check" parent="menu_fg_account" name="对账单" sequence="2" groups="fg_account.group_fg_account_checker,fg_account.group_fg_account_manager"/>
+        
+        <menuitem id="menu_fg_account_period_check_all" parent="menu_fg_account_period_check" name="对账" sequence="2"/>
+        <menuitem id="menu_fg_account_period_check_reconciled" action="action_fg_account_period_check_reconciled_tree_view" parent="menu_fg_account_period_check_all" sequence="0"/>
+        <menuitem id="menu_fg_account_period_check_unreconciled" action="action_fg_account_period_check_unreconciled_tree_view" parent="menu_fg_account_period_check_all" sequence="1"/>
+        
+        <menuitem id="menu_fg_account_period_check_clear" action="action_fg_account_period_check_clear_tree_view" parent="menu_fg_account_check" sequence="3"/>
+        <!-- <menuitem id="menu_fg_account_period_check_cust_clear" action="action_fg_account_period_check_cust_clear_tree_view" parent="menu_fg_account_check" sequence="4"/> -->
+        
+    </data>
+</openerp>

@@ -1,0 +1,33 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"fg_picking_client_partner","group_fgp_client res_partner","base.model_res_partner","fg_picking.group_fgp_client",1,0,0,0
+"fg_picking_client_partner_address","group_fgp_client res_partner_address","base.model_res_partner_address","fg_picking.group_fgp_client",1,0,0,0
+"fg_picking_client_lang","group_fgp_client res.lang","base.model_res_lang","fg_picking.group_fgp_client",1,0,0,0
+"fg_picking_clientcompany","group_fgp_client res.company","base.model_res_company","fg_picking.group_fgp_client",1,0,0,0
+
+"fg_picking_client_order","group_fgp_client fuguang_order","model_fuguang_order","fg_picking.group_fgp_client",1,1,1,0
+"fg_picking_user_order","group_fgp_user fuguang_order","model_fuguang_order","fg_picking.group_fgp_user",1,0,0,0
+"fg_picking_admin_order","group_fgp_admin fuguang_order","model_fuguang_order","fg_picking.group_fgp_admin",1,0,0,0
+
+"fg_picking_client_order_line","group_fgp_client fuguang_order_line","model_fuguang_order_line","fg_picking.group_fgp_client",1,1,1,1
+"fg_picking_user_order_line","group_fgp_user fuguang_order_line","model_fuguang_order_line","fg_picking.group_fgp_user",1,0,0,0
+"fg_picking_admin_order_line","group_fgp_admin fuguang_order_line","model_fuguang_order_line","fg_picking.group_fgp_admin",1,1,1,0
+
+"fuguang_picking_item_client","group_fgp_client fuguang_picking_item","model_fuguang_picking_item","fg_picking.group_fgp_client",1,0,0,0
+"fuguang_picking_item_user","group_fgp_user fuguang_picking_item","model_fuguang_picking_item","fg_picking.group_fgp_user",1,0,0,0
+"fuguang_picking_item_admin","group_fgp_admin fuguang_picking_item","model_fuguang_picking_item","fg_picking.group_fgp_admin",1,1,1,0
+
+"fuguang_picking_item_color_client","group_fgp_client fuguang_picking_item_color","model_fuguang_picking_item_color","fg_picking.group_fgp_client",1,0,0,0
+"fuguang_picking_item_color_user","group_fgp_user fuguang_picking_item_color","model_fuguang_picking_item_color","fg_picking.group_fgp_user",1,0,0,0
+"fuguang_picking_item_color_admin","group_fgp_admin fuguang_picking_item_color","model_fuguang_picking_item_color","fg_picking.group_fgp_admin",1,1,1,0
+
+"fuguang_picking_item_uom","group_fgp_admin fuguang_picking_item_uom","model_fuguang_picking_item_uom","fg_picking.group_fgp_admin",1,1,1,1
+"fg_picking_item_uom_user","group_fgp_user fuguang_picking_item_uom","model_fuguang_picking_item_uom","fg_picking.group_fgp_user",1,0,0,0
+"fg_picking_item_uom_client","group_fgp_client fuguang_picking_item_uom","model_fuguang_picking_item_uom","fg_picking.group_fgp_client",1,0,0,0
+
+"fuguang_delivery_user","group_fgp_user fuguang_delivery","model_fuguang_delivery","fg_picking.group_fgp_user",1,1,1,0
+"fuguang_delivery_admin","group_fgp_admin fuguang_delivery","model_fuguang_delivery","fg_picking.group_fgp_admin",1,1,1,0
+"fuguang_delivery_client","group_fgp_client fuguang_delivery","model_fuguang_delivery","fg_picking.group_fgp_client",0,0,0,0
+
+"fuguang_delivery_line_user","group_fgp_user fuguang_delivery_line","model_fuguang_delivery_line","fg_picking.group_fgp_user",1,1,1,1
+"fuguang_delivery_line_admin","group_fgp_admin fuguang_delivery_line","model_fuguang_delivery_line","fg_picking.group_fgp_admin",1,1,1,1
+"fuguang_delivery_line_client","group_fgp_client fuguang_delivery_line","model_fuguang_delivery_line","fg_picking.group_fgp_client",0,0,0,0

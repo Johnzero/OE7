@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="seq_type_fuguang_order" model="ir.sequence.type">
+            <field name="name">Fuguang Order</field>
+            <field name="code">fuguang.order</field>
+        </record>
+        <record id="seq_fg_picking_order" model="ir.sequence">
+            <field name="name">Order</field>
+            <field name="code">fuguang.order</field>
+            <field name="prefix">FGO-%(year)s%(month)s</field>
+            <field name="padding">4</field>
+            <field name="implementation">no_gap</field>
+        </record>
+        <record id="seq_type_fuguang_delivery" model="ir.sequence.type">
+            <field name="name">Fuguang Delivery</field>
+            <field name="code">fuguang.delivery</field>
+        </record>
+        <record id="seq_fuguang_delivery" model="ir.sequence">
+            <field name="name">Fuguang Delivery</field>
+            <field name="code">fuguang.delivery</field>
+            <field name="prefix">FGDL-%(year)s%(month)s</field>
+            <field name="padding">2</field>
+            <field name="implementation">no_gap</field>
+        </record>
+    </data>
+</openerp>

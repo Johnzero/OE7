@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data noupdate="0">
+		<record id="group_fgp_client" model="res.groups">
+	        <field name="name">客户订单系统 / 客户</field>
+	    </record>
+		<record id="group_fgp_user" model="res.groups">
+	        <field name="name">客户订单系统 / 业务部业务员</field>
+	    </record>
+		<record id="group_fgp_admin" model="res.groups">
+	        <field name="name">客户订单系统 / 业务部管理员</field>
+	    </record>
+		<record id="partner_exception" model="ir.rule">
+			<field name="name">partner client</field>
+			<field name="model_id" ref="model_res_partner"/>
+			<field name="prem_read" eval="True"/>
+			<field name="perm_write" eval="False"/>
+			<field name="perm_create" eval="False"/>
+			<field name="perm_unlink" eval="False"/>
+			<field eval="0" name="global"/>
+			<field eval="[(6,0,[ref('fg_picking.group_fgp_client')])]" name="groups"/>
+			<field name="domain_force">[('client_id','=',user.id)]</field>
+		</record>
+        <record id="picking_item_client" model="ir.rule">
+			<field name="name">picking_item client</field>
+			<field name="model_id" ref="model_fuguang_picking_item"/>
+			<field name="prem_read" eval="True"/>
+			<field name="perm_write" eval="False"/>
+			<field name="perm_create" eval="False"/>
+			<field name="perm_unlink" eval="False"/>
+			<field eval="0" name="global"/>
+			<field eval="[(6,0,[ref('fg_picking.group_fgp_client')])]" name="groups"/>
+			<field name="domain_force">['|',('user_ids','in',[user.id]),('user_ids','=',False)]</field>
+		</record>
+		<record id="picking_order_user" model="ir.rule">
+			<field name="name">order user</field>
+			<field name="model_id" ref="model_fuguang_order"/>
+			<field name="prem_read" eval="True"/>
+			<field name="perm_write" eval="False"/>
+			<field name="perm_create" eval="False"/>
+			<field name="perm_unlink" eval="False"/>
+			<field eval="0" name="global"/>
+			<field eval="[(6,0,[ref('fg_picking.group_fgp_user')])]" name="groups"/>
+			<field name="domain_force">['|',('sales_ids','in',[user.id]),('sales_ids','=',False)]</field>
+		</record>
+		<record id="picking_order_client" model="ir.rule">
+			<field name="name">order client</field>
+			<field name="model_id" ref="model_fuguang_order"/>
+			<field name="prem_read" eval="True"/>
+			<field name="perm_write" eval="True"/>
+			<field name="perm_create" eval="True"/>
+			<field name="perm_unlink" eval="False"/>
+			<field eval="0" name="global"/>
+			<field eval="[(6,0,[ref('fg_picking.group_fgp_client')])]" name="groups"/>
+			<field name="domain_force">[('user_id','=',user.id)]</field>
+		</record>
+	</data>
+</openerp>

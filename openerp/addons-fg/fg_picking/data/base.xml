@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="base_pick_item_uom" model="fuguang.picking.item.uom">
+            <field name="name">只</field>
+        	<field name="factor">1</field>
+        </record>
+        <record id="base_pick_item_uom_tao" model="fuguang.picking.item.uom">
+            <field name="name">套</field>
+        	<field name="factor">1</field>
+        </record>
+	<record id="pick_item_uom_j" model="fuguang.picking.item.uom">
+            <field name="name">件</field>
+                <field name="factor">1</field>
+        </record>
+    </data>
+</openerp>

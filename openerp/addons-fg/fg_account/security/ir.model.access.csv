@@ -1,0 +1,16 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"group_fg_account_user_bill","group_fg_account_user fg_account.bill","model_fg_account_bill","fg_account.group_fg_account_user",1,1,1,0
+"group_fg_account_checker_bill","group_fg_account_checker fg_account.bill","model_fg_account_bill","fg_account.group_fg_account_checker",1,1,1,0
+"group_fg_account_manager_bill","group_fg_account_manager fg_account.bill","model_fg_account_bill","fg_account.group_fg_account_manager",1,1,1,0
+"group_fg_account_chart_bill","group_fg_account_chart fg_account.bill","model_fg_account_bill","fg_account.group_fg_account_chart",1,0,0,0
+
+"group_fg_account_user_bill_cate","group_fg_account_user fg_account.bill.cate","model_fg_account_bill_category","fg_account.group_fg_account_user",1,1,1,0
+"group_fg_account_checker_bill_cate","group_fg_account_checker fg_account.bill.cate","model_fg_account_bill_category","fg_account.group_fg_account_checker",1,1,1,0
+"group_fg_account_manager_bill_cate","group_fg_account_manager fg_account.bill.cate","model_fg_account_bill_category","fg_account.group_fg_account_manager",1,1,1,0
+"group_fg_account_chart_bill_cate","group_fg_account_chart fg_account.bill.cate","model_fg_account_bill_category","fg_account.group_fg_account_chart",1,0,0,0
+
+"group_fg_account_checker_period_check","group_fg_account_checker fg_account_period_check","model_fg_account_period_check","fg_account.group_fg_account_checker",1,0,0,0
+"group_fg_account_manager_period_check","group_fg_account_manager fg_account_period_check","model_fg_account_period_check","fg_account.group_fg_account_manager",1,0,0,0
+
+"group_fg_account_checker_sale_order","group_fg_account_checker fg_sale_order","model_fg_sale_order","fg_account.group_fg_account_checker",1,1,0,0
+"group_fg_account_manager_sale_order","group_fg_account_manager fg_sale_order","model_fg_sale_order","fg_account.group_fg_account_manager",1,1,0,0

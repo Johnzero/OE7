@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="picking_uom_form_view">
+            <field name="name">fuguang.picking.item.uom.form</field>
+            <field name="model">fuguang.picking.item.uom</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="计量单位">
+                    <field name="name" select="1"/>
+                    <field name="factor" select="1"/>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="picking_uom_tree_view">
+            <field name="name">fuguang.picking.item.uom.tree</field>
+            <field name="model">fuguang.picking.item.uom</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="计量单位">
+                    <field name="name"/>
+                    <field name="factor"/>
+                </tree>
+            </field>
+        </record>
+        
+                <record id="view_fg_picking_item_form" model="ir.ui.view">
+                        <field name="name">fg_picking.item.form</field>
+            <field name="model">fuguang.picking.item</field>
+            <field name="type">form</field>
+                        <field name="arch" type="xml">
+                                <form string="产品">
+                                        <field name="name" />
+                                        <field name="category"/>
+                                        <field name="code" />
+                                        <field name="barcode"/>
+                                        <field name="price"/>
+                                        <field name="sequence"/>
+                                        <notebook colspan="5">
+                                            <page string="颜色">
+                                                <field colspan="4" mode="tree,form" name="colors" nolabel="1" widget="one2many_list">
+                                                                <form string="颜色">
+                                                                        <field name="color"/>
+                                                                        <field name="sequence"/>
+                                                                </form>
+                                                                <tree string="颜色">
+                                                                        <field name="color"/>
+                                                                        <field name="sequence"/>
+                                                                </tree>
+                                                        </field>
+                                            </page>
+                                            <page string="可见客户">
+                                               <field colspan="4" mode="tree,form" name="user_ids"  nolabel="1" widget="many2many_list"/>
+                                            </page>
+                                            <page string="计量单位">
+                                               <field colspan="4" mode="tree,form" name="uoms" nolabel="1" widget="many2many_list"/>
+                                            </page>
+                                        </notebook>
+                                        
+                                        
+                                </form>
+                        </field>
+                </record>
+                
+                <record id="view_fg_picking_item_tree" model="ir.ui.view">
+            <field name="name">fg_picking.item.tree</field>
+            <field name="model">fuguang.picking.item</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="产品列表">
+                    <field name="category" select="1"/>
+                    <field name="name" select="1"/>
+                                        <field name="code" select="1"/>
+                                        <field name="sequence"/>
+                                        <field name="price"/>
+                </tree>
+            </field>
+        </record>
+                
+                
+                <record id="view_partner_client_form" model="ir.ui.view">
+                        <field name="name">res.partner.client.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+                        <field name="inherit_id" ref="base.view_partner_form"/>
+                        <field name="arch" type="xml">
+                                <field name="parent_id" position="after">
+                                        <field name="client_id"/>
+                                </field>
+                        </field>
+                </record>
+            
+                <record id="view_fuguang_order_form" model="ir.ui.view">
+                        <field name="name">fuguang.order.form</field>
+            <field name="model">fuguang.order</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="订单">
+                    <field name="name" select="2" />
+                    <field name="date_order" select="1"/>
+                    <field name="user_id" select="1"/>
+                    <field name="partner_id" domain="[('customer','=',True)]" required="1"/>
+                    <field name="partner_address_id" select="2"/>
+                    <field name="total_amount"/>
+                    <newline/>
+                    <notebook colspan="5">
+                            <page string="订单明细">
+                                <field colspan="4" name="order_line" nolabel="1" widget="one2many_list">
+                                    <form string="订单明细">
+                                            <field name="product_id"/>
+                                            <field name="product_uom"/>
+                                            <field name="color"/>
+                                            <field name="qty"/>
+                                            <field name="amount"/>
+                                            <field name="notes"/>
+                                    </form>
+                                    <tree string="订单明细" editable="bottom">
+                                            <field name="product_id" on_change="product_id_change(product_id)"/>
+                                            <field name="product_uom" on_change="product_uom_change(product_id, product_uom)"/>
+                                            <field name="color"/>
+                                            <field name="qty" on_change="qty_change(product_id, product_uom, qty)"/>
+                                            <field name="amount"/>
+                                            <field name="notes"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="附注">
+                                    <field name="note"/>
+                            </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+                
+        <record id="view_fuguang_order_tree" model="ir.ui.view">
+            <field name="name">fuguang.order.tree</field>
+            <field name="model">fuguang.order</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="订单列表">
+                    <field name="name"/>
+                    <field name="user_id"/>
+                    <field name="partner_id"/>
+                    <field name="date_order"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fuguang_delivery_form_view">
+            <field name="name">fuguang.delivery.form</field>
+            <field name="model">fuguang.delivery</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="仓库发货单">
+                    <field name="name"/>
+                    <field name="partner_name"/>
+                    <field name="user_id"/>
+                    <field name="date_import"/>
+                    <field name="dep_name"/>
+                    <newline />
+                    <field colspan="4" name="lines" nolabel="1" widget="one2many_list">
+                        <form string="明细">
+                            <field name="product"/>
+                            <field name="code"/>
+                            <field name="color"/>
+                            <field name="uom"/>
+                            <field name="plan"/>
+                            <field name="real"/>
+                            <field name="warehouse"/>
+                            <field name="note"/>
+                        </form>
+                        <tree string="明细" editable="bottom">
+                            <field name="product"/>
+                            <field name="code"/>
+                            <field name="color"/>
+                            <field name="uom"/>
+                            <field name="plan"/>
+                            <field name="real"/>
+                            <field name="warehouse"/>
+                            <field name="note"/>
+                        </tree>
+                    </field>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fuguang_delivery_tree_view">
+            <field name="name">fuguang.delivery.tree</field>
+            <field name="model">fuguang.delivery</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="仓库发货单">
+                    <field name="name" />
+                    <field name="partner_name"/>
+                    <field name="user_id"/>
+                    <field name="date_import"/>
+                    <field name="dep_name"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fuguang_delivery_tree_view">
+            <field name="name">仓库发货单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fuguang.delivery</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fuguang_delivery_tree_view"/>
+        </record>
+        
+        
+        <record id="action_fuguang_order_form" model="ir.actions.act_window">
+            <field name="name">订单列表</field>
+            <!-- 内部用户使用,规则控制只能看到自己负责客户的,没有设置负责人的单子大家都能看到 -->
+            <field name="res_model">fuguang.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record id="action_fuguang_order_client_form" model="ir.actions.act_window">
+            <!-- 外部用户使用,规则控制, 只能看到自己创建的. -->
+            <field name="name">订单列表</field>
+            <field name="res_model">fuguang.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- 写在rule里了,这里应该可以删除. -->
+        <!-- <record id="action_fuguang_order_user_form" model="ir.actions.act_window">
+                    <field name="name">我负责的订单</field>
+                    <field name="res_model">fuguang.order</field>
+                    <field name="view_type">form</field>
+                    <field name="domain">[('partner_id.sales_ids','in',[uid])]</field>
+                    <field name="view_mode">tree,form</field>
+                </record> -->
+        
+                <record id="action_fuguang_picking_item_form" model="ir.actions.act_window">
+            <field name="name">产品列表</field>
+            <field name="res_model">fuguang.picking.item</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_picking_uom_tree_view">
+            <field name="name">计量单位</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fuguang.picking.item.uom</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="picking_uom_tree_view"/>
+        </record>
+                
+                <report auto="False" id="report_fuguang_order_html" model="fuguang.order" name="fuguang.order.html" rml="fg_picking/report/order.html" string="导出订单" report_type="mako2html" />
+                <report auto="False" id="report_fuguang_picking_html" model="fuguang.delivery" name="fuguang.picking.html" rml="fg_picking/report/picking.html" string="打印仓库发货单" report_type="mako2html" />
+                
+                <menuitem id="menu_fg_picking" name="客户订单" sequence="1" web_icon="icon/icon.png" web_icon_hover="icon/icon_hover.png"
+                    groups="fg_picking.group_fgp_client,fg_picking.group_fgp_user,fg_picking.group_fgp_admin"/>
+                <menuitem id="fg_order_menu" name="客户订单" parent="menu_fg_picking" sequence="1"/>
+                
+                <menuitem id="fg_picking_delivery" name="仓库发货单" parent="menu_fg_picking" sequence="2"/>
+                <menuitem id="fg_picking_delivery_all" action="action_fuguang_delivery_tree_view" parent="fg_picking_delivery" sequence="1"/>
+                
+                <menuitem id="fg_picking_config_menu" name="配置" parent="menu_fg_picking" sequence="3" groups="fg_picking.group_fgp_admin"/>
+                
+                <menuitem action="action_fuguang_order_form" id="menu_action_fuguang_picking_order_form"
+                    parent="fg_order_menu" sequence="1" groups="fg_picking.group_fgp_admin,fg_picking.group_fgp_user"/>
+            <menuitem action="action_fuguang_order_client_form" id="menu_action_fuguang_picking_order_client_form"
+                parent="fg_order_menu" sequence="2" groups="fg_picking.group_fgp_client"/>
+            <!-- <menuitem action="action_fuguang_order_user_form" id="menu_action_fuguang_picking_order_user_form"
+                            parent="fg_order_menu" sequence="3" groups="fg_picking.group_fgp_user"/> -->
+            
+
+                <menuitem id="menu_fg_picking_item_manage" name="产品管理" parent="fg_picking_config_menu" sequence="1" action="action_fuguang_picking_item_form"/>
+                <menuitem id="menu_fg_picking_uom_manage" name="计量单位管理" parent="fg_picking_config_menu" sequence="2" action="action_picking_uom_tree_view"/>
+
+    </data>
+</openerp>

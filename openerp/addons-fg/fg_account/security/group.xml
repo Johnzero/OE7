@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	    <record id="group_fg_account_user" model="res.groups">
+	        <field name="name">财务系统 / 会计</field>
+	    </record>
+	    <record id="group_fg_account_checker" model="res.groups">
+	        <field name="name">财务系统 / 检查</field>
+	    </record>
+	    <record id="group_fg_account_manager" model="res.groups">
+	        <field name="name">财务系统 / 经理</field>
+	    </record>
+	    <record id="group_fg_account_chart" model="res.groups">
+	        <field name="name">财务系统 / 报表</field>
+	    </record>
+	</data>
+</openerp>

@@ -1,0 +1,27 @@
+.fg_online_shop {
+    width: 100%;
+    font-size: larger !important;
+    font-family:"微软雅黑" !important;
+    font-size: bolder !important;
+    text-decoration: underline !important;
+}
+.fg_online_shop:hover{
+    background-color: black !important}
+.imgstyle {
+    width:150px !important;
+    background-color: red !important;
+}
+
+.imgstyle:hover {
+    background-color: green !important;
+}
+.test {
+    height : 200px !important;
+    width: 700px !important;
+    background-image: url("/web/static/src/img/losgo.png");
+}
+.test2 {
+    width: 300px !important;
+    font-family:"微软雅黑" !important;
+    font-weight: bolder !important;
+}

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!--
+        Resource: res.partner.category
+        -->
+        <record id="res_partner_category_0" model="res.partner.category">
+            <field name="name">一级经销商</field>
+        </record>
+		<record id="res_partner_category_1" model="res.partner.category">
+            <field name="name">订制杯客户</field>
+        </record>
+		<record id="res_partner_category_2" model="res.partner.category">
+            <field name="name">二级经销商</field>
+        </record>
+		<record id="res_partner_category_3" model="res.partner.category">
+            <field name="name">FGA客户</field>
+        </record>
+		<record id="res_partner_category_4" model="res.partner.category">
+            <field name="name">富光专卖店</field>
+        </record>
+	</data>
+</openerp>

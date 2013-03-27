@@ -1,0 +1,75 @@
+<?xml version='1.0'?>
+<openerp>
+    <data>
+        <!--workflow-->
+        <record model='workflow' id='wkf_order'>
+            <field name='name'>After Service workflow</field>
+            <field name='osv'>after.service</field>
+            <field name='on_create'>True</field>
+        </record>
+        <!--activity-->
+        <record model='workflow.activity' id='act_draft'>
+            <field name='wkf_id' ref='wkf_order' />
+            <field name='name'>draft</field>
+            <field name='flow_start'>True</field>
+            <field name='kind'>function</field>
+            <field name='action'>write({'state':'draft'})</field>
+        </record>
+        
+        
+        <record model='workflow.activity' id='act_processing'>
+            <field name='wkf_id' ref='wkf_order' />
+            <field name='name'>processing</field>
+            <field name='kind'>function</field>
+            <field name='action'>write({'state':'processing'})</field>
+        </record>
+
+
+        <record model='workflow.activity' id='act_done'>
+            <field name='wkf_id' ref='wkf_order' />
+            <field name='name'>done</field>
+            <field name='kind'>function</field>
+            <field name='action'>write({'state':'done'})</field>
+        </record>
+
+        <record model='workflow.activity' id='act_cancelled'>
+            <field name='wkf_id' ref='wkf_order'/>
+            <field name='flow_stop'>True</field>
+            <field name='name'>cancelled</field>
+            <field name='kind'>function</field>
+            <field name='action'>write({'state':'cancelled'})</field>
+        </record>
+
+        <!--transition-->
+        <record model='workflow.transition' id='t1'>
+            <field name='act_from' ref='act_draft' />
+            <field name='act_to' ref='act_processing' />
+            <field name='signal'>case_processing</field>
+        </record>
+        
+        <record model='workflow.transition' id='t2'>
+            <field name='act_from' ref='act_processing'/>
+            <field name='act_to' ref='act_done'/>
+            <field name='signal'>case_done</field>
+        </record>
+        
+        <record model='workflow.transition' id='t3'>
+            <field name='act_from' ref='act_draft'/>
+            <field name='act_to' ref='act_cancelled'/>
+            <field name='signal'>case_cancelled</field>
+        </record>  
+        
+        <record model='workflow.transition' id='t4'>
+            <field name='act_from' ref='act_cancelled'/>
+            <field name='act_to' ref='act_draft'/>
+            <field name='signal'>case_draft</field>
+        </record>
+        
+        <record model='workflow.transition' id='t5'>
+            <field name='act_from' ref='act_processing'/>
+            <field name='act_to' ref='act_cancelled'/>
+            <field name='signal'>case_cancelled</field>
+        </record>
+        
+    </data>
+</openerp>

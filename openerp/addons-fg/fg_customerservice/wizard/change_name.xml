@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+      <data>
+            <record id="view_customerservice_wizard" model="ir.ui.view">
+                <field name="name">Customerservice Wizard</field>
+                <field name="model">changename</field>
+                <field name="type">form</field>
+                <field name="arch" type="xml">
+                    <form string="Create Wizard">
+                        <group col='6' colspan='4'>
+                              <field name="in_charge"/>
+                              <field name='commit_to'/>
+                              <field name="date"/>
+                        </group>
+                        <group col='6' colspan='4'>
+                              <group col='5' colspan='3'>
+                              </group>
+                              <button name="change_to" string="将问题交付" type="object" icon="gtk-convert" attrs="{'invisible':[('in_charge','!=',uid)]}" help='将改投诉问题交付,并且将您的处理意见记录到日志'/>
+                        </group>
+                    </form>
+                </field>
+            </record>
+      
+            <record model="ir.actions.act_window" id="action_view_creat_wizard">
+                  <field name="name">将处理意见提交给...</field>
+                  <field name="type">ir.actions.act_window</field>
+                  <field name="res_model">changename</field>
+                  <field name="view_type">form</field>
+                  <field name="view_id" ref="view_customerservice_wizard"/>
+                  <field name="target">new</field>
+            </record>
+      </data>
+</openerp>

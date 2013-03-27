@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="bi_product_tree_view">
+            <field name="name">Month sales Trend</field>
+            <field name="model">bi_product</field>
+            <field name="type">ht</field>
+            <field name="arch" type="xml">
+                <ht>
+                    <html>
+                        <field name='name' cssclass='productid'/>
+                        <button type="button" id='refreshed' style="display:none">Refresh</button>
+                    </html>
+                    <group colspan='4' col='6'>
+                        <button type="object" string="查看数据" name='query' icon="gtk-ok"/>
+                    </group>
+                    <newline/>
+                    <html>
+                        <hr style='opacity:0.5;width:auto'/>
+                        <div id="fuguang" style="height: 500px; min-width: 500px"></div>
+                        <div id="AAPL" style="height: 500px; min-width: 500px"></div>
+                    </html>
+                    <newline/>
+                    <button name="updateModule" string="Update" type="object" icon="gtk-go-forward"/>
+                </ht>
+            </field>
+        </record>     
+        <record model="ir.actions.act_window" id="action_month_trend">
+            <field name="name">Month sales Trend</field>
+            <field name="res_model">bi_product</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">ht</field>
+        </record>   
+            
+        <menuitem name='Business Intelligence' id='bi'/>
+        <menuitem name='Sales Quality Trend'  id='month' parent='bi' action='action_month_trend'/>
+    </data>
+</openerp>

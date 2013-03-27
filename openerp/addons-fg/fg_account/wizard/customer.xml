@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_fg_account_confirm_customer" model="ir.ui.view">
+            <field name="name">确认客户</field>
+            <field name="model">fg_account.bank_bill.customer.confirm.wizard</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="确认客户">
+                    <field name="partner_id"/>
+                    <newline/>
+                    <button special="cancel" string="关闭" icon="gtk-cancel"/>
+                    <button name="confirm_customer" string="确认客户" type="object" icon="terp-gtk-go-back-rtl"/>
+               </form>
+            </field>
+        </record>
+        
+        
+        <act_window id="action_fg_account_confirm_customer"
+            multi="True"
+            key2="client_action_multi" name="确认客户"
+            res_model="fg_account.bank_bill.customer.confirm.wizard" src_model="fg_account.bill"
+            view_mode="form" target="new" view_type="form" />
+        
+    </data>
+</openerp>

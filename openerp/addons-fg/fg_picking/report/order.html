@@ -1,0 +1,72 @@
+# -*- coding: utf-8 -*-
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>仓库发货单</title>
+		<style type="text/css">
+			table
+			{
+			    border-collapse:collapse;
+			}
+			table, td, th
+			{
+			    border:1px solid #ccc;
+			}
+		</style>
+		<script language="javascript" src="/web_lodop/static/src/js/LodopFuncs.js"></script>
+		<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0>
+			<embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0 pluginspage="/web_lodop/static/src/js/install_lodop.exe"></embed>
+		</object>
+	</head>
+	<body>
+	% if len(objects) > 1:
+			不支持多单据下载.
+		% else:
+		<table width="600">
+		<% 
+            lines = dict()
+            for line in objects[0].order_line:
+                lines[line.product_id.code+line.color.color] = { 
+                    'uom':line.product_uom, 
+                    'qty': line.qty,
+                    'code':line.product_id.code,
+                    'color':line.color.color,
+                    }
+            def get_data(code, color):
+                l = lines.get(code+color)
+                if l:
+                    return l['qty'], l['uom'].name
+                return '', ''
+        %>
+		
+		% for item in picking_items:
+		   % for color in item['colors']:
+               <tr>
+                   <td>${ item['category'] }</td>
+                   <td>${ item['name'] }</td>
+                   <td>${ item['code'] }</td>
+                   <td>${ color }</td>
+                   <td>${ get_data(item['code'], color)[0] }</td>
+                   <td>${ get_data(item['code'], color)[1] }</td>
+               </tr>
+           % endfor
+		% endfor
+
+        </table>
+		
+        <script language="javascript" type="text/javascript">
+		    var LODOP; //声明为全局变量
+		    function SaveAsFile(){
+            		LODOP=getLodop(document.getElementById('LODOP'),document.getElementById('LODOP_EM'));  
+            		LODOP.SET_LICENSES("","292881049110510152101109126561","","");
+            		LODOP.PRINT_INIT("");
+            		LODOP.ADD_PRINT_TABLE(100,20,500,80,document.documentElement.innerHTML);
+            		LODOP.SET_SAVE_MODE("QUICK_SAVE",true);//快速生成（无表格样式,数据量较大时或许用到）
+            		LODOP.SAVE_TO_FILE("${ objects[0].name }.xls");
+            		window.close();
+            	};
+            SaveAsFile()
+		</script>
+	% endif
+	</body>
+ </html>
