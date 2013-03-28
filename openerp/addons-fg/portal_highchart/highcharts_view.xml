@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="highcharts_form_view">
+            <field name="name">HighCharts Demo</field>
+            <field name="model">highcharts</field>
+            <field name="arch" type="xml">
+                <form string="HighCharts Demo" create="false" version="7.0">
+                    <group>
+                        <div id="AAPL" style="height: 500px; min-width: 500px">Test</div>
+                    </group>
+                    <group>
+                        <div id="demo" style="height: 500px; min-width: 500px">Test2</div>
+                    </group>
+                </form>
+            </field>
+        </record>     
+
+        <record model="ir.actions.act_window" id="highcharts_action">
+            <field name="name">HighCharts Action</field>
+            <field name="res_model">highcharts</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="highcharts_form_view"/>
+            <field name="help">There are no HighCharts Demos.</field>
+        </record>   
+
+        <menuitem name="HighCharts Demos" id="highcharts_menu" parent="portal.portal_company"
+            action="highcharts_action" sequence="50"/>
+
+    </data>
+</openerp>

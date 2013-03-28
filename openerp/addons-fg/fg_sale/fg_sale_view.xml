@@ -2,7 +2,7 @@
 <openerp>
     <data>
         <!-- Top menu item -->
-        <menuitem name="业务系统" id="fg_sale_top_menu" sequence="11"/>
+        <menuitem name="业务系统" id="fg_sale_top_menu" groups="group_fg_sale_user,group_fg_sale_manager,group_fg_sale_chart,group_fg_sale_fga,group_fg_sale_sale_user,group_fg_sale_sale_manager" sequence="11"/>
 
         <record id="seq_type_fg_sale_order" model="ir.sequence.type">
             <field name="name">Fuguang Sale Order</field>
