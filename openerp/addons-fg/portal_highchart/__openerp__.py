@@ -35,7 +35,7 @@ This module adds HighCharts menu and features to your portal .
         'highcharts_view.xml',
     ],
     'installable': True,
-    'auto_install': True,
+    'auto_install': False,
     'category': 'Hidden',
     "js":[
           "static/src/js/highcharts.js",

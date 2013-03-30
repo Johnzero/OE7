@@ -15829,6 +15829,21 @@ msgstr "注册"
 #~ msgstr "个人"
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # ------------------------------更改------------------------------------------------
 #. module: mail
 #. openerp-web
@@ -16074,3 +16089,9 @@ msgstr ""
 #: selection:mrp.production,state:0
 msgid "Awaiting Raw Materials"
 msgstr "等待原材料"
+
+#. module: portal
+#: model:mail.group,name:portal.company_jobs
+#: model:ir.ui.menu,name:portal.company_jobs
+msgid "Company Jobs"
+msgstr "公司招聘"

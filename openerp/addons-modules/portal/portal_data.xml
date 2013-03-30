@@ -14,7 +14,7 @@
 
         <!-- Mail group for the company's news -->
         <record id="company_news_feed" model="mail.group">
-            <field name="name">Company News</field>
+            <field name="name">新闻</field>
             <field name="public">public</field>
         </record>
 
@@ -46,7 +46,7 @@
 
         <!-- Mail group for the company's jobs -->
         <record id="company_jobs" model="mail.group">
-            <field name="name">Company Jobs</field>
+            <field name="name">招聘</field>
             <field name="public">public</field>
         </record>
 
