@@ -419,7 +419,11 @@ instance.board.AddToDashboard = instance.web.search.Input.extend({
 instance.web.SearchView.include({
     add_common_inputs: function() {
         this._super();
-        var vm = this.getParent().getParent();
+        try {
+            var vm = this.getParent().getParent();
+        } catch(e) {
+            alert(e);   
+        }
         if (vm.inner_action && vm.inner_action.views) {
             (new instance.board.AddToDashboard(this));
         }

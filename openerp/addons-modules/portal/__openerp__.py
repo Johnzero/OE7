@@ -53,7 +53,7 @@ very handy when used in combination with the module 'share'.
     ],
     'demo': ['portal_demo.xml'],
     'css': ['static/src/css/portal.css'],
-    'auto_install': True,
+    'auto_install': False,
     'installable': True,
 }
 
