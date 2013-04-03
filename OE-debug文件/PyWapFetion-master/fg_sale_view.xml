@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <menuitem id="menu_fg_sale" name="业务开单" sequence="2" web_icon="icon/fg_sale.png" web_icon_hover="icon/fg_sale_hover.png"
+            groups="fg_sale.group_fg_sale_user,fg_sale.group_fg_sale_fga,fg_sale.group_fg_sale_chart,fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_sale_user,fg_sale.group_fg_sale_sale_manager"/>
+        <record id="view_partner_client_form" model="ir.ui.view">
+            <field name="name">res.partner.client.form</field>
+            <field name="model">res.partner</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="parent_id" position="after">
+                    <field name="ratio"/>
+                </field>
+            </field>
+        </record>
+        
+        
+        <record model="ir.ui.view" id="fg_sale_order_tree_view">
+            <field name="name">fg_sale.order.tree</field>
+            <field name="model">fg_sale.order</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="销售订单" colors="red:minus == True;blue:state == 'draft';gray:state=='cancel'">
+                    <field name="name"/>
+                    <field name="sub_name"/>
+                    <field name="date_order"/>
+                    <field name="user_id"/>
+                    <field name="partner_id"/>
+                    <field name="amount_total" sum="共计"/>
+                    <field name="minus"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_sale_order_form_view">
+            <field name="name">fg_sale.order.form</field>
+            <field name="model">fg_sale.order</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="销售订单">
+                    <group col="6" colspan="4">
+                        <field name="name"/>
+                        <field name="sub_name"/>
+                        <field name="user_id"/>
+                        <field name="date_order"/>
+                        <field name="date_confirm"/>
+                        <field name="confirmer_id"/>
+                        <field name="minus"/>
+                        <field name="amount_total"/>
+                    </group>
+                    <newline/>
+                    <notebook colspan="5">
+                        <page string="销售订单">
+                            <field name="partner_id" options='{"quick_create": false}' on_change="onchange_partner_id(partner_id)" domain="[('customer','=',True)]" required="1"/>
+                            <field domain="[('partner_id','=',partner_id)]" name="partner_shipping_id" options='{"quick_create": false}'/>
+                            <field colspan="4" name="order_line" nolabel="1" widget="one2many_list">
+                                <form string="销售明细">
+                                    <field name="product_id"/>
+                                    <field name="product_uom"/>
+                                    <field name="product_uom_qty"/>
+                                    <field name="aux_qty" invisible="1"/>
+                                    <field name="unit_price"/>
+                                    <field name="subtotal_amount"/>
+                                    <field name="note"/>
+                                </form>
+                                <tree string="销售明细" editable="bottom">
+                                    <field name="product_id" on_change="product_id_change(product_id)"/>
+                                    <field name="product_uom" on_change="product_uom_id_change(product_id, product_uom)"/>
+                                    <field name="product_uom_qty" on_change="product_uom_qty_change(product_id, product_uom, product_uom_qty, unit_price)"/>
+                                    <field name="aux_qty" invisible="1"/>
+                                    <field name="unit_price" on_change="product_uom_qty_change(product_id, product_uom, product_uom_qty, unit_price)"/>
+                                    <field name="subtotal_amount" sum="共计"/>
+                                    <field name="note"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="关联定制单" attrs="{'invisible' : [('cust_order_id', '!=', True)] }">
+                            <field name="cust_order_id"/>
+                        </page>
+                        <page string="摘要">
+                            <field name="note" nolabel="1"/>
+                        </page>
+                    </notebook>
+                    <newline/>
+                    <group col="6" colspan="4">
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done" statusbar_colors='{"draft":"red","done":"blue"}'/>
+                        <button name="button_dummy" states="draft" string="计算价格" type="object" icon="gtk-execute"/>
+                        <button name="button_review" confirm="一旦审核以后,将不能被修改, 确认审核?" string="审核" type="object" icon="gtk-go-forward" attrs="{'invisible' : [('state', '!=','draft')] }"/>
+                        <button name="button_cancel" confirm="确认取消?" string="取消" type="object" icon="STOCK_CANCEL" attrs="{'invisible' : [('state', '!=', 'draft')] }"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_sale_price_protection_form_view">
+            <field name="name">fg_sale.price.protection.form</field>
+            <field name="model">fg_sale.price.protection</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="价格保护单">
+                    <field name="name" select="1"/>
+                    <field name="user_id"/>
+                    <field name="due_date_from"/>
+                    <field name="due_date_to"/>
+                    <field name="partner_id"/>
+                    <field name="customer"/>
+                    <field name="product_id" on_change="product_id_change(product_id)"/>
+                    <field name="product_uom_qty"/>
+                    <field name="unit_price"/>
+                </form>
+            </field>
+        </record>
+        
+        <record model="ir.ui.view" id="fg_sale_price_protection_tree_view">
+            <field name="name">fg_sale.price.protection.tree</field>
+            <field name="model">fg_sale.price.protection</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="价格保护单">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="product_id"/>
+                    <field name="customer"/>
+                    <field name="due_date_from"/>
+                    <field name="due_date_to"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_sale_price_protection_tree_view">
+            <field name="name">有效价格保护单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.price.protection</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('due_date_to', '&gt;=',(datetime.date.today()).strftime('%Y-%m-%d')),('due_date_from', '&lt;=', datetime.date.today().strftime('%Y-%m-%d'))]</field>
+            <field name="view_id" ref="fg_sale_price_protection_tree_view"/>
+        </record>
+        
+        <record model="ir.actions.act_window" id="action_fg_sale_price_protection_all_tree_view">
+            <field name="name">所有价格保护单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.price.protection</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="fg_sale_price_protection_tree_view"/>
+        </record>
+        
+        <record id="view_fg_sales_order_filter" model="ir.ui.view">
+            <field name="name">fg_sale.order.list.select</field>
+            <field name="model">fg_sale.order</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="搜索订单">
+                    <filter icon="terp-document-new" string="未审核" domain="[('state','=','draft')]"/>
+                    <filter icon="terp-check" string="已审核" domain="[('state','=','done')]"/>
+                    <filter icon="terp-dialog-close" string="已取消" domain="[('state','=','cancel')]"/>
+                    <separator orientation="vertical"/>
+                    <field name="partner_id"/>
+                    <field name="user_id">
+                        <filter domain="[('user_id','=',uid)]" help="我创建的订单" icon="terp-personal"/>
+                    </field>
+                    <field name="confirmer_id"/>
+                    <field name="name"/>
+                    <field name="due_date_from" filter_domain="[('date_confirm','&gt;=',self)]"/>
+                    <field name="due_date_to" filter_domain="[('date_confirm','&lt;=',self)]"/>
+                    <newline/>
+                    <group expand="0" string="分组为..." groups="base.group_extended">
+                        <filter string="客户" icon="terp-personal" domain="[]" context="{'group_by':'partner_id'}"/>
+                        <filter string="业务员" icon="terp-personal" domain="[]" context="{'group_by':'user_id'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="状态" icon="terp-stock_effects-object-colorize" domain="[]" context="{'group_by':'state'}"/>
+                        <separator orientation="vertical"/>
+                        <filter string="订单日期" icon="terp-go-month" domain="[]" context="{'group_by':'date_order'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record id="action_fg_sale_order_draft" model="ir.actions.act_window">
+            <field name="name">未审核销售单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','draft'),('minus','=',False)]</field>
+            <field name="search_view_id" ref="view_fg_sales_order_filter"/>
+        </record>
+        
+        <record id="action_fg_sale_order_draft_2" model="ir.actions.act_window">
+            <field name="name">今日未审核销售单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('state','=','draft'),('minus','=',False),('date_order', '=',(datetime.date.today()).strftime('%Y-%m-%d'))]</field>
+        </record>
+        
+        <record id="action_fg_sale_order_all" model="ir.actions.act_window">
+            <field name="name">所有销售单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_fg_sales_order_filter"/>
+        </record>
+        
+        <record id="action_fg_sale_order_my" model="ir.actions.act_window">
+            <field name="name">我的销售单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{}</field>
+            <!-- 暂时取消 -->
+            <!-- <field name="domain">['|','|',('sales_ids','in',[uid]),('sales_ids','=',False),('user_id','=',uid)]</field> -->
+            <field name="search_view_id" ref="view_fg_sales_order_filter"/>
+        </record>
+        
+        <record id="action_fg_sale_order_new" model="ir.actions.act_window">
+            <field name="name">新建销售单</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">fg_sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form,tree</field>
+        </record>
+        
+        <report auto="False" id="report_fg_sale_order_html" model="fg_sale.order"
+                name="fg_sale.order.html" rml="fg_sale/report/order.html"
+                string="打印产品清单" report_type="mako2html" />
+                
+        <report auto="False" id="report_fg_sale_order_notice_html" model="fg_sale.order"
+                name="fg_sale.order.notice.html" rml="fg_sale/report/notice.html"
+            string="打印发货通知单" report_type="mako2html" />
+        
+        <report auto="False" id="report_fg_sale_order_ship_html" model="fg_sale.order"
+                name="fg_sale.order.ship.html" rml="fg_sale/report/ship.html"
+            string="打印配载单" report_type="mako2html" />
+        
+        <menuitem id="menu_fg_sale_order" name="订单" parent="menu_fg_sale" sequence="0"/>
+        <menuitem id="menu_fg_sale_order_new" parent="menu_fg_sale_order" action="action_fg_sale_order_new" sequence="1"/>
+        <menuitem id="menu_fg_sale_order_all" parent="menu_fg_sale_order" action="action_fg_sale_order_all" sequence="2" groups="fg_sale.group_fg_sale_manager"/>
+        
+        <menuitem id="menu_fg_sale_order_draft" parent="menu_fg_sale_order" action="action_fg_sale_order_draft" sequence="3"/>
+        <menuitem id="menu_fg_sale_order_my" parent="menu_fg_sale_order" action="action_fg_sale_order_my" sequence="4"/>
+        <menuitem id="menu_fg_sale_chart" name="报表" parent="menu_fg_sale" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart,fg_sale.group_fg_sale_fga" sequence="2"/>
+        <menuitem id="menu_fg_sale_cust_order" name="销售部定制单" parent="menu_fg_sale" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_sale_user,fg_sale.group_fg_sale_user,fg_sale.group_fg_sale_sale_manager" sequence="1"/>
+        
+        
+        <menuitem id="menu_fg_sale_chart_by_month" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_report_by_month" sequence="0"/>
+        <menuitem id="menu_fg_sale_chart_by_year" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_report_by_year" sequence="8"/>
+        <menuitem id="menu_fg_sale_chart_by_daily_source" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_order_report_daily_source_tree_view" sequence="1"/>
+        <menuitem id="menu_fg_sale_amount_partner_wizard" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_parnter_wizard" sequence="2"/>
+        <menuitem id="menu_fg_sale_amount_resource_wizard" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_resource_wizard" sequence="3"/>
+        
+        <menuitem id="menu_fg_sale_discount_product_wizard" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_discount_product_wizard" sequence="4"/>
+        <menuitem id="menu_fg_sale_report_product_sale_toplist_wizard" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_report_product_sale_toplist_export_wizard" sequence="5"/>
+        
+        <menuitem id="menu_fg_sale_fga_partner_export_wizard" groups="fg_sale.group_fg_sale_fga" parent="menu_fg_sale_chart" action="action_fg_sale_report_fga_partner_export_wizard" sequence="4"/>
+        <menuitem id="menu_fg_sale_fga_product_export_wizard" groups="fg_sale.group_fg_sale_fga" parent="menu_fg_sale_chart" action="action_fg_sale_report_fga_product_export_wizard" sequence="5"/>
+        <menuitem id="menu_fg_sale_fga_partner_product_export_wizard" groups="fg_sale.group_fg_sale_fga" parent="menu_fg_sale_chart" action="action_fg_sale_report_fga_partner_product_export_wizard" sequence="6"/>
+        <menuitem id="menu_fg_sale_fg_partner_product_export_wizard" groups="fg_sale.group_fg_sale_chart" parent="menu_fg_sale_chart" action="action_fg_sale_report_fg_partner_product_export_wizard" sequence="7"/>
+        
+        <menuitem id="menu_fg_sale_report_export_wizard" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_report_export_wizard" sequence="10"/>
+        <menuitem id="menu_fg_sale_report_order_export_wizard" parent="menu_fg_sale_chart" groups="fg_sale.group_fg_sale_manager,fg_sale.group_fg_sale_chart" action="action_fg_sale_report_order_export_wizard" sequence="11"/>
+        
+        
+        <menuitem id="fg_sale_cust_order_menu_new" parent="menu_fg_sale_cust_order" action="action_fg_sale_cust_order_new" sequence="0"/>
+        <menuitem id="fg_sale_cust_order_menu_draft" parent="menu_fg_sale_cust_order" action="action_fg_sale_cust_order_tree_view_draft" sequence="1"/>
+        <menuitem id="fg_sale_cust_order_menu_submit" parent="menu_fg_sale_cust_order" action="action_fg_sale_cust_order_tree_view_submit" sequence="2"/>
+        <menuitem id="fg_sale_cust_order_menu_review" parent="menu_fg_sale_cust_order" action="action_fg_sale_cust_order_tree_view_review" sequence="3"/>
+        <menuitem id="fg_sale_cust_order_menu_reset" parent="menu_fg_sale_cust_order" action="action_fg_sale_cust_order_tree_view_reset" sequence="4"/>
+        
+        
+        <menuitem id="menu_fg_sale_price_protection" name="价格保护" parent="menu_fg_sale" sequence="5"/>
+        <menuitem id="fg_sale_price_protection_tree_menu" parent="menu_fg_sale_price_protection" action="action_fg_sale_price_protection_tree_view" sequence="0"/>
+        <menuitem id="fg_sale_price_protection_all_tree_menu" parent="menu_fg_sale_price_protection" action="action_fg_sale_price_protection_all_tree_view" sequence="1"/>
+        
+    </data>
+</openerp>
