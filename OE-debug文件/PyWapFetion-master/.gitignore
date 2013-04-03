@@ -1,0 +1,14 @@
+*.pyc
+*.cache
+test.py
+PyWapFetion.egg-info/
+build/
+dist/
+*.zip
+*.tar
+*.tar.gz
+*.jpeg
+*.cookies
+
+#OS X
+.DS_Store
