@@ -431,10 +431,3 @@ instance.web.SearchView.include({
 });
 
 };
-
-
-//http://item.taobao.com/item.htm?spm=a230r.1.14.23.wPKfZf&id=17305171913 这个买蓝黑色XXL
-
-
-//http://item.taobao.com/item.htm?spm=a230r.1.14.45.wPKfZf&id=18893044945 这个买黑色扣子版XL
-
