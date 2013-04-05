@@ -1,4 +1,4 @@
-openerp_FieldMany2ManyTagsEmail = function(instance) {
+openerp_FieldMany2ManyTagsPhone = function(instance) {
 var _t = instance.web._t;
 
 /**
@@ -6,12 +6,11 @@ var _t = instance.web._t;
  * When the user add a partner and the partner don't have an email, open a popup to purpose to add an email.
  * The user can choose to add an email or cancel and close the popup.
  */
-instance.web.form.FieldMany2ManyTagsEmail = instance.web.form.FieldMany2ManyTags.extend({
+instance.web.form.FieldMany2ManyTagsPhone = instance.web.form.FieldMany2ManyTags.extend({
 
     start: function() {
         this.values = [];
         this.values_checking = [];
-        console.log("asdfas");
 
         this.on("change:value", this, this.on_change_value_check);
         this.trigger("change:value");
@@ -36,16 +35,15 @@ instance.web.form.FieldMany2ManyTagsEmail = instance.web.form.FieldMany2ManyTags
             // remember values on checking for cheked only one time
             this.values_checking = this.values_checking.concat(not_checked);
             // check values
-            this._check_email_popup(not_checked);
+            this._check_phone_popup(not_checked);
         }
     },
 
-    _check_email_popup: function (ids) {
+    _check_phone_popup: function (ids) {
         var self = this;
         new instance.web.Model('res.partner').call("search", [[
                 ["id", "in", ids], 
-                ["email", "=", false], 
-                ["notification_email_send", "in", ['all', 'comment']] ]], 
+                ["phone", "=", false] ]], 
                 {context: this.build_context()})
             .then(function (record_ids) {
                 // valid partner
@@ -61,7 +59,7 @@ instance.web.form.FieldMany2ManyTagsEmail = instance.web.form.FieldMany2ManyTags
                         id,
                         self.build_context(),
                         {
-                            title: _t("Please complete partner's informations and Email"),
+                            title: "请完成合作伙伴信息和手机",
                         }
                     );
                     pop.on('write_completed', self, function () {
@@ -83,7 +81,7 @@ instance.web.form.FieldMany2ManyTagsEmail = instance.web.form.FieldMany2ManyTags
  * Registry of form fields
  */
 instance.web.form.widgets = instance.web.form.widgets.extend({
-    'many2many_tags_email' : 'instance.web.form.FieldMany2ManyTagsEmail',
+    'many2many_tags_phone' : 'instance.web.form.FieldMany2ManyTagsPhone',
 });
 
 };
