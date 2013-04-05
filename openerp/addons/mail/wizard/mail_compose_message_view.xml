@@ -33,7 +33,7 @@
                     <field name="body"/>
                     <field name="attachment_ids" widget="many2many_binary"/>
                     <footer>
-                        <button string="Send" name="send_mail" type="object" class="oe_highlight"/>
+                        <button string="Send" name="send_fetion_message" type="object" class="oe_highlight"/>
                         or
                         <button string="Cancel" class="oe_link" special="cancel" />
                     </footer>

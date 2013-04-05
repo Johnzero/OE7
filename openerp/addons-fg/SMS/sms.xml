@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="view_gerenal_configuration_sms" model="ir.ui.view">
+            <field name="name">base.config.settings.sms</field>
+            <field name="model">base.config.settings</field>
+            <field name="inherit_id" ref="base_setup.view_general_configuration"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@string='Import / Export']/.." position="after">
+                    <group>
+                        <label for="id" string="SMS中心设置"/>
+                        <div name="fetion">
+                            <div>
+                                <label for="fetion"/>
+                                <field name="fetion" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="key"/>
+                                <field name="key" class="oe_inline" />
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="compose_fetion_message_from_view">
+            <field name="name">Fetion Message</field>
+            <field name="model">fetion</field>
+            <field name="arch" type="xml">
+                <form string="Compose Fetion" version="7.0">
+                    <group>
+                        <label for="partner_ids" string="联系人"/>
+                        <field name="partner_ids" widget="many2many_tags_email" nolabel='1' placeholder="添加联系人..."/>
+                    </group>
+                    <field name="body"/>
+                    <footer style="text-align:right">
+                        <button string="发送" name="send_mail" type="object" class="oe_highlight"/>
+                        或
+                        <button string="取消" class="oe_link" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_fetion">
+            <field name="name">Fetion Action View</field>
+            <field name="res_model">fetion</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+        </record>
+
+    </data>
+</openerp>

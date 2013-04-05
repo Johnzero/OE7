@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- vim:fdl=1:
+-->
+<template>
+<t t-name="sms.ComposeFetionTopButton">
+    <div class="oe_topbar_item">
+        <span id="fetion" class="fetion" title="发送短信">短信</span>
+    </div>
+</t>
+</template>
