@@ -35,16 +35,14 @@ class fetion(osv.osv):
     def send_fetion_message(self, cr, uid, ids, context=None):
 
         base_module = self.pool.get("base.config.settings")
-        print ids
 
-        fetion_list = base_module.read(cr, uid, [1], ["fetion","key"],context=None)
+        fetion_list = base_module.read(cr, uid, ids, ["fetion","key"],context=None)
 
-        print fetion_list
+        print fetion_list;
 
         if not fetion_list[0]["fetion"]:return True
 
         myfetion = Fetion(fetion_list[0]["fetion"], fetion_list[0]["key"])
-
 
         return True
     
