@@ -11,7 +11,6 @@ instance.web.form.FieldMany2ManyTagsEmail = instance.web.form.FieldMany2ManyTags
     start: function() {
         this.values = [];
         this.values_checking = [];
-        console.log("asdfas");
 
         this.on("change:value", this, this.on_change_value_check);
         this.trigger("change:value");

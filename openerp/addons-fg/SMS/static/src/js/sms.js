@@ -1,5 +1,7 @@
 openerp.SMS = function (session) { 
 
+    openerp_FieldMany2ManyTagsPhone(session);//import openerp_FieldMany2ManyTagsPhone widget="many2many_tags_phone"
+
     session.web.ComposeFetionTopButton = session.web.Widget.extend({
 
         template:'sms.ComposeFetionTopButton',

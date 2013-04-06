@@ -31,7 +31,7 @@ Fetion Short Message Service in the web client.
     'website': 'http://openerp.com',
     'depends': ["base",'base_setup',"mail"],
     'js' : ["static/src/js/sms.js","static/src/js/many2many_tags_phone.js"],
-    "update_xml" : [
+    "data" : [
         "sms.xml",
     ],
     'css' : ["static/src/css/sms.css"],

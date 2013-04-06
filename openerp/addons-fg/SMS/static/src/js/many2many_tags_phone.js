@@ -43,7 +43,7 @@ instance.web.form.FieldMany2ManyTagsPhone = instance.web.form.FieldMany2ManyTags
         var self = this;
         new instance.web.Model('res.partner').call("search", [[
                 ["id", "in", ids], 
-                ["phone", "=", false] ]], 
+                ["mobile", "=", false] ]], 
                 {context: this.build_context()})
             .then(function (record_ids) {
                 // valid partner
@@ -77,6 +77,7 @@ instance.web.form.FieldMany2ManyTagsPhone = instance.web.form.FieldMany2ManyTags
 });
 
 
+console.log(instance.web.form.FieldMany2ManyTagsPhone);
 /**
  * Registry of form fields
  */
