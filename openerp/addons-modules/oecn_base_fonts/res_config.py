@@ -19,8 +19,8 @@ class font_configuration(osv.TransientModel):
     _inherit = 'base.config.settings'
 
     _columns = {
-        'base_font' : fields.char('Font Url'),
-        'cjk_wrap': fields.boolean('CJK Wrap', help="CJK warp"),
+        'base_font' : fields.char('Font Url',size = 64,readonly=False),
+        'cjk_wrap': fields.boolean('CJK Wrap',size = 64,readonly=False,help="CJK warp"),
     }
     
     _defaults = {

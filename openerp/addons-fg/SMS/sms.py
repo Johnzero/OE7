@@ -10,6 +10,20 @@ class feitionsetting(osv.TransientModel):
     _inherit = 'base.config.settings'
     _description = "Fetion Setting"
 
+    def create(self, cr, uid, vals, context={}):
+
+        config_parameter_obj = self.pool.get("ir.config_parameter")
+        config_parameter_obj.set_param(cr, uid, "fetion",vals["fetion"])
+        config_parameter_obj.set_param(cr, uid, "key",vals["key"])
+        return super(feitionsetting, self).create(cr, uid, vals, context=context)
+    
+    def get_default_fetion(self, cr, uid, ids, context=None):
+
+        config_parameter_obj = self.pool.get("ir.config_parameter")
+        fetion = config_parameter_obj.get_param(cr, uid, "fetion", context=context)
+        key = config_parameter_obj.get_param(cr, uid, "key", context=context)
+        return {'fetion' : fetion,'key' : key}
+
     _columns = {
         "fetion" : fields.char('账号',size = 64,readonly=False,help="飞信登陆手机号"),
         "key" : fields.char("密码",size = 64,readonly=False),
@@ -34,16 +48,11 @@ class fetion(osv.osv):
     
     def send_fetion_message(self, cr, uid, ids, context=None):
 
-        base_module = self.pool.get("base.config.settings")
-
-        fetion_list = base_module.read(cr, uid, ids, ["fetion","key"],context=None)
-
-        print fetion_list;
-
-        if not fetion_list[0]["fetion"]:return True
-
-        myfetion = Fetion(fetion_list[0]["fetion"], fetion_list[0]["key"])
-
+        config_parameter_obj = self.pool.get("ir.config_parameter")
+        fetion = config_parameter_obj.get_param(cr, uid, "fetion", context=context)
+        key = config_parameter_obj.get_param(cr, uid, "key", context=context)
+        myfetion = Fetion(fetion, key)
+        print myfetion,'------------------------------------------'
         return True
     
     def send_myself_fetion_message(self, cr, uid, ids, context=None):
