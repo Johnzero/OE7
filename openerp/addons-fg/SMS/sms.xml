@@ -33,7 +33,7 @@
                         <label for="fetion_partner" string="联系人"/>
                         <field name="fetion_partner" widget="many2many_tags_phone" nolabel='1' placeholder="添加联系人..."/>
                     </group>
-                    <field name="body"/>
+                        <field name="fetion_message" nolabel="1"/>
                     <footer style="text-align:right">
                         <button string="发送" name="send_fetion_message" type="object" class="oe_highlight"/>
                         或

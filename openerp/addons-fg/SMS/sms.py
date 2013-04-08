@@ -31,7 +31,7 @@ class feitionsetting(osv.TransientModel):
     
     _defaults = {
         "fetion" : "13956070164",
-        "key" : "wangsong1233276",
+        "key" : "zero1233276",
     }
 
 class fetion(osv.osv):
@@ -43,16 +43,23 @@ class fetion(osv.osv):
         'fetion_partner': fields.many2many('res.partner',
             'phone_compose_message_res_partner_rel',
             'wizard_id', 'partner_id', '联系人'),
+        "fetion_message":fields.text(u"消息"),
 
     }
     
     def send_fetion_message(self, cr, uid, ids, context=None):
-
+        
+        fields = self.browse(cr, uid, ids[0], context=context)
+        message = ""
+        if fields.fetion_message:message = fields.fetion_message
         config_parameter_obj = self.pool.get("ir.config_parameter")
         fetion = config_parameter_obj.get_param(cr, uid, "fetion", context=context)
         key = config_parameter_obj.get_param(cr, uid, "key", context=context)
         myfetion = Fetion(fetion, key)
-        print myfetion,'------------------------------------------'
+        answer = myfetion.send(['13956070164'], message, sm=True)
+        if not answer:
+            raise osv.except_osv(u"发送飞信失败", u"请联系管理员!")
+        
         return True
     
     def send_myself_fetion_message(self, cr, uid, ids, context=None):
