@@ -1,4 +1,4 @@
-import time
+import time,os
 import win32api, win32pdhutil, win32con
 import win32pdh, string
  
@@ -74,4 +74,4 @@ if __name__ == "__main__":
     a = GetAllProcesses()
     print a
     process = 'cmd'# process name
-    Kill_Process ( process )
+    os.system('taskkill /im cmd.exe')
