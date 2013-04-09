@@ -62,5 +62,4 @@ class ir_needaction_mixin(osv.AbstractModel):
         if not dom:
             return 0
         res = self.search(cr, uid, (domain or []) + dom, limit=100, order='id DESC', context=context)
-        print len(res),'______________-'
         return len(res)

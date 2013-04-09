@@ -30,8 +30,8 @@
             <field name="arch" type="xml">
                 <form string="Compose Fetion" version="7.0">
                     <group>
-                        <label for="fetion_partner" string="联系人"/>
-                        <field name="fetion_partner" widget="many2many_tags_phone" nolabel='1' placeholder="添加联系人..."/>
+                        <label for="fetion_partner" string="联系人" />
+                        <field name="fetion_partner" widget="many2many_tags_phone" nolabel='1' on_change="on_change_partner(fetion_partner,fetion_partner)" placeholder="添加联系人..."/>
                     </group>
                         <field name="fetion_message" nolabel="1"/>
                     <footer style="text-align:right">

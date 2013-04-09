@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from openerp.osv import osv, fields
+from openerp.osv import osv, fields,orm
 from openerp import SUPERUSER_ID
 import PyWapFetion
 from PyWapFetion import Fetion
@@ -42,24 +42,47 @@ class fetion(osv.osv):
 
         'fetion_partner': fields.many2many('res.partner',
             'phone_compose_message_res_partner_rel',
-            'wizard_id', 'partner_id', '联系人'),
-        "fetion_message":fields.text(u"消息"),
+            'wizard_id', 'partner_id', '联系人',change_default=True,required=True),
+        "fetion_message":fields.text(u"消息",required=True),
 
     }
+    _defaults = {
+        "fetion_message":"test",
+    }
+    
+    def default_get(self, cr, uid, fields, context=None):
+        
+        result = super(fetion, self).default_get(cr, uid, fields, context=context)
+        config_parameter_obj = self.pool.get("ir.config_parameter")
+        fetion_username = config_parameter_obj.get_param(cr, uid, "fetion", context=context)
+        key = config_parameter_obj.get_param(cr, uid, "key", context=context)
+        global myfetion
+        myfetion = Fetion(fetion_username, key)
+        print myfetion
+        return result
+    
+    def on_change_partner(self, cr, uid, ids, res_id, fetion_partner, context=None):
+        
+        if res_id[0][-1]:
+            res_partner = self.pool.get("res.partner")
+            partner = res_partner.browse(cr, uid,res_id[0][-1][-1],context=None)
+            if partner.mobile:
+                answer = myfetion.findid(partner.mobile)
+                if not answer:
+                    del res_id[0][-1][-1]
+                    return {'value': {'fetion_partner': res_id}}
+        else:return True
+        return True
     
     def send_fetion_message(self, cr, uid, ids, context=None):
         
         fields = self.browse(cr, uid, ids[0], context=context)
-        message = ""
         if fields.fetion_message:message = fields.fetion_message
-        config_parameter_obj = self.pool.get("ir.config_parameter")
-        fetion = config_parameter_obj.get_param(cr, uid, "fetion", context=context)
-        key = config_parameter_obj.get_param(cr, uid, "key", context=context)
-        myfetion = Fetion(fetion, key)
-        answer = myfetion.send(['13956070164'], message, sm=True)
-        if not answer:
-            raise osv.except_osv(u"发送飞信失败", u"请联系管理员!")
-        
+        for partner in fields.fetion_partner:
+            answer = myfetion.send(partner.mobile, message, sm=True)
+            if not answer:answer = myfetion.send(partner.mobile, message, sm=True)
+            if not answer:
+                raise osv.except_osv(u"发送飞信失败", u"请联系管理员!")
         return True
     
     def send_myself_fetion_message(self, cr, uid, ids, context=None):
