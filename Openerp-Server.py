@@ -14,8 +14,8 @@ ACTIONS = {
 
 # Thanks to Claudio Grondi for the correct set of numbers
 FILE_LIST_DIRECTORY = 0x0001
-path_to_watch = "C:\Users\Administrator\Desktop\pyinotify-master"
-OPENERP_BAT_PATH = "J:\\V7.bat"
+path_to_watch = "F:\OE7"
+OPENERP_BAT_PATH = "F:\\v7.bat"
 
 
 hDir = win32file.CreateFile (
@@ -96,6 +96,11 @@ while 1:
     for action, file in results:
         full_filename = os.path.join (path_to_watch, file)
         print full_filename, ACTIONS.get (action, "Unknown")
+<<<<<<< HEAD
         os.system('taskkill /im cmd.exe')
         os.system(OPENERP_BAT_PATH)      
+=======
+        os.system('taskkill /im python.exe')
+        os.popen(OPENERP_BAT_PATH)      
+>>>>>>> c7e090530529ff7717e059c28bbfba999cedf608
         
