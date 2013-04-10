@@ -4,6 +4,7 @@ from openerp.osv import osv, fields,orm
 from openerp import SUPERUSER_ID
 import PyWapFetion
 from PyWapFetion import Fetion
+from openerp import service
 
 class feitionsetting(osv.TransientModel):
 

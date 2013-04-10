@@ -56,18 +56,19 @@ while 1:
         None,
         None
     )
-    
+
     for action, file in results:
         #full_filename = os.path.join (path_to_watch, file)
-        print file, ACTIONS.get (action, "Unknown")
         endwith = file.split(".")
         t = False
         if endwith[-1] in DICT_TO_WATCH:
+            print file, ACTIONS.get (action, "Unknown")
             for p in psutil.process_iter():
                 if p.get_connections():
                     if 8069 in p.get_connections()[0].local_address:
-                        p.kill()
-                        t = True
-                        #win32api.ShellExecute(0, 'open', OPENERP_BAT_PATH, '','',1)
-            if t:win32api.ShellExecute(0, 'open', OPENERP_BAT_PATH, '','',1)
+                        if p.parent.name == "cmd.exe":
+                            p.kill()
+                            t = True
+                            win32api.ShellExecute(0, 'open', OPENERP_BAT_PATH, '','',1)
+            #if t:win32api.ShellExecute(0, 'open', OPENERP_BAT_PATH, '','',1)
             print '\n'

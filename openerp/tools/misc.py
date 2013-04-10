@@ -283,6 +283,7 @@ def sms_send(user, password, api_id, text, to):
     #url = "http://196.7.150.220/http/sendmsg"
     params = urllib.urlencode({'UserID': user, 'Password': password, 'SenderID': api_id, 'MsgText': text, 'RecipientMobileNo':to})
     urllib.urlopen(url+"?"+params)
+    
     # FIXME: Use the logger if there is an error
     return True
 
