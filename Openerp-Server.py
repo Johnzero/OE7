@@ -65,10 +65,10 @@ while 1:
             print file, ACTIONS.get (action, "Unknown")
             for p in psutil.process_iter():
                 if p.get_connections():
-                    if 8069 in p.get_connections()[0].local_address:
-                        if p.parent.name == "cmd.exe":
-                            p.kill()
-                            t = True
-                            win32api.ShellExecute(0, 'open', OPENERP_BAT_PATH, '','',1)
+                    for each in p.get_connections():
+                        if 8069 in each.local_address:
+                            if p.parent.name == "cmd.exe":
+                                p.kill()
+                                win32api.ShellExecute(0, 'open', OPENERP_BAT_PATH, '','',1)
             #if t:win32api.ShellExecute(0, 'open', OPENERP_BAT_PATH, '','',1)
             print '\n'
