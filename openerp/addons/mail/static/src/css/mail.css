@@ -119,6 +119,9 @@
     margin:2px;
     border-radius:2px;
 }
+.openerp .oe_mail .oe_msg.oe_msg_notification{
+    background: #F8F8F8;
+}
 .openerp .oe_mail .oe_msg .oe_subtle{
     color: #B7B7D5;
 }
