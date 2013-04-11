@@ -12,7 +12,6 @@
 # For gunicorn additional globals need to be defined in the Gunicorn section.
 # Then the following command should run:
 #   $ gunicorn openerp:service.wsgi_server.application -c openerp-wsgi.py
-
 import openerp
 
 #----------------------------------------------------------

@@ -39,6 +39,7 @@
             </field>
         </record>
         
+        
         <record model="ir.ui.view" id="fg_data_report_horizontal_tree">
             <field name="name">fg_data.report.horizontal.tree</field>
             <field name="model">fg_data.report.horizontal</field>

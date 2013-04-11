@@ -435,7 +435,6 @@ class ConnectionPool(object):
             else:
                 # note: this code is called only if the for loop has completed (no break)
                 raise PoolError('The Connection Pool Is Full')
-
         try:
             result = psycopg2.connect(dsn=dsn, connection_factory=PsycoConnection)
         except psycopg2.Error:
