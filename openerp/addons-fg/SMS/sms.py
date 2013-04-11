@@ -14,7 +14,6 @@ class feitionsetting(osv.TransientModel):
     def create(self, cr, uid, vals, context={}):
 
         config_parameter_obj = self.pool.get("ir.config_parameter")
-        
         config_parameter_obj.set_param(cr, uid, "fetion",vals["fetion"])
         config_parameter_obj.set_param(cr, uid, "key",vals["key"])
         return super(feitionsetting, self).create(cr, uid, vals, context=context)
@@ -92,5 +91,6 @@ class fetion(osv.osv):
     def send_myself_fetion_message(self, cr, uid, ids, context=None):
 
         pass
+
 
 
