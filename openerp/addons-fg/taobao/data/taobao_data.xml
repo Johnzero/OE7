@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+         <!-- Create a transporter -->
+        <record id="taobao_delivery_partner" model="res.partner">
+            <field name="name">快递</field>
+        </record>
+
+        <!-- Create a service product -->
+        <record id="taobao_delivery_product" model="product.product">
+            <field name="name">运费</field>
+            <field name="default_code">post_fee</field>
+            <field name="type">service</field>
+            <!--<field name="categ_id" ref="product.product_category_services"/>-->
+        </record>
+
+        <record id="taobao_coupon_product" model="product.product">
+            <field name="name">优惠减价</field>
+            <field name="default_code">discount_fee</field>
+            <field name="type">service</field>
+        </record>
+
+        <!-- Create a free product -->
+        <record id="taobao_mouse_product" model="product.product">
+            <field name="name">赠品</field>
+            <field name="default_code">X.SWX.011.11</field>
+            <field name="type">consu</field>
+        </record>
+
+   </data>
+</openerp>

@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="taobao_shop_user_view_form" model="ir.ui.view">
+            <field name="name">taobao_shop_user_view_form</field>
+            <field name="model">taobao.shop</field>
+            <field name="inherit_id" ref="taobao.view_taobao_shop_form" />
+            <field name="arch" type="xml">
+                <page string="Basic" position="after">
+                    <page string="User">
+                        <field name="taobao_user_category_id"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+        <!-- res.partner form 视图-->
+        <record id="taobao_user_view_partner_form" model="ir.ui.view">
+            <field name="name">taobao_user_view_partner_form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form" />
+            <field name="arch" type="xml">
+              <data>
+                <field name="name" position="replace">
+                    <group>
+                        <field name="name" default_focus="1" placeholder="Name" nolabel="1"/>
+                        <field name="taobao_nick"  placeholder="淘宝昵称" nolabel="1" readonly = "1"/>
+                    </group>
+                </field>
+              </data>
+            </field>
+        </record>
+
+        <record id="taobao_user_view_partner_tree" model="ir.ui.view">
+            <field name="name">taobao_user_view_partner_tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree" />
+            <field name="arch" type="xml">
+                <field name="name"  position="after">
+                    <field name="taobao_nick"/>
+                </field>
+                <field name="phone"  position="after">
+                    <field name="mobile"/>
+                </field>
+                <field name="parent_id"  position="before">
+                    <field name="state_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</openerp>
+

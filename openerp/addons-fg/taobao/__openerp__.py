@@ -1,0 +1,68 @@
+# -*- coding: utf-8 -*-
+##############################################################################
+#    Taobao OpenERP Connector
+#    Copyright 2013 OSCG
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU Affero General Public License as
+#    published by the Free Software Foundation, either version 3 of the
+#    License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU Affero General Public License for more details.
+#
+#    You should have received a copy of the GNU Affero General Public License
+#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#
+##############################################################################
+
+{
+    "name": "Taobao OpenERP Connector",
+    "author" : "OSCG",
+    'website': 'http://www.oscg.cn',
+    'category': 'Sales Management',
+    'version': '1.0',
+    'sequence': 300,
+    'summary': '淘宝订单自动同步到OpenERP',
+    'description': """
+        Taobao Connect Module
+        系统要求：
+            beanstalkd 
+        功能:
+        1. 接受淘宝主动通知，自动添加、确认订单、发货等。
+        2. 同步淘宝订单
+        3. 导入淘宝产品, 同步库存
+        4. 导入淘宝用户
+        5. 自动评价，中差评预警
+        6. 跟踪淘宝订单物流信息, 签收提醒
+        7. ......
+    """,
+    "depends" : ['account','account_voucher','sale','stock','mrp','delivery','crm_helpdesk'],
+    'data': [
+           'security/ir.model.access.csv',
+           'data/bank_data.xml',
+           'data/taobao_data.xml',
+           'taobao_shop_view.xml',
+           'wizard/taobao_product_import.xml',
+           'wizard/taobao_order_import.xml',
+           'wizard/taobao_stock_update.xml',
+           'wizard/taobao_picking_update.xml',
+           'wizard/taobao_delivery_update.xml',
+           'taobao_product_view.xml',
+           'taobao_packet_view.xml',
+           'taobao_order_view.xml',
+           'taobao_user_view.xml',
+           'taobao_rate_view.xml',
+           'taobao_refund_view.xml',
+           #'taobao_delivery_tracking_view.xml',
+           'wizard/order_merge_view.xml',
+    ],
+    'demo': [ ],
+    'test': [ ],
+    'images': [],
+    'installable': True,
+    'auto_install': False,
+    'application': False,
+}

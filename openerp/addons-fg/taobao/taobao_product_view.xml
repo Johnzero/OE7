@@ -1,0 +1,116 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <record id="taobao_shop_product_view_form" model="ir.ui.view">
+            <field name="name">taobao_shop_product_view_form</field>
+            <field name="model">taobao.shop</field>
+            <field name="inherit_id" ref="taobao.view_taobao_shop_form" />
+            <field name="arch" type="xml">
+                <page string="Basic" position="after">
+                    <page string="Product">
+                        <field name="taobao_product_category_id"/>
+                        <field name="taobao_product_supplier"/>
+                        <field name="taobao_product_warehouse_id"/>
+                        <field name="taobao_product_location_id"/>
+                        <field name="taobao_product_cost_method"/>
+                        <field name="taobao_product_type"/>
+                        <field name="taobao_product_supply_method"/>
+                        <field name="taobao_product_procure_method"/>
+                        <field name="taobao_product_min_qty"/>
+                        <field name="taobao_product_max_qty"/>
+                        <field name="taobao_product_uom"/>
+                    </page>
+                </page>
+            </field>
+        </record>
+        
+        <!--update mrp scheduler-->
+        <record id="procurement.ir_cron_scheduler_action" model="ir.cron">
+            <field name="interval_number">1</field>
+            <field name="interval_type">hours</field>
+            <field eval="True" name="active"/>
+        </record>
+
+        <!--taobao product view-->
+        <record id="view_taobao_product_form" model="ir.ui.view">
+            <field name="name">view_taobao_product_form</field>
+            <field name="model">taobao.product</field>
+            <field name="arch" type="xml">
+                <form string="Taobao Product">
+                    <group colspan="4">
+                        <group colspan="2" col="2">
+                            <field name="taobao_shop_id" />
+                            <field name="taobao_num_iid" />
+                            <field name="taobao_sku_id" />
+                            <field name="taobao_outer_id" />
+                        </group>
+                        <group colspan="2" col="2">
+                            <field name="taobao_sku_id" />
+                            <field name="taobao_sku_properties_name" />
+                        </group>
+                    </group>
+                    <button name="%(action_view_taobao_stock_update)d" string="更新淘宝库存" type="action" icon="gtk-execute"/>
+                </form>
+            </field>
+        </record>
+        <record id="view_taobao_product_tree" model="ir.ui.view">
+            <field name="name">view_taobao_product_tree</field>
+            <field name="model">taobao.product</field>
+            <field name="arch" type="xml">
+                <tree string="Taobao Product">
+                    <field name="taobao_num_iid" />
+                    <field name="taobao_sku_id" />
+                    <field name="taobao_shop_id" />
+                    <field name="taobao_outer_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!--product.product form 视图-->
+        <record id="product_taobao_product_template_view_form" model="ir.ui.view">
+            <field name="name">product_taobao_product_template_view_form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="priority">30</field>
+            <field name="arch" type="xml">
+               <data>
+                 <xpath expr="//field[@name='description']" position="before">
+                     <separator string="Taobao Product" />
+                     <field name="taobao_product_ids"  nolabel='1'/>
+                 </xpath>
+               </data>
+            </field>
+        </record>
+
+        <!--product.product form 视图-->
+        <record id="taobao_product_qty_template_view_form" model="ir.ui.view">
+            <field name="name">taobao_product_qty_template_view_form</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="stock.view_normal_procurement_locations_form" />
+            <field name="priority">35</field>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@string='Stock and Expected Variations']" position="after">
+                  <group string="淘宝库存" attrs="{'invisible': [('type', '=', 'service')]}" groups="base.group_user">
+                    <field name="taobao_qty_available" class="oe_inline"/>
+                    <field name="taobao_wait_buyer_pay_qty" class="oe_inline"/>
+                  </group>
+                </xpath>
+            </field>
+        </record>
+
+        <!--product.product form 视图-->
+        <record id="taobao_product_qty_product_product_tree_view" model="ir.ui.view">
+            <field name="name">taobao_product_qty_product_product_tree_view</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_product_tree_view" />
+            <field name="arch" type="xml">
+                <field name="virtual_available" position="after">
+                    <field name="taobao_qty_available"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+

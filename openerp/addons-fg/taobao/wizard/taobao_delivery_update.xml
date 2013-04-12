@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="taobao_delivery_update_line_tree_in" model="ir.ui.view">
+            <field name="name">taobao.delivery.update.line.tree</field>
+            <field name="model">taobao.delivery.update.line</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom" string="Taobao Delivery">
+                    <field name="delivery_ref" />
+                    <field name="tid" />
+                    <field name="company_code" />
+                    <field name="carrier_tracking_ref" />
+                    <field name="taobao_shop_id" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_taobao_delivery_update" model="ir.ui.view">
+            <field name="name">Taobao Delivery Stock Update</field>
+            <field name="model">taobao.delivery.update</field>
+            <field name="arch" type="xml">
+                <form string="Lines">
+                    <field name="delivery_update_lines" colspan="4" nolabel='1'/>
+                    <separator string="" colspan="4"/>
+                    <label string=""  colspan="2" />
+                    <group colspan="4">
+                        <button special="cancel" string="Close" icon="gtk-cancel"/>
+                        <button name="update_delivery" string="Update Delivery" type="object" icon="gtk-go-forward"/>
+                    </group>
+                 </form>
+            </field>
+        </record>
+
+        <act_window 
+            name="同步淘宝运单号"
+            res_model="taobao.delivery.update"
+            src_model="stock.picking.out"
+            view_mode="form"
+            target="new"
+            key2="client_action_multi"
+            id="action_view_taobao_delivery_update"/>
+
+    </data>
+</openerp>

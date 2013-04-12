@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
-#
-#    OpenERP, Open Source Management Solution
-#    Copyright (C) 2004-2010 Tiny SPRL (<http://tiny.be>).
+#    Taobao OpenERP Connector
+#    Copyright 2013 OSCG
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -19,11 +18,13 @@
 #
 ##############################################################################
 
-import content_index
-import std_index
-import document
-import report
+import taobao_packet
+import taobao_shop
+import taobao_product
+import taobao_order
+import taobao_user
+import taobao_rate
+import taobao_refund
 import wizard
-
-
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+
