@@ -432,7 +432,6 @@ class hr_holidays(osv.osv):
         # if this user is a hr.manager, he should do second validations
         if self.pool.get('res.users').has_group(cr, uid, 'base.group_hr_manager'):
             dom = ['|'] + dom + [('state', '=', 'validate1')]
-        print self
         return dom
 
     def holidays_first_validate_notificate(self, cr, uid, ids, context=None):

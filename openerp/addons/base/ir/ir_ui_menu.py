@@ -313,6 +313,7 @@ class ir_ui_menu(osv.osv):
                         dom = eval(menu.action.params_store or '{}', {'uid': uid}).get('domain')
                     res[menu.id]['needaction_enabled'] = obj._needaction
                     res[menu.id]['needaction_counter'] = obj._needaction_count(cr, uid, dom, context=context)
+                    print menu.id,res[menu.id]
         return res
 
     _columns = {
