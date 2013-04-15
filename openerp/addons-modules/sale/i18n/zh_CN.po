@@ -2166,7 +2166,7 @@ msgstr ""
 msgid ""
 "Before choosing a product,\n"
 " select a customer in the sales form."
-msgstr "在挑选产品前，在 销售表单选择一个客户"
+msgstr "在挑选产品前，在销售表单选择一个客户"
 
 #. module: sale
 #: view:sale.order:0
