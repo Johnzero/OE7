@@ -1060,6 +1060,9 @@ openerp.mail = function (session) {
 
         on_message_read: function (event) {
             event.stopPropagation();
+            if ($(".oe_active .oe_menu_counter").text()) {
+                $(".oe_active .oe_menu_counter").text($(".oe_active .oe_menu_counter").text()-1);
+            };
             this.on_message_read_unread(true);
             return false;
         },

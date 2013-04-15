@@ -256,7 +256,6 @@ class abstracted_fs(object):
         if self.cwd_node is None:
             if not os.path.isabs(path):
                 path = os.path.join(self.root, path)
-
         if path == '/' and mode in ('list', 'cwd'):
             return (None, None, None )
 
