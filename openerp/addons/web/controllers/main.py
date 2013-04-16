@@ -1713,7 +1713,6 @@ class Reports(View):
         'sxw': 'application/vnd.sun.xml.writer',
         'xls': 'application/vnd.ms-excel',
     }
-
     @openerpweb.httprequest
     def index(self, req, action, token):
         action = simplejson.loads(action)
@@ -1721,7 +1720,6 @@ class Reports(View):
         report_srv = req.session.proxy("report")
         context = dict(req.context)
         context.update(action["context"])
-
         report_data = {}
         report_ids = context["active_ids"]
         if 'report_type' in action:
