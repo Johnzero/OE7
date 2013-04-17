@@ -98,7 +98,6 @@ class WebPdfReports(View):
                 break
 
             time.sleep(self.POLLING_DELAY)
-
         report = base64.b64decode(report_struct['result'])
         if report_struct.get('code') == 'zlib':
             report = zlib.decompress(report)

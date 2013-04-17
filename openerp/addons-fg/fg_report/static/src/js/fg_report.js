@@ -24,7 +24,7 @@ openerp.fg_report = function(instance) {
     // TypeError: Cannot call method 'get_title' of undefined on Chrome / IE
 
     instance.web.ActionManager = instance.web.ActionManager.extend({
-        ir_actions_fgreport_xml: function(action, options) {
+        ir_actions_report_xml: function(action, options) {
             var self = this;
             instance.web.blockUI();
             return instance.web.pyeval.eval_domains_and_contexts({

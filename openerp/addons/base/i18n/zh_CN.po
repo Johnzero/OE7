@@ -16095,3 +16095,20 @@ msgstr "等待原材料"
 #: model:ir.ui.menu,name:portal.company_jobs
 msgid "Company Jobs"
 msgstr "公司招聘"
+
+#. module: base_import
+#: code:addons/base_import/static/src/xml/import.xml:26
+#: help:addons/base_import/static/src/xml/import.xml:26
+#: view:addons/base_import/static/src/xml/import.xml:26
+#: constraint:addons/base_import/static/src/xml/import.xml:26
+msgid ""
+"file to import. If you need a sample importable file, you\n"
+"            can use the export tool to generate one."
+msgstr "fasfdasdfasdf"
+
+#. module: base_import
+#. openerp-web
+#: code:addons/base_import/static/src/xml/import.xml:24
+#, python-format
+msgid "Select the"
+msgstr "选择"

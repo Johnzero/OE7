@@ -424,7 +424,7 @@ class sale_order(osv.osv):
                  'ids': ids,
                  'form': self.read(cr, uid, ids[0], context=context),
         }
-        return {'type': 'ir.actions.fgreport.xml', 'report_name': 'sale.order', 'datas': datas, 'nodestroy': True}
+        return {'type': 'ir.actions.report.xml', 'report_name': 'sale.order', 'datas': datas, 'nodestroy': True}
 
     def manual_invoice(self, cr, uid, ids, context=None):
         """ create invoices for the given sales orders (ids), and open the form

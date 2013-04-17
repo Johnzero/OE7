@@ -41,5 +41,13 @@ class order(report_sxw.rml_parse):
 
 report_sxw.report_sxw('report.sale.order', 'sale.order', 'addons/sale/report/sale_order.rml', parser=order, header="external")
 
-# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
+class orderss(report_sxw.rml_parse):
+    def __init__(self, cr, uid, name, context=None):
+        super(orderss, self).__init__(cr, uid, name, context=context)
+        self.localcontext.update({
+            'time': time, 
+        })
 
+report_sxw.report_sxw('report.sale.order.html', 'sale.order',
+                      'addons/sale/report/product_report.html',parser=orderss,header="external")
+# vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

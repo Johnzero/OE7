@@ -20,6 +20,7 @@
 ##############################################################################
 import logging
 import mako
+import lxml.html
 from lxml import etree
 from mako.template import Template
 from mako.lookup import TemplateLookup
@@ -122,9 +123,9 @@ class makohtml2html(object):
         try:
             html = template.render_unicode(**self.localcontext)
             etree_obj = etree.HTML(html)
-            final_html += self.format_header(etree_obj)
-            final_html += self.format_body(etree_obj)
-            return final_html
+            #final_html += self.format_header(etree_obj)
+            #final_html += self.format_body(etree_obj)
+            return lxml.html.tostring(etree_obj, method='html', encoding='utf-8')
         except Exception:
             _logger.exception('report :')
 

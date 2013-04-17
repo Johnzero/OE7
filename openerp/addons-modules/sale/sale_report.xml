@@ -3,8 +3,12 @@
     <data>
 
         <report auto="False" id="report_sale_order" model="sale.order" name="sale.order"
-                rml="sale/report/sale_order.rml" string="Quotation / Order"
-                usage="default"/>
+                rml="sale/report/sale_order.rml" string="Quotation / Order" usage="default"
+        />
+
+        <report auto="False" id="report_fg_sale_order_html" model="sale.order"
+                name="sale.order.html" rml="sale/report/product_report.html"
+                string="打印产品清单" report_type="mako2html"/>
 
     </data>
 </openerp>

@@ -43,7 +43,7 @@ If your brower prevented pop-up window, you should allow it.
     'data': [],
     'auto_install': False,
     'web_preload': True,
-    'js': ['static/src/js/fg_report.js'],
+    'js': ['static/src/js/*.js'],
 }
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
