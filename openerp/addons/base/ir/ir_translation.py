@@ -275,7 +275,6 @@ class ir_translation(osv.osv):
             return tools.ustr(source or '')
         if isinstance(types, basestring):
             types = (types,)
-        print source
         if source:
             query = """SELECT value
                        FROM ir_translation

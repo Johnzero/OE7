@@ -45,12 +45,22 @@ def content_disposition(filename, req):
 
 class WebPdfFileTokenView(View):
     _cp_path = "/web/report/pdf_token"
+    POLLING_DELAY = 0.25
+    TYPES_MAPPING = {
+        'doc': 'application/vnd.ms-word',
+        'html': 'text/html',
+        'odt': 'application/vnd.oasis.opendocument.text',
+        'pdf': 'application/pdf',
+        'sxw': 'application/vnd.sun.xml.writer',
+        'xls': 'application/vnd.ms-excel',
+    }
 
     @openerpweb.jsonrequest
     def index(self, req, action, token):
         args = cPickle.dumps((action, token))
         token = hashlib.md5(args).hexdigest()
         FILE_TOKENS[str(req.session._uid)] = {token:args}
+        
         return dict(pdf_file_token = token)
 
 
@@ -66,10 +76,9 @@ class WebPdfReports(View):
         'xls': 'application/vnd.ms-excel',
     }
 
-    @openerpweb.httprequest
-    def index(self, req, pdf_file_token):
-        args = FILE_TOKENS[str(req.session._uid)].pop(pdf_file_token)
-        action, token  = cPickle.loads(args)
+    @openerpweb.jsonrequest
+    def index(self, req, action, token):
+
         action = simplejson.loads(action)
 
         report_srv = req.session.proxy("report")
@@ -98,6 +107,7 @@ class WebPdfReports(View):
                 break
 
             time.sleep(self.POLLING_DELAY)
+
         report = base64.b64decode(report_struct['result'])
         if report_struct.get('code') == 'zlib':
             report = zlib.decompress(report)
@@ -114,11 +124,6 @@ class WebPdfReports(View):
                 file_name = action['report_name']
         file_name = '%s.%s' % (file_name, report_struct['format'])
 
-        return req.make_response(report,
-             headers=[
-                 ('Content-Disposition', content_disposition(file_name, req)),
-                 ('Content-Type', report_mimetype),
-                 ('Content-Length', len(report))],
-             cookies={'fileToken': int(token)})
+        return dict(report = report)
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
