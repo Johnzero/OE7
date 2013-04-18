@@ -64,8 +64,8 @@ class WebPdfFileTokenView(View):
         return dict(pdf_file_token = token)
 
 
-class WebPdfReports(View):
-    _cp_path = "/web/report/pdf"
+class WebHtmlReports(View):
+    _cp_path = "/web/report/html"
     POLLING_DELAY = 0.25
     TYPES_MAPPING = {
         'doc': 'application/vnd.ms-word',
@@ -125,5 +125,74 @@ class WebPdfReports(View):
         file_name = '%s.%s' % (file_name, report_struct['format'])
 
         return dict(report = report)
+
+
+class WebPdfReports(View):
+    _cp_path = "/web/report/pdf"
+    POLLING_DELAY = 0.25
+    TYPES_MAPPING = {
+        'doc': 'application/vnd.ms-word',
+        'html': 'text/html',
+        'odt': 'application/vnd.oasis.opendocument.text',
+        'pdf': 'application/pdf',
+        'sxw': 'application/vnd.sun.xml.writer',
+        'xls': 'application/vnd.ms-excel',
+    }
+
+    @openerpweb.httprequest
+    def index(self, req, pdf_file_token):
+        args = FILE_TOKENS[str(req.session._uid)].pop(pdf_file_token)
+        action, token  = cPickle.loads(args)
+        action = simplejson.loads(action)
+
+        report_srv = req.session.proxy("report")
+        context = dict(req.context)
+        context.update(action["context"])
+
+        report_data = {}
+        report_ids = context["active_ids"]
+        if 'report_type' in action:
+            report_data['report_type'] = action['report_type']
+        if 'datas' in action:
+            if 'ids' in action['datas']:
+                report_ids = action['datas'].pop('ids')
+            report_data.update(action['datas'])
+
+        report_id = report_srv.report(
+            req.session._db, req.session._uid, req.session._password,
+            action["report_name"], report_ids,
+            report_data, context)
+
+        report_struct = None
+        while True:
+            report_struct = report_srv.report_get(
+                req.session._db, req.session._uid, req.session._password, report_id)
+            if report_struct["state"]:
+                break
+
+            time.sleep(self.POLLING_DELAY)
+
+        report = base64.b64decode(report_struct['result'])
+        if report_struct.get('code') == 'zlib':
+            report = zlib.decompress(report)
+        report_mimetype = self.TYPES_MAPPING.get(
+            report_struct['format'], 'octet-stream')
+        file_name = action.get('name', 'report')
+        if 'name' not in action:
+            reports = req.session.model('ir.actions.report.xml')
+            res_id = reports.search([('report_name', '=', action['report_name']),],
+                                    0, False, False, context)
+            if len(res_id) > 0:
+                file_name = reports.read(res_id[0], ['name'], context)['name']
+            else:
+                file_name = action['report_name']
+        file_name = '%s.%s' % (file_name, report_struct['format'])
+
+        return req.make_response(report,
+             headers=[
+                 ('Content-Disposition', content_disposition(file_name, req)),
+                 ('Content-Type', report_mimetype),
+                 ('Content-Length', len(report))],
+             cookies={'fileToken': int(token)})
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

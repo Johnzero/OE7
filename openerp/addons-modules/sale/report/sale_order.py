@@ -49,5 +49,5 @@ class orderss(report_sxw.rml_parse):
         })
 
 report_sxw.report_sxw('report.sale.order.html', 'sale.order',
-                      'addons/sale/report/product_report.html',parser=orderss,header="external")
+                      'addons/sale/report/product_report.html',parser=orderss)
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:

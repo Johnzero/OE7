@@ -339,7 +339,6 @@ class TinyPoFile(object):
             if not line.startswith('msgid'):
                 raise Exception("malformed file: bad line: %s" % line)
             source = unquote(line[6:])
-            print source,'------------------'
             line = self.lines.pop(0).strip()
             if not source and self.first:
                 # if the source is "" and it's the first msgid, it's the special

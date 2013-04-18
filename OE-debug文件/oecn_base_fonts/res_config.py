@@ -22,7 +22,7 @@ class font_configuration(osv.TransientModel):
         'base_font' : fields.char('Font Url'),
         'cjk_wrap': fields.boolean('CJK Wrap', help="CJK warp"),
     }
-    
+
     _defaults = {
         'base_font': 'C:\Windows\Fonts\msyhbd.ttf',
         'cjk_wrap': True,
