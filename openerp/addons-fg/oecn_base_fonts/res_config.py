@@ -33,6 +33,8 @@ class font_configuration(osv.TransientModel):
         base_font = config_parameter_obj.get_param(cr, uid, "font_url", context=context)
         #base_font_name = config_parameter_obj.get_param(cr, uid, "base_font_name", context=context)
         cjk_wrap = config_parameter_obj.get_param(cr, uid, "cjk_wrap", context=context)
+        base_font = 'C:\Windows\Fonts\msyhbd.ttf'
+        cjk_wrap = True
         return {'base_font' : base_font,'cjk_wrap' : cjk_wrap}
     
     def set_base_font(self, cr, uid, ids, context=None):

@@ -19,21 +19,10 @@
 ##############################################################################
 
 {
-    "name": "Web PDF Report Preview & Print",
+    "name": "FG HTML Report PRINT",
     'version': '1.0',
     'category': 'Web',
-    'description': """Web PDF Report Preview & Print
-
-Preview & Print PDF report in your browser.
-
-* For IE, Adobe Reader is required.
-* For Chrome , nothing is requried.
-* For Firefox, Adobe Reader is required.
-
-Test passed on Windows.
-
-If your brower prevented pop-up window, you should allow it.
-
+    'description': """
 
     """,
     'author': 'wangbuke@gmail.com',

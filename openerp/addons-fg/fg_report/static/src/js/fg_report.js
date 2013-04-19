@@ -22,9 +22,13 @@ openerp.fg_report = function(instance) {
     // TODO: FIX ERROR
     // TypeError: this.get_action_manager(...) is undefined on Firefox
     // TypeError: Cannot call method 'get_title' of undefined on Chrome / IE
-
     
     instance.web.ActionManager = instance.web.ActionManager.extend({
+        init: function(parent) {
+            this._super(parent);
+            $("body").append('<script language="javascript" src="/fg_report/static/src/js/LodopFuncs.js"></script>');
+            $("body").append('<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0><embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0 pluginspage="/fg_report/static/src/js/install_lodop.exe"></embed></object>');
+        },
         ir_actions_report_xml: function(action, options) {
             var self = this;
             instance.web.blockUI();
@@ -38,19 +42,15 @@ openerp.fg_report = function(instance) {
                 linux = os.indexOf("Linux") > -1;
                 if(!linux) {
                     if (action.report_type == "mako2html") {
-                        $("body").append('<script language="javascript" src="/fg_report/static/src/js/LodopFuncs.js"></script>');
-                        $("body").append('<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width=0 height=0><embed id="LODOP_EM" type="application/x-print-lodop" width=0 height=0 pluginspage="/fg_report/static/src/js/install_lodop.exe"></embed></object>');
                         self.rpc("/web/report/html", {
-                            action: JSON.stringify(action),
-                            token: new Date().getTime()
+                            action: JSON.stringify(action)
                         }).done(function(result) {
                             instance.web.unblockUI();
                             self.dialog_stop();
                             var dom = $('<div>').append(result.report);
-                            LODOP = getLodop(document.getElementById('LODOP'),document.getElementById('LODOP_EM'));
-                            LODOP.ADD_PRINT_TABLE("0mm","0mm","220mm", "92mm", dom.find('div').html());
+                            LODOP = getLodop(document.getElementById('LODOP_OB'),document.getElementById('LODOP_EM'));
+                            LODOP.ADD_PRINT_TABLE("0mm","0mm","100%", "100%", dom.find('div').html());
                             LODOP.PREVIEW();
-                            window.close();
                         });
                     }
                     else {
