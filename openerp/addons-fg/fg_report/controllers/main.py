@@ -95,7 +95,7 @@ class WebHtmlReports(View):
                 break
             time.sleep(self.POLLING_DELAY)
         report = base64.b64decode(report_struct['result'])
-        
+
         return dict(report = report)
 
 
