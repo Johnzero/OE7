@@ -3,7 +3,7 @@
 #
 #    OpenERP, Open Source Management Solution
 #    Copyright (C) 2004-2009 Tiny SPRL (<http://tiny.be>).
-#    Copyright (C) 2010-2012 Xero (<http://openerp.com>).
+#    Copyright (C) 2010-2012 OpenERP SA (<http://openerp.com>).
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as
@@ -103,6 +103,7 @@ class ir_ui_menu(osv.osv):
                     if not menu.child_id:
                         # not displayed if there is no children
                         continue
+
                 result.append(menu.id)
                 self._cache[key] = True
             return result
@@ -312,7 +313,6 @@ class ir_ui_menu(osv.osv):
                         dom = eval(menu.action.params_store or '{}', {'uid': uid}).get('domain')
                     res[menu.id]['needaction_enabled'] = obj._needaction
                     res[menu.id]['needaction_counter'] = obj._needaction_count(cr, uid, dom, context=context)
-        
         return res
 
     _columns = {

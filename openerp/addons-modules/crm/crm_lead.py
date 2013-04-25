@@ -23,8 +23,9 @@ from openerp.addons.base_status.base_stage import base_stage
 import crm
 from datetime import datetime
 from operator import itemgetter
-from openerp.osv import fields, osv
+from openerp.osv import fields, osv, orm
 import time
+from openerp import SUPERUSER_ID
 from openerp import tools
 from openerp.tools.translate import _
 from openerp.tools import html2plaintext
@@ -357,11 +358,14 @@ class crm_lead(base_stage, format_address, osv.osv):
         return {'value' : values}
 
     def on_change_user(self, cr, uid, ids, user_id, context=None):
+        """ When changing the user, also set a section_id or restrict section id
+            to the ones user_id is member of. """
+        section_id = False
         if user_id:
-            user = self.pool.get('res.users').browse(cr, uid, user_id, context=context)
-            return {'value':{'section_id': user.default_section_id and user.default_section_id.id or False}}
-        else:
-            return {'value':{'section_id':False}}
+            section_ids = self.pool.get('crm.case.section').search(cr, uid, ['|', ('user_id', '=', user_id), ('member_ids', '=', user_id)], context=context)
+            if section_ids:
+                section_id = section_ids[0]
+        return {'value': {'section_id': section_id}}
 
     def _check(self, cr, uid, ids=False, context=None):
         """ Override of the base.stage method.
@@ -969,15 +973,18 @@ class crm_lead(base_stage, format_address, osv.osv):
     def message_get_reply_to(self, cr, uid, ids, context=None):
         """ Override to get the reply_to of the parent project. """
         return [lead.section_id.message_get_reply_to()[0] if lead.section_id else False
-                    for lead in self.browse(cr, uid, ids, context=context)]
+                    for lead in self.browse(cr, SUPERUSER_ID, ids, context=context)]
 
     def message_get_suggested_recipients(self, cr, uid, ids, context=None):
         recipients = super(crm_lead, self).message_get_suggested_recipients(cr, uid, ids, context=context)
-        for lead in self.browse(cr, uid, ids, context=context):
-            if lead.partner_id:
-                self._message_add_suggested_recipient(cr, uid, recipients, lead, partner=lead.partner_id, reason=_('Customer'))
-            elif lead.email_from:
-                self._message_add_suggested_recipient(cr, uid, recipients, lead, email=lead.email_from, reason=_('Customer Email'))
+        try:
+            for lead in self.browse(cr, uid, ids, context=context):
+                if lead.partner_id:
+                    self._message_add_suggested_recipient(cr, uid, recipients, lead, partner=lead.partner_id, reason=_('Customer'))
+                elif lead.email_from:
+                    self._message_add_suggested_recipient(cr, uid, recipients, lead, email=lead.email_from, reason=_('Customer Email'))
+        except (osv.except_osv, orm.except_orm):  # no read access rights -> just ignore suggested recipients because this imply modifying followers
+            pass
         return recipients
 
     def message_new(self, cr, uid, msg, custom_values=None, context=None):
@@ -1040,6 +1047,14 @@ class crm_lead(base_stage, format_address, osv.osv):
             prefix = 'Scheduled'
         suffix = ' %s' % phonecall.description
         message = _("%s a call for %s.%s") % (prefix, phonecall.date, suffix)
+        return self.message_post(cr, uid, ids, body=message, context=context)
+
+    def log_meeting(self, cr, uid, ids, meeting_subject, meeting_date, duration, context=None):
+        if not duration:
+            duration = _('unknown')
+        else:
+            duration = str(duration)
+        message = _("Meeting scheduled at '%s'<br> Subject: %s <br> Duration: %s hour(s)") % (meeting_date, meeting_subject, duration)
         return self.message_post(cr, uid, ids, body=message, context=context)
 
     def onchange_state(self, cr, uid, ids, state_id, context=None):

@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-03-07 08:37+0000\n"
-"PO-Revision-Date: 2013-03-28 19:39+0000\n"
+"PO-Revision-Date: 2013-04-22 19:01+0000\n"
 "Last-Translator: Ayhan KIZILTAN <Unknown>\n"
 "Language-Team: Turkish <tr@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-03-29 05:08+0000\n"
-"X-Generator: Launchpad (build 16546)\n"
+"X-Launchpad-Export-Date: 2013-04-23 06:10+0000\n"
+"X-Generator: Launchpad (build 16580)\n"
 
 #. module: stock
 #: field:stock.inventory.line.split,line_exist_ids:0
@@ -2136,7 +2136,7 @@ msgstr "Tarih"
 #: field:stock.picking.in,message_is_follower:0
 #: field:stock.picking.out,message_is_follower:0
 msgid "Is a Follower"
-msgstr "Bir Takipçisi mi"
+msgstr "Bir İzleyicidir"
 
 #. module: stock
 #: view:report.stock.inventory:0
@@ -2181,6 +2181,22 @@ msgid ""
 "\n"
 "                 * Cancelled: has been cancelled, can't be confirmed anymore"
 msgstr ""
+"* Tasla: henüz onaylanmamış ve onaylanana kadar planlanmayacaktır\n"
+"\n"
+"                 * Başka bir İşlem Bekliyor: kendiliğinden hazır hale "
+"gelmeden önce ilerlemek için başka bir hareket bekliyor (örn. Stoktan Al "
+"akışları)\n"
+"\n"
+"                 * Hazırlanmasını Bekliyor: hala ürünlerin hazırlanmasını "
+"bekliyor\n"
+"\n"
+"                 * Teslime Hazır: ürünler ayrılmıştır, yalnızca onaylanmayı "
+"bekliyor.\n"
+"\n"
+"                 * Teslim edildi: işlenmiş olup bir daha değiştirilemez ve "
+"iptal edilemez\n"
+"\n"
+"                 * İptal edildi: iptal edilmiş olup bir daha onaylanamaz"
 
 #. module: stock
 #: field:stock.incoterms,code:0
@@ -2217,6 +2233,20 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir ürün kabulü kayıtı için tıklayın. \n"
+"              </p><p>\n"
+"                Burada, hangi sipariş emri ya da toplama emrinden geldiğine\n"
+"                bakmaksızın ürünleri tek olarak alabilirsiniz. Beklediğiniz "
+"tüm\n"
+"                ürünlerin listesini bulacaksınız. Bir sipariş aldığınızda, "
+"tedarikçi\n"
+"                adına ya da satınalma emri referansına göre süzebilirsiniz.\n"
+"                Sonra, her satırın sağındaki düğmeye basarak aldığınız "
+"ürünleri\n"
+"                onaylayabilirsiniz.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: view:stock.change.product.qty:0
@@ -3168,6 +3198,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir konum eklemek için tıklayın.\n"
+"              </p><p>\n"
+"                Bu şirketinizin depolarının ve konumlarının yapısıdır.\n"
+"                Bir konuma tıklayarak bu konumdaki ve alt konumlarındaki\n"
+"                ürünlerin ve stok düzeylerinin listesini alabilirsiniz.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: field:stock.location,stock_real:0
@@ -3198,6 +3236,8 @@ msgid ""
 "Total quantity after split exceeds the quantity to split for this product: "
 "\"%s\" (id: %d)."
 msgstr ""
+"Paylaştırmadan sonraki toplam miktar bu ürünün paylaştırma miktarını "
+"aşmaktadır: \"%s\" (id: %d)."
 
 #. module: stock
 #: view:stock.partial.move.line:0
@@ -3225,6 +3265,8 @@ msgid ""
 "When you select a serial number on product moves, you can get the upstream "
 "or downstream traceability of that product."
 msgstr ""
+"Bir ürün hareketindeki bir seri numarasını seçtiğinizde, o ürünün aşağı ve "
+"yukarı izlenebilirliğini alabilirsinz."
 
 #. module: stock
 #: code:addons/stock/wizard/stock_partial_picking.py:95
@@ -3301,6 +3343,16 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bu ürün için bir kabul kaydı yapmak için tıklayın. \n"
+"              </p><p>\n"
+"                Burada, bu ürünle ilgili tüm kabullerin geçmişini "
+"bulacaksınız,\n"
+"                aynı zamanda tedarikçilerinizden beklediğiniz ürünlerin "
+"gelecek\n"
+"                kabullerini de bulacaksınız.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: help:stock.fill.inventory,recursive:0
@@ -3329,6 +3381,13 @@ msgid ""
 "needs, etc.\n"
 "                This installs the module stock_location."
 msgstr ""
+"İtekleme ve çekme envanter akışları sağlar.  Bu özelliğin tipik "
+"kullanımları:\n"
+"                ürün üretim zinciri yönetimi, ürüne göre varsayılan "
+"konumların yönetimi,\n"
+"                işiniz gereksinimlerine göre depolarınız içinde rotalar "
+"tanımlayın, vb.\n"
+"                Bu,stock_location modülünü kurar."
 
 #. module: stock
 #: view:stock.inventory:0
@@ -3355,6 +3414,19 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir ürün teslimatı kaydı için tıklayın.\n"
+"              </p>\n"
+"              <p>\n"
+"                Bu listede müşterilerinize teslim edeceğiniz bütün\n"
+"                ürünleri bulacaksınız. Teslimatları bu listedeki her "
+"satırın\n"
+"                sağındaki düğmeleri kullanarak doğrudan işleyebilirsiniz.\n"
+"                Teslim edilecek ürünleri müşteriye, ürüne ya da satış "
+"siparişine\n"
+"                göre süzebilirsiniz (Kaynak alanı kullanarak).\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: view:stock.move:0
@@ -3390,6 +3462,16 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir izleme sayısı eklemek için tıklayın.\n"
+"              </p><p>\n"
+"                Bu bütün paketlerinizin listesidir. Bir Paket seçtiğinizde, "
+"paket\n"
+"                içindeki ürünlerin aşağı ve yukarı doğru izlenebilirliğini "
+"elde\n"
+"                edebilirsiniz.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: code:addons/stock/stock.py:2496
@@ -3471,7 +3553,7 @@ msgstr "Zamanlandı"
 #. module: stock
 #: view:stock.picking:0
 msgid "Add an internal note..."
-msgstr ""
+msgstr "Bir iç not ekle..."
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_warehouse_form
@@ -3495,6 +3577,8 @@ msgid ""
 "This stock location will be used, instead of the default one, as the source "
 "location for stock moves generated by procurements."
 msgstr ""
+"Bu stok konumu varsayılanın yerine tedarik işlemi tarafından oluşturulan "
+"stok hareketinin kaynak konumu olarak kullanılacaktır."
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_stock_inventory_report
@@ -3564,6 +3648,15 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir envanter başlatmak için tıklayın. \n"
+"              </p><p>\n"
+"                Periyodik Envanterler her konumdaki ürünleri saymak için\n"
+"                kullanılır. Bir ürünün mevcut stok düzeyini uygun hale\n"
+"                getirmek için senede bir kez ya da gereksinim duduğunuz\n"
+"                herhangi bir zamanda kullanabilirsiniz.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: view:stock.return.picking:0
@@ -3708,6 +3801,24 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir konum eklemek için tıklayın.\n"
+"              </p><p>\n"
+"                Deponuzu yapısını ve düzeninin yansıtacak konumları\n"
+"                tanımlayın. OpenERP fiziksel konumları (depolar, raflar,\n"
+"                kutular, vb.), iş ortağı konumları (müşteriler, "
+"tedarikçiler)\n"
+"                ve stok işlemlerinin benzeri olan üretim emirleri\n"
+"                harcamaları, sayımlar vb. gibi sanal konumları\n"
+"                yönetebilir.\n"
+"              </p><p>  \n"
+"                OpenERP de her stok işlemi ürünleri bir konumdan diğerine\n"
+"                taşır.  Örneğin, eğer bir tedarikçiden ürün alırsanız\n"
+"                OpenERP ürünleri Tedarikçi konumundan Stok konumuna\n"
+"                taşıyacaktır. Her rapor fiziksel, iş ortağı ya da sanal\n"
+"                konumlarda yapılabilir.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: field:stock.fill.inventory,recursive:0
@@ -3779,6 +3890,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Gelen bir sevkiyat eklemek için tıklayın. \n"
+"              </p><p>\n"
+"                Gelen Sevkiyat tedarikçilerinizden alacağınız bütün\n"
+"                siparişlerin listesidir. Bir gelen sevkiyat asıl satınalma\n"
+"                siparişine göre alınacak ürünlerin listesini içerir.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: view:stock.move:0
@@ -3823,6 +3942,21 @@ msgid ""
 "\n"
 "                 * Cancelled: has been cancelled, can't be confirmed anymore"
 msgstr ""
+"* Taslak: henüz onaylanmamış ve onaylanana kadar da planlanmayacaktır\n"
+"\n"
+"                 * Başka Bir İşlem Bekliyor: kendiliğinden hazır olmadan "
+"önce ilerlemek için başka bir hareket bekliyor (örn. Sipariş Verme akışı)\n"
+"\n"
+"                 * Hazır Olmayı Bekliyor: hala ürünlerin hazır olmasını "
+"bekliyor\n"
+"\n"
+"                 * Kabul Bekliyor: ürünler ayrılmış olup yalnızca onay "
+"bekliyor.\n"
+"\n"
+"                 * Kabul edildi: işlenmiş olup bir daha değiştirilemez ya da "
+"iptal edilemez\n"
+"\n"
+"                 * İptal edildi: iptal edilmiş olup bir daha onaylanamaz"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_stock_config_settings
@@ -4051,6 +4185,8 @@ msgid ""
 "The unit of measure rounding does not allow you to ship \"%s %s\", only "
 "roundings of \"%s %s\" is accepted by the Unit of Measure."
 msgstr ""
+"Ölçü birimi yuvarlaması \"%s%s\" sevkiyatı yapmanıza izin vermez, Ölçü "
+"Birimi yalnızca \"%s%s\" yuvarlamasını kabul eder."
 
 #. module: stock
 #: model:stock.location,name:stock.stock_location_shop0
@@ -4165,7 +4301,7 @@ msgstr ""
 #: field:stock.picking.in,message_follower_ids:0
 #: field:stock.picking.out,message_follower_ids:0
 msgid "Followers"
-msgstr "Takipçiler"
+msgstr "İzleyiciler"
 
 #. module: stock
 #: code:addons/stock/stock.py:2585
@@ -4179,6 +4315,9 @@ msgid ""
 "As an example, a decimal precision of 2 will allow weights like: 9.99 kg, "
 "whereas a decimal precision of 4 will allow weights like:  0.0231 kg."
 msgstr ""
+"Bir örnek olarak, 2 ondalık hassasiyeti vereceği ağırlık değeri: 9.99 kg "
+"olacağı gibi 4 ondalık hassasiyetinin de vereceği ağırlık değeri: 0.0231 kg "
+"olur."
 
 #. module: stock
 #: view:report.stock.move:0
@@ -4251,7 +4390,7 @@ msgstr ""
 #: code:addons/stock/stock.py:2811
 #, python-format
 msgid "INV:"
-msgstr ""
+msgstr "ENV:"
 
 #. module: stock
 #: help:stock.config.settings,module_stock_invoice_directly:0
@@ -4622,7 +4761,7 @@ msgstr "Ocak"
 #. module: stock
 #: constraint:stock.move:0
 msgid "You cannot move products from or to a location of the type view."
-msgstr ""
+msgstr "Görünüm türündeki bir konumdan ürün hareketi yapamazsınız."
 
 #. module: stock
 #: help:stock.config.settings,group_stock_production_lot:0
@@ -4631,13 +4770,16 @@ msgid ""
 "a serial number on product moves, you can get the upstream or downstream "
 "traceability of that product."
 msgstr ""
+"Bu sizin ürünlerinizi seri numarası seçerek yönetmenizi sağlar. Ürün "
+"hareketlerinde seri numarası seçerseniz, o ürünün aşağı doğru ya da yukarı "
+"doğru izlenebilirliğini elde edebilirsiniz."
 
 #. module: stock
 #: code:addons/stock/wizard/stock_fill_inventory.py:124
 #, python-format
 msgid ""
 "No product in this location. Please select a location in the product form."
-msgstr ""
+msgstr "Bu konumda hiç ürün yok. Ürün kartından lütfen bir konum seçin."
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.act_product_stock_move_futur_open
@@ -4689,6 +4831,16 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bu ürün için bir teslimat emri eklemek için tıklayın.\n"
+"              </p><p>\n"
+"                Bu ürünle ilgili bütün teslimat geçmişini burada "
+"bulacaksınız\n"
+"                aynı zamanda müşterilerinize teslim etmeniz gereken "
+"ürünleri\n"
+"                de bulacaksınız.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_location_form
@@ -4706,6 +4858,8 @@ msgid ""
 "If this shipment was split, then this field links to the shipment which "
 "contains the already processed part."
 msgstr ""
+"Bu sevkiyat bölünmüşse, bu alan halihazırda işlenmiş parçayı içeren "
+"sevkiyata bağlıdır."
 
 #. module: stock
 #: view:stock.inventory:0
@@ -4724,7 +4878,7 @@ msgstr "Önek"
 #: view:stock.move:0
 #: view:stock.move.split:0
 msgid "Split in Serial Numbers"
-msgstr ""
+msgstr "Seri Numaralarına Göre ayır"
 
 #. module: stock
 #: help:product.template,property_stock_account_input:0
@@ -4823,7 +4977,7 @@ msgstr "Mayıs"
 #: code:addons/stock/product.py:110
 #, python-format
 msgid "No difference between standard price and new price!"
-msgstr ""
+msgstr "Standart fiyat ve yeni fiyat arasında fark yok!"
 
 #. module: stock
 #: view:stock.picking.out:0
@@ -4915,6 +5069,20 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir seri numarası eklemek için tıklayın.\n"
+"              </p><p>\n"
+"                Bu kayıt ettiğiniz bütün partilerin listesidir. Bir parti\n"
+"                seçtiğinizde, partinin içerdiği ürünlerin aşağı doğru ve "
+"yukarı\n"
+"                doğru izlenebilirliğini elde edebilirsiniz. Varsayılan "
+"olarak, liste\n"
+"                deponuzda bulunan seri numaralarına göre süzülür ama siz\n"
+"                'Mevcut' düğmesine basarak ürettiğiniz, aldığınız ya da\n"
+"                müşterilerinize teslim ettiğiniz tüm partileri elde\n"
+"                edebilirsiniz.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: view:stock.picking.in:0
@@ -4927,6 +5095,8 @@ msgid ""
 "This allows to configure and use multiple stock locations and warehouses,\n"
 "                instead of having a single default one."
 msgstr ""
+"Bu, varsayılan olarak tek bir yerine çoklu stok konumları\n"
+"                ve depoları yapılandırmanızı ve kullanmanızı sağlar."
 
 #. module: stock
 #: view:stock.picking:0
@@ -4977,6 +5147,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                Bir teslimat emri oluşturmak için tıklayın. \n"
+"              </p><p>\n"
+"                Değişik satış siparişlerine ve lojistik kurallarınıza göre "
+"hazırlanması\n"
+"                gereken bütün teslimat emirlerinin listesidir.\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: help:stock.tracking,name:0

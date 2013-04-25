@@ -276,7 +276,7 @@ class module(osv.osv):
             ('to remove', 'To be removed'),
             ('to install', 'To be installed')
         ], string='Status', readonly=True, select=True),
-        'demo': fields.boolean('Demo Data'),
+        'demo': fields.boolean('Demo Data', readonly=True),
         'license': fields.selection([
             ('GPL-2', 'GPL Version 2'),
             ('GPL-2 or any later version', 'GPL-2 or later version'),

@@ -258,7 +258,6 @@ openerp.mail = function (session) {
         format_data: function () {
             //formating and add some fields for render
             this.date = this.date ? session.web.str_to_datetime(this.date) : false;
-            this.datestring = this.date.toLocaleString();
             if (this.date && new Date().getTime()-this.date.getTime() < 7*24*60*60*1000) {
                 this.timerelative = $.timeago(this.date);
             } 
@@ -621,7 +620,10 @@ openerp.mail = function (session) {
             // have unknown names -> call message_get_partner_info_from_emails to try to find partner_id
             var find_done = $.Deferred();
             if (names_to_find.length > 0) {
-                find_done = self.parent_thread.ds_thread._model.call('message_get_partner_info_from_emails', [names_to_find]);
+                var values = {
+                    'res_id': this.context.default_res_id,
+                }
+                find_done = self.parent_thread.ds_thread._model.call('message_get_partner_info_from_emails', [names_to_find], values);
             }
             else {
                 find_done.resolve([]);
@@ -667,7 +669,11 @@ openerp.mail = function (session) {
                     var new_names_to_find = _.difference(names_to_find, names_to_remove);
                     find_done = $.Deferred();
                     if (new_names_to_find.length > 0) {
-                        find_done = self.parent_thread.ds_thread._model.call('message_get_partner_info_from_emails', [new_names_to_find, true]);
+                        var values = {
+                            'link_mail': true,
+                            'res_id': self.context.default_res_id,
+                        }
+                        find_done = self.parent_thread.ds_thread._model.call('message_get_partner_info_from_emails', [new_names_to_find], values);
                     }
                     else {
                         find_done.resolve([]);
@@ -969,8 +975,8 @@ openerp.mail = function (session) {
         expender: function () {
             this.$('.oe_msg_body:first').expander({
                 slicePoint: this.options.truncate_limit,
-                expandText: 'Read more',
-                userCollapseText: 'Read less',
+                expandText: 'read more',
+                userCollapseText: 'read less',
                 detailClass: 'oe_msg_tail',
                 moreClass: 'oe_mail_expand',
                 lessClass: 'oe_mail_reduce',
@@ -1060,9 +1066,6 @@ openerp.mail = function (session) {
 
         on_message_read: function (event) {
             event.stopPropagation();
-            if ($(".oe_active .oe_menu_counter").text()) {
-                $(".oe_active .oe_menu_counter").text($(".oe_active .oe_menu_counter").text()-1);
-            };
             this.on_message_read_unread(true);
             return false;
         },
@@ -1394,9 +1397,9 @@ openerp.mail = function (session) {
             if (this.options.help) {
                 no_message.html(this.options.help);
             }
-             if (!this.$el.find(".oe_view_nocontent").length)
+            if (!this.$el.find(".oe_view_nocontent").length)
             {
-               no_message.appendTo(this.$el);
+                no_message.appendTo(this.$el);
             }
         },
 

@@ -24,6 +24,7 @@ import os
 import re
 from socket import gethostname
 import time
+
 from openerp import SUPERUSER_ID
 from openerp import netsvc, tools
 from openerp.osv import fields, osv
