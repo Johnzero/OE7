@@ -9,9 +9,9 @@ import thread
 
 FILE_LIST_DIRECTORY = 0x0001
 
-path_to_watch = "J:\openerp-7.0"
-OPENERP_BAT_PATH = "J:\\v7.bat" # python openerp-server -c install/openerp-server.conf
-DICT_TO_WATCH = ["py","xml"]
+path_to_watch = "E:\OE7"
+OPENERP_BAT_PATH = "E:\\OE7\\v7.bat" # python openerp-server -c install/openerp-server.conf
+DICT_TO_WATCH = ["py","xml","conf"]
 
 ACTIONS = {
     1 : "Created",

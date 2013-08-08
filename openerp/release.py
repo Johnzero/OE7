@@ -54,6 +54,6 @@ nt_service_name = "openerp-server-" + serie
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
 version = "7.0-20130424-232422"
-# server bzr version: 4958 odo@openerp.com-20130424131625-aeljtyo5yuiyrlcz on lp:~openerp/openobject-server/7.0
+# server bzr version: 5044 odo@openerp.com-20130424131625-aeljtyo5yuiyrlcz on lp:~openerp/openobject-server/7.0
 # addons bzr version: 9069 qdp-launchpad@openerp.com-20130424092810-qmkgr66pv770euv3 on lp:~openerp/openobject-addons/7.0
 # web bzr version: 3909 al@openerp.com-20130423210644-hmvglhh10zlrwp9q on lp:~openerp/openerp-web/7.0

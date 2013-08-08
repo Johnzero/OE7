@@ -30,7 +30,7 @@
         <function name="install_lang" model="res.lang"/>
 
         <record id="main_partner" model="res.partner" context="{'default_is_company': True}">
-            <field name="name">君子兰</field>
+            <field name="name">Your Company</field>
             <field name="company_id" eval="None"/>
             <field name="image" eval="False"/>
             <field name="customer" eval="False"/>
@@ -49,8 +49,6 @@
             <field name="symbol">€</field>
             <field name="rounding">0.01</field>
             <field name="accuracy">4</field>
-            <!-- Company ID will be set later -->
-            <field name="company_id" eval="None"/>
         </record>
         <record id="rateEUR" model="res.currency.rate">
             <field name="rate">1.0</field>
@@ -67,10 +65,10 @@
         </record>
 
         <record model="res.partner" id="base.partner_root">
-            <field name="name">管理员</field>
+            <field name="name">Administrator</field>
             <field name="company_id" ref="main_company"/>
             <field name="customer" eval="False"/>
-            <field name="email">419484794@qq.com</field>
+            <field name="email">admin@example.com</field>
         </record>
 
         <record model="res.users" id="base.user_root">
@@ -79,14 +77,10 @@
             <field name="company_ids" eval="[(4, ref('main_company'))]"/>
             <field name="menu_id" ref="action_menu_admin"/>
             <field name="signature">--
-管理员</field>
+Administrator</field>
         </record>
 
         <record id="main_partner" model="res.partner">
-            <field name="company_id" ref="main_company"/>
-        </record>
-
-        <record id="EUR" model="res.currency">
             <field name="company_id" ref="main_company"/>
         </record>
 

@@ -35,6 +35,7 @@ from sql import *
 from float_utils import *
 from mail import *
 from hanzi import *
+from autoreload import main as autoreload_main
 
 #.apidoc title: Tools
 

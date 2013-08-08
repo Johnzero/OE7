@@ -1,4 +1,3 @@
-#!/usr/bin/python
 # WSGI Handler sample configuration file.
 #
 # Change the appropriate settings below, in order to provide the parameters
@@ -12,6 +11,7 @@
 # For gunicorn additional globals need to be defined in the Gunicorn section.
 # Then the following command should run:
 #   $ gunicorn openerp:service.wsgi_server.application -c openerp-wsgi.py
+
 import openerp
 
 #----------------------------------------------------------
@@ -46,8 +46,8 @@ application = openerp.service.wsgi_server.application
 # Standard OpenERP XML-RPC port is 8069
 bind = '127.0.0.1:8069'
 pidfile = '.gunicorn.pid'
-workers = 8
+workers = 4
 timeout = 240
-max_requests = 10000
+max_requests = 2000
 
 # vim:expandtab:smartindent:tabstop=4:softtabstop=4:shiftwidth=4:
